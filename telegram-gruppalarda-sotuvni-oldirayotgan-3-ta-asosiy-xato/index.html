@@ -192,9 +192,8 @@
    <script>
       const params = new URLSearchParams(window.location.search);
       const chatId = params.get("u");
-
+      console.log("chatId:", chatId);
       if (chatId) {
-
          fetch("https://konsultantrobot-production.up.railway.app/track/dps-article", {
             method: "POST",
             headers: {
@@ -203,8 +202,20 @@
             body: JSON.stringify({
                chatId: chatId
             })
-         });
-
+         })
+            .then(response => {
+               // Status kodini tekshiramiz (masalan, 200 yoki 201)
+               console.log("Status:", response.status);
+               return response.json(); // Javobni JSON formatida o'qiymiz
+            })
+            .then(data => {
+               // Serverdan kelgan ma'lumotni konsolga chiqaramiz
+               console.log("Serverdan kelgan natija:", data);
+            })
+            .catch(error => {
+               // Agar xatolik yuz bersa (tarmoq xatosi yoki server o'chiq bo'lsa)
+               console.error("Xatolik yuz berdi:", error);
+            });
       }
    </script>
 </body>
