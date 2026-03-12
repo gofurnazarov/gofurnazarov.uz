@@ -4,8 +4,8 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title>Telegram gruppalarda sotuvni o‘ldirayotgan 3 ta asosiy xato</title>
-   <link href="./assets/app.css" rel="stylesheet" media="screen" data-turbolinks-track="reload">
-   <script src="./assets/app.js" defer="true" data-turbolinks-track="reload"></script>
+   <link href="../assets/app.css" rel="stylesheet" media="screen" data-turbolinks-track="reload">
+   <script src="../assets/app.js" defer="true" data-turbolinks-track="reload"></script>
    <meta name="turbolinks-cache-control" content="no-cache">
    <meta name="csrf-param" content="_csrf">
    <meta name="csrf-token" content="qtIJVSdcrRtoFJHTp6Pq8mI5bnLCEKlmvFWEfZRJGsM">
@@ -206,7 +206,7 @@
             .then(response => {
                // Status kodini tekshiramiz (masalan, 200 yoki 201)
                console.log("Status:", response.status);
-               return response.json(); // Javobni JSON formatida o'qiymiz
+               return response.text(); // Javobni JSON formatida o'qiymiz
             })
             .then(data => {
                // Serverdan kelgan ma'lumotni konsolga chiqaramiz
