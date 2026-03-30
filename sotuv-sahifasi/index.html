@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Gullar.uz — Siz izlagan eng sara gullar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fdf6f0;
+      --blush: #f4d6cc;
+      --rose: #e07070;
+      --deep: #1a1a2e;
+      --gold: #c9a96e;
+      --text: #2d2d2d;
+      --muted: #888;
+      --bg: #f9f7f2;
+      --toast-bg: rgba(255, 255, 255, 0.96);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #e5e5e5;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, .logo {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .app-shell {
+      width: 100%;
+      /* max-width: 430px; */
+      min-height: 100vh;
+      background: var(--cream);
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      position: relative;
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      color: #fff;
+      font-size: 1.5rem;
+      letter-spacing: 0.01em;
+      line-height: 0.95;
+      padding: 0 0 8px;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, 0.34);
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      left: 2px;
+      right: 12%;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.08));
+    }
+
+    .logo span {
+      color: #f0a7a1;
+      font-size: 0.74em;
+      letter-spacing: 0.03em;
+    }
+
+    .live-status {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font: 700 0.68rem 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot-green,
+    .dot-red {
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-green {
+      width: 8px;
+      height: 8px;
+      background: #2ecc71;
+      animation: pulse-green 1.5s infinite;
+    }
+
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+      50% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
+    }
+
+    .hero {
+      /* background: url('https://plus.unsplash.com/premium_photo-1673426711123-ee3684849f2c?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; */
+      background: url('assets/images/hero-background.jpg') center/cover;
+      position: relative;
+      min-height: 65vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 24px 56px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      background: url('https://unsplash.com/photos/C6xPBLXdurs/download?force=true&w=1400') center 30%/cover;
+      filter: blur(1px) brightness(0.68) saturate(0.88);
+      transform: scale(1.05);
+      transform-origin: center;
+      z-index: -2;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.26) 0%,
+          rgba(0, 0, 0, 0.4) 34%,
+          rgba(0, 0, 0, 0.74) 74%,
+          rgba(0, 0, 0, 0.9) 100%
+        );
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.15rem, 9vw, 2.8rem);
+      line-height: 1.08;
+      margin-bottom: 12px;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.42);
+    }
+
+    .hero-sub {
+      font: 400 0.92rem 'Montserrat', sans-serif;
+      color: rgba(255, 255, 255, 0.94);
+      margin-bottom: 22px;
+      text-shadow: 0 8px 22px rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .hero-trust span {
+      font: 600 0.68rem 'Montserrat', sans-serif;
+      color: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+      border-radius: 999px;
+      padding: 6px 10px;
+    }
+
+    .btn-primary,
+    .sticky-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #fff;
+      background: var(--rose);
+      box-shadow: 0 10px 28px rgba(224, 112, 112, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary {
+      padding: 16px 34px;
+      font: 700 0.95rem 'Montserrat', sans-serif;
+    }
+
+    .btn-primary:hover,
+    .sticky-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary:active,
+    .sticky-btn:active,
+    .btn-order:active,
+    .urgency-cta:active,
+    .arrow-btn:active {
+      transform: scale(0.97);
+    }
+
+    .scroll-hint {
+      margin-top: 16px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      font: 600 0.68rem 'Montserrat', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      animation: bounce-down 2.1s ease-in-out infinite;
+    }
+
+    .scroll-hint svg {
+      width: 18px;
+      height: 18px;
+      stroke: rgba(255, 255, 255, 0.7);
+      fill: none;
+    }
+
+    @keyframes bounce-down {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: 0.85;
+      }
+
+      50% {
+        transform: translateY(6px);
+        opacity: 1;
+      }
+    }
+
+    .section-header {
+      text-align: center;
+      padding: 44px 24px 6px;
+    }
+
+    .section-header h2 {
+      font-size: 1.7rem;
+      color: var(--deep);
+      margin-bottom: 5px;
+    }
+
+    .section-header p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .products {
+      padding: 8px 18px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .product-card.visible {
+      animation: reveal-card 0.5s ease forwards;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.11);
+    }
+
+    .product-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .circle-frame {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ecd8d8;
+    }
+
+    .circle-frame .inner {
+      cursor: pointer;
+      width: 82%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(201, 169, 110, 0.32);
+      box-shadow: 0 0 0 7px rgba(201, 169, 110, 0.09);
+    }
+
+    .circle-frame .inner img,
+    .circle-frame .inner video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-preview {
+      pointer-events: none;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(224, 112, 112, 0.18);
+      border-radius: 999px;
+      color: var(--rose);
+      padding: 4px 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .product-play {
+      position: absolute;
+      bottom: 13px;
+      right: 13px;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .product-play:hover {
+      background: var(--rose);
+      transform: scale(1.08);
+    }
+
+    .product-play svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--rose);
+      fill: none;
+      margin-left: 2px;
+    }
+
+    .product-play:hover svg {
+      stroke: #fff;
+    }
+
+    .product-info {
+      padding: 18px 20px 20px;
+    }
+
+    .product-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 1.25rem;
+      color: var(--deep);
+      margin-bottom: 3px;
+    }
+
+    .product-hook {
+      font-size: 13px;
+      color: var(--rose);
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+
+    .product-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--deep);
+    }
+
+    .btn-order {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--deep);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-order:hover {
+      background: var(--rose);
+      transform: scale(1.03);
+    }
+
+    .more-link {
+      text-align: center;
+      margin: 2px 0 14px;
+    }
+
+    /* .more-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      padding: 9px 22px;
+      border-radius: 999px;
+      transition: border-color 0.2s, color 0.2s;
+    } */
+
+    .more-link a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 13px;
+      background-color: var(--text);
+
+      color: #fff;
+      font-weight: 700;
+
+      margin-bottom: 45px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+
+      box-shadow: 0 10px 28px rgba(224, 112, 112, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .more-link a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(224, 112, 112, 0.45);
+    }
+
+    /* .more-link a:hover {
+      border-color: var(--rose);
+      color: var(--rose);
+    } */
+
+    .urgency {
+      margin: 0 18px 70px;
+      background: linear-gradient(135deg, #d95f5f, #e07070);
+      border-radius: 20px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 8px 28px rgba(224, 112, 112, 0.38);
+    }
+
+    .urgency-icon {
+      font-size: 1.9rem;
+      flex-shrink: 0;
+    }
+
+    .urgency-text h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .urgency-text p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .urgency-cta {
+      margin-left: auto;
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 18px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .urgency-cta:hover {
+      background: rgba(255, 255, 255, 0.32);
+    }
+
+    @media (max-width: 768px) {
+      .urgency {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .urgency-text {
+        text-align: center;
+      }
+
+      .urgency-cta {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 14px;
+        font-size: 14px;
+      }
+    }
+
+    .trust {
+      position: relative;
+      padding: 56px 24px 52px;
+      text-align: center;
+      overflow: hidden;
+      background: #f6efe9;
+    }
+
+    .trust::before,
+    .trust::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .trust::before {
+      width: 260px;
+      height: 260px;
+      background: rgba(224, 112, 112, 0.18);
+      top: -60px;
+      left: -80px;
+    }
+
+    .trust::after {
+      width: 220px;
+      height: 220px;
+      background: rgba(201, 169, 110, 0.14);
+      bottom: -50px;
+      right: -60px;
+    }
+
+    .trust-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .trust-label {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 10px;
+    }
+
+    .trust-number {
+      font-size: 4rem;
+      color: var(--deep);
+      line-height: 1;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, var(--deep) 40%, var(--rose));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .trust-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .trust-card {
+      background: #fff;
+      border: 1px solid rgba(224, 112, 112, 0.12);
+      border-radius: 18px;
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .trust-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(224, 112, 112, 0.12);
+    }
+
+    .trust-card-icon {
+      font-size: 1.6rem;
+    }
+
+    .trust-card-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--deep);
+    }
+
+    .trust-card-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .how {
+      padding: 48px 24px 40px;
+    }
+
+    .how h2 {
+      font-size: 1.7rem;
+      color: var(--deep);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding-bottom: 24px;
+    }
+
+    .step-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step-dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .step-connector {
+      width: 2px;
+      flex: 1;
+      background: linear-gradient(to bottom, var(--blush), transparent);
+      margin-top: 5px;
+      min-height: 24px;
+    }
+
+    .step:last-child .step-connector {
+      display: none;
+    }
+
+    .step-text {
+      padding-top: 8px;
+    }
+
+    .step-title {
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: 2px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .reviews {
+      padding: 48px 0 40px;
+    }
+
+    .reviews-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 20px;
+      margin-bottom: 18px;
+    }
+
+    .reviews-head h2 {
+      font-size: 1.7rem;
+      color: var(--deep);
+    }
+
+    .slider-arrows {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .arrow-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid #e0e0e0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, opacity 0.2s;
+    }
+
+    .arrow-btn:hover {
+      border-color: var(--rose);
+      background: var(--rose);
+    }
+
+    .arrow-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--muted);
+      fill: none;
+    }
+
+    .arrow-btn:hover svg {
+      stroke: #fff;
+    }
+
+    .arrow-btn:disabled {
+      opacity: 0.45;
+      cursor: default;
+      transform: none;
+    }
+
+    .reviews-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 4px 20px 12px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+
+    .reviews-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      min-width: 230px;
+      width: 230px;
+      min-height: 188px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 18px;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .review-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .review-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .review-name {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--deep);
+    }
+
+    .review-handle {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .review-stars {
+      color: #f5a623;
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+
+    .review-text {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    footer {
+      background: var(--deep);
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+      padding: 24px 24px 100px;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    footer .social-links a {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+
+    footer .social-links svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    footer .social-links a:hover {
+      border-color: var(--gold);
+    }
+
+    .toast {
+      position: fixed;
+      left: max(16px, calc(50% - 199px));
+      bottom: 112px;
+      z-index: 120;
+      background: var(--toast-bg);
+      padding: 12px 18px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transform: translateX(-150%);
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      max-width: min(260px, calc(100vw - 32px));
+    }
+
+    .toast.show {
+      transform: translateX(0);
+    }
+
+    .toast-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .toast-copy {
+      font-size: 0.75rem;
+      line-height: 1.45;
+    }
+
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(10, 10, 20, 0.74);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      z-index: 220;
+    }
+
+    .video-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .video-modal-dialog {
+      position: relative;
+      width: min(100%, 720px);
+      border-radius: 24px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      isolation: isolate;
+    }
+
+    .video-modal video {
+      width: 100%;
+      max-height: min(78vh, 900px);
+      display: block;
+      background: #000;
+    }
+
+    .video-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 1.35rem;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes reveal-card {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 960px) {
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(224, 112, 112, 0.14), transparent 32%),
+          radial-gradient(circle at bottom right, rgba(201, 169, 110, 0.18), transparent 34%),
+          #e5e5e5;
+      }
+
+      .app-shell {
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      header {
+        padding: 28px 38px;
+      }
+
+      .logo {
+        font-size: 1.7rem;
+      }
+
+      .live-status {
+        padding: 8px 14px;
+        font-size: 0.74rem;
+      }
+
+      .hero {
+        min-height: 82vh;
+        align-items: center;
+        justify-content: center;
+        padding: 140px 72px 100px;
+      }
+
+      .hero-content {
+        max-width: 760px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.8rem, 5vw, 5.4rem);
+        margin-bottom: 18px;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+
+      .hero-trust {
+        margin-bottom: 36px;
+      }
+
+      .btn-primary {
+        padding: 18px 40px;
+        font-size: 1rem;
+      }
+
+      .section-header {
+        padding: 72px 56px 14px;
+      }
+
+      .section-header h2,
+      .how h2,
+      .reviews-head h2 {
+        font-size: 2.4rem;
+      }
+
+      .section-header p,
+      .trust-sub,
+      .step-desc,
+      .review-text {
+        font-size: 0.95rem;
+      }
+
+      .products {
+        padding: 20px 56px 44px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .product-card {
+        height: 100%;
+      }
+
+      .product-info {
+        padding: 22px 24px 24px;
+      }
+
+      .product-name {
+        font-size: 1.45rem;
+      }
+
+      .product-desc {
+        font-size: 0.88rem;
+      }
+
+      .product-footer {
+        align-items: flex-end;
+      }
+
+      .more-link {
+        margin: 6px 0 26px;
+      }
+
+      .urgency {
+        margin: 0 56px 70px;
+        padding: 24px 28px;
+      }
+
+      .urgency-text h3 {
+        font-size: 1rem;
+      }
+
+      .urgency-text p {
+        font-size: 0.9rem;
+      }
+
+      .trust {
+        padding: 64px 56px;
+      }
+
+      .trust-number {
+        font-size: 4.6rem;
+      }
+
+      .trust-grid {
+        gap: 14px;
+      }
+
+      .trust-card {
+        padding: 22px 18px;
+      }
+
+      .trust-card-title {
+        font-size: 0.98rem;
+      }
+
+      .trust-card-desc {
+        font-size: 0.84rem;
+      }
+
+      .how {
+        padding: 72px 56px 56px;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        align-items: start;
+      }
+
+      .step {
+        display: block;
+        padding: 28px;
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+      }
+
+      .step-line {
+        display: block;
+      }
+
+      .step-connector {
+        display: none;
+      }
+
+      .step-text {
+        padding-top: 20px;
+      }
+
+      .step-title {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+
+      .reviews {
+        padding: 72px 0 56px;
+      }
+
+      .reviews-head {
+        padding: 0 56px;
+        margin-bottom: 24px;
+      }
+
+      .reviews-scroll {
+        padding: 6px 56px 12px;
+        gap: 18px;
+      }
+
+      .review-card {
+        width: 300px;
+        min-width: 300px;
+        min-height: 220px;
+        padding: 22px;
+      }
+
+      footer {
+        padding: 34px 56px 116px;
+        font-size: 0.84rem;
+      }
+
+      .sticky-bar {
+        max-width: 1240px;
+        padding: 16px 56px 24px;
+      }
+
+      .sticky-btn {
+        margin-left: auto;
+        width: auto;
+        min-width: 380px;
+        padding-inline: 28px;
+      }
+
+      .toast {
+        left: max(32px, calc(50% - 588px));
+      }
+
+      .video-modal {
+        padding: 32px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero {
+        min-height: 60vh;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 44px;
+      }
+
+      .hero-trust {
+        gap: 8px;
+      }
+
+      .hero-trust span {
+        font-size: 0.64rem;
+      }
+
+      .product-footer,
+      .urgency {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .urgency-cta,
+      .btn-order {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .reviews-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    .container {
+      display: inherit;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <div class="container">
+        <div class="logo">Gullar<span>.uz</span></div>
+        <div class="live-status"><span class="dot-green"></span>ONLINE</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Siz izlagan <br />eng sara gullar</h1>
+          <p class="hero-sub">Toshkent bo'ylab 2 soat ichida yetkazamiz</p>
+          <a href="#products" class="btn-primary">Buyurtma berish</a>
+          <a href="#products" class="scroll-hint" aria-label="Mahsulotlarga o'tish">
+            <span>Pastga</span>
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5v14" />
+              <path d="m6 13 6 6 6-6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-header">
+          <h2>Eng ko'p tanlanadigan 🌹</h2>
+          <p>Har kuni yangilanadi — bugungi eng yaxshi variantlar</p>
+        </div>
+  
+        <div class="products">
+          <div class="product-card">
+            <div class="product-media">
+              <div class="circle-frame">
+                <div class="inner">
+                  <video class="product-preview" autoplay muted loop playsinline preload="metadata" poster="">
+                    <source src="assets/videos/flower_1.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+              <span class="product-badge">🔥 Hozir ommabop</span>
+              <button class="product-play" aria-label="Video ko'rish" data-video-src="assets/videos/flower_1.mp4">
+                <svg viewBox="0 0 24 24" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-label">❤️ Eng ko'p sotilgan</div>
+              <div class="product-name">"Qirolicha" guldastasi</div>
+              <div class="product-hook">Sevgan insoningizni hayratda qoldiradi ❤️</div>
+              <div class="product-desc">101 dona qizil atirgul · Premium lenta · Sovg'a qadoqi</div>
+              <div class="product-footer">
+                <div class="product-price">450 000 so'm</div>
+                <a href="https://t.me/gullaruz_bot?start=top1" class="btn-order" target="_blank" rel="noreferrer">👉 Buyurtma</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="product-card">
+            <div class="product-media">
+              <div class="circle-frame">
+                <div class="inner">
+                  <video class="product-preview" autoplay muted loop playsinline preload="metadata" poster="">
+                    <source src="assets/videos/flower_2.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+              <span class="product-badge" style="color: var(--gold);">✨ Bugungi trend</span>
+              <button class="product-play" aria-label="Video ko'rish" data-video-src="assets/videos/flower_2.mp4">
+                <svg viewBox="0 0 24 24" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-label" style="color: var(--gold);">🌸 Yangi to'plam</div>
+              <div class="product-name">"Oq orzular"</div>
+              <div class="product-hook">Do'stingiz bu guldastani hech unutmaydi 🌸</div>
+              <div class="product-desc">Pushti va oq gullar aralashmasi · Romantik dizayn · Sovg'aga ideal</div>
+              <div class="product-footer">
+                <div class="product-price">380 000 so'm</div>
+                <a href="https://t.me/gullaruz_bot?start=top2" class="btn-order" target="_blank" rel="noreferrer">👉 Buyurtma</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="product-card">
+            <div class="product-media">
+              <div class="circle-frame">
+                <div class="inner">
+                  <video class="product-preview" autoplay muted loop playsinline preload="metadata" poster="">
+                    <source src="assets/videos/flower_3.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+              <span class="product-badge" style="color: #8b5cf6;">💎 Premium</span>
+              <button class="product-play" aria-label="Video ko'rish" data-video-src="assets/videos/flower_3.mp4">
+                <svg viewBox="0 0 24 24" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-label" style="color: #8b5cf6;">💎 Premium variant</div>
+              <div class="product-name">"Shodlik" to'plami</div>
+              <div class="product-hook">Eng katta his-tuyg'ular uchun eng katta sovg'a 💎</div>
+              <div class="product-desc">Ekzotik gullar · Individual rasm va kartochka · VIP yetkazish</div>
+              <div class="product-footer">
+                <div class="product-price">720 000 so'm</div>
+                <a href="https://t.me/gullaruz_bot?start=top3" class="btn-order" target="_blank" rel="noreferrer">👉 Buyurtma</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="more-link">
+          <a href="https://t.me/gullaruz_bot" target="_blank" rel="noreferrer">Ko‘proq Gullarni Ko‘rish 🌸 →</a>
+        </div>
+        
+        <div class="urgency">
+          <div class="urgency-icon">⚡</div>
+          <div class="urgency-text">
+            <h3>Hozir buyurtma bering</h3>
+            <p>Kechikmasdan — 2 soatda yetkazamiz</p>
+          </div>
+          <a href="https://t.me/gullaruz_bot" class="urgency-cta" target="_blank" rel="noreferrer">Buyurtma berish →</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="trust">
+      <div class="container">
+        <div class="trust-inner">
+          <div class="trust-label">Ishonch va sifat</div>
+          <div class="trust-number">79,000+</div>
+          <div class="trust-sub">Mijozlarimiz bizni tanlashgan</div>
+          <div class="trust-grid">
+            <div class="trust-card">
+              <div class="trust-card-icon">⚡</div>
+              <div class="trust-card-title">Tez yetkazish</div>
+              <div class="trust-card-desc">Buyurtmadan 2 soat ichida</div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-card-icon">🌹</div>
+              <div class="trust-card-title">Yangi gullar</div>
+              <div class="trust-card-desc">Har kuni yangi partiya</div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-card-icon">📍</div>
+              <div class="trust-card-title">Toshkent bo'ylab</div>
+              <div class="trust-card-desc">Barcha tumanlar qamrovi</div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-card-icon">💬</div>
+              <div class="trust-card-title">24/7 javob</div>
+              <div class="trust-card-desc">Har qanday savolingizga</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how">
+      <div class="container">
+        <h2>Qanday buyurtma beriladi?</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-line"><div class="step-dot">🌸</div><div class="step-connector"></div></div>
+            <div class="step-text">
+              <div class="step-title">Tanlaysiz</div>
+              <div class="step-desc">Yuqoridagi variantlardan birini tanlab "Buyurtma" tugmasini bosing</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-line"><div class="step-dot">📍</div><div class="step-connector"></div></div>
+            <div class="step-text">
+              <div class="step-title">Manzil berasiz</div>
+              <div class="step-desc">Telegram orqali manzil va qulay vaqtni yuboring — 1 daqiqa ketadi</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-line"><div class="step-dot">🚚</div></div>
+            <div class="step-text">
+              <div class="step-title">Qabul qilasiz</div>
+              <div class="step-desc">Kuryer 2 soat ichida yetkazadi. To'lov — qabul qilgandan keyin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="container">
+        <div class="reviews-head">
+          <h2>Mijozlarimizdan 🌸</h2>
+          <div class="slider-arrows">
+            <button class="arrow-btn" id="arrowLeft" aria-label="Oldingi">
+              <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+            <button class="arrow-btn" id="arrowRight" aria-label="Keyingi">
+              <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="9 18 15 12 9 6" /></svg>
+            </button>
+          </div>
+        </div>
+  
+        <div class="reviews-scroll" id="reviewsScroll">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=80" alt="Madina" /></div>
+              <div><div class="review-name">Madina S.</div><div class="review-handle">@madina_01</div></div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-text">Ertalab buyurtma berdim, tushdan keyin oldim. Gullari hali ham yangi va chiroyli! 🌹</div>
+          </div>
+  
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="Shirin" /></div>
+              <div><div class="review-name">Shirin G.</div><div class="review-handle">@shirin_gul</div></div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-text">Do'stim uchun sovg'a oldim, u juda xursand bo'ldi. Sifati a'lo! Albatta qaytaman 💐</div>
+          </div>
+  
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Jasur" /></div>
+              <div><div class="review-name">Jasur T.</div><div class="review-handle">@jasur_t</div></div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-text">Xotinimga surprise qildim. Kuryer aniq vaqtida keldi, qadoq juda chiroyli edi!</div>
+          </div>
+  
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80" alt="Nilufar" /></div>
+              <div><div class="review-name">Nilufar X.</div><div class="review-handle">@nilufar.x</div></div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-text">Premium to'plamni oldim — haqiqatan ham premium! Narxi asosli, sifati yuqori ✨</div>
+          </div>
+  
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">🌷</div>
+              <div><div class="review-name">Zulfiya M.</div><div class="review-handle">@zulfiya.m</div></div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-text">Tug'ilgan kunim uchun buyurtma berdim. Hammasi mukammal — vaqtida, chiroyli, yangi! 🎂🌸</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a href="https://instagram.com/gullar.uz" target="_blank" rel="noreferrer" title="Instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4.2" />
+              <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="https://t.me/gullaruz" target="_blank" rel="noreferrer" title="Telegram" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 4 3.8 10.7c-.8.3-.8 1.5 0 1.8l4.3 1.4 1.5 4.6c.2.7 1.1.8 1.6.2L14 15l4.5 3.5c.6.4 1.4.1 1.6-.7L22 5.4C22.2 4.6 21.6 3.9 21 4Z" />
+              <path d="M8.1 13.9 19.7 5.7" />
+            </svg>
+          </a>
+          <a href="tel:+998901234567" title="Telefon" aria-label="Telefon">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6.8 4.5h2.6c.4 0 .8.3.9.7l.9 4a1 1 0 0 1-.3.9l-1.6 1.6a14.5 14.5 0 0 0 5.1 5.1l1.6-1.6a1 1 0 0 1 .9-.3l4 .9c.4.1.7.5.7.9v2.6c0 .6-.5 1.1-1.1 1.1C11.2 21.5 2.5 12.8 2.5 5.6c0-.6.5-1.1 1.1-1.1Z" />
+            </svg>
+          </a>
+        </div>
+        <div>Gullar.uz © 2026</div>
+        <div>Toshkent, O'zbekiston</div>
+        <div style="margin-top: 8px;"><a href="tel:+998901234567">+998 90 123 45 67</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="social-toast" aria-live="polite" aria-atomic="true">
+    <span class="toast-icon" id="toast-icon">🎁</span>
+    <div class="toast-copy">
+      <strong id="toast-name">Nigora (Chilonzor)</strong><br />
+      Hozirgina buyurtma berdi
+    </div>
+  </div>
+
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Gullar videosi">
+      <button class="video-modal-close" id="videoModalClose" aria-label="Yopish">×</button>
+      <video id="modalVideo" controls playsinline preload="metadata"></video>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.product-card');
+    const cardObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const index = Array.from(cards).indexOf(entry.target);
+        entry.target.style.animationDelay = (index * 0.12) + 's';
+        entry.target.classList.add('visible');
+        cardObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => cardObserver.observe(card));
+
+    const reviewsScroll = document.getElementById('reviewsScroll');
+    const arrowLeft = document.getElementById('arrowLeft');
+    const arrowRight = document.getElementById('arrowRight');
+
+    function getReviewStep() {
+      const firstCard = reviewsScroll.querySelector('.review-card');
+      if (!firstCard) return 240;
+      const styles = window.getComputedStyle(reviewsScroll);
+      const gap = parseFloat(styles.columnGap || styles.gap || 12);
+      return firstCard.getBoundingClientRect().width + gap;
+    }
+
+    function updateReviewArrows() {
+      const maxScroll = reviewsScroll.scrollWidth - reviewsScroll.clientWidth;
+      arrowLeft.disabled = reviewsScroll.scrollLeft <= 4;
+      arrowRight.disabled = reviewsScroll.scrollLeft >= maxScroll - 4;
+    }
+
+    arrowLeft.addEventListener('click', () => {
+      reviewsScroll.scrollBy({ left: -getReviewStep(), behavior: 'smooth' });
+    });
+
+    arrowRight.addEventListener('click', () => {
+      reviewsScroll.scrollBy({ left: getReviewStep(), behavior: 'smooth' });
+    });
+
+    reviewsScroll.addEventListener('scroll', updateReviewArrows, { passive: true });
+    window.addEventListener('resize', updateReviewArrows);
+    updateReviewArrows();
+
+    const footer = document.querySelector('footer');
+    const hero = document.querySelector('.hero');
+    let heroVisible = true;
+    let footerVisible = false;
+
+
+    const customers = [
+      { name: 'Zarnigor (Yunusobod)', icon: '🌸' },
+      { name: 'Aziza (Mirobod)', icon: '✨' },
+      { name: 'Dilnoza (Sergeli)', icon: '💐' },
+      { name: 'Lobar (Shayxontohur)', icon: '🎁' }
+    ];
+
+    let toastIndex = 0;
+    const toast = document.getElementById('social-toast');
+    const toastName = document.getElementById('toast-name');
+    const toastIcon = document.getElementById('toast-icon');
+    const previewVideos = document.querySelectorAll('.product-preview');
+    const playButtons = document.querySelectorAll('.product-play');
+    const innerFrames = document.querySelectorAll('.circle-frame .inner');
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const videoModalClose = document.getElementById('videoModalClose');
+
+    previewVideos.forEach(video => {
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    });
+
+    function openVideoModal(src) {
+      if (!src) return;
+      modalVideo.src = src;
+      modalVideo.currentTime = 0;
+      videoModal.classList.add('open');
+      videoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const playPromise = modalVideo.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    }
+
+    function closeVideoModal() {
+      videoModal.classList.remove('open');
+      videoModal.setAttribute('aria-hidden', 'true');
+      modalVideo.pause();
+      modalVideo.removeAttribute('src');
+      modalVideo.load();
+      document.body.style.overflow = '';
+    }
+
+    playButtons.forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        openVideoModal(button.dataset.videoSrc);
+      });
+    });
+
+    innerFrames.forEach(inner => {
+      inner.addEventListener('click', () => {
+        const button = inner.closest('.product-media').querySelector('.product-play');
+        openVideoModal(button.dataset.videoSrc);
+      });
+    });
+
+    videoModalClose.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      closeVideoModal();
+    });
+
+    videoModal.addEventListener('click', event => {
+      if (event.target === videoModal) {
+        closeVideoModal();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && videoModal.classList.contains('open')) {
+        closeVideoModal();
+      }
+    });
+
+    function showToast() {
+      const current = customers[toastIndex];
+      toastName.textContent = current.name;
+      toastIcon.textContent = current.icon;
+      toast.classList.add('show');
+      window.setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+      toastIndex = (toastIndex + 1) % customers.length;
+    }
+
+    // window.setTimeout(showToast, 2000);
+    // window.setInterval(showToast, 9000);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', event => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
