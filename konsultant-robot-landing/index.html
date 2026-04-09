@@ -245,7 +245,7 @@
          border: 0px solid var(--border);
          border-left: 3px solid var(--ink);
          /* border-radius: 0 10px 10px 0; */
-         padding: 22px 22px;
+         padding: 12px 22px;
          margin-top: 28px;
       }
 
@@ -339,6 +339,13 @@
       .proof-grid .shot {
          margin: 0 15px 30px;
          width: calc(50% - 30px);
+      }
+
+      @media (max-width: 480px) {
+         .proof-grid .shot {
+            margin: 0 0 30px;
+            width: 100%;
+         }
       }
 
       .shot {
