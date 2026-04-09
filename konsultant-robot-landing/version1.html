@@ -26,12 +26,6 @@
          --red-bg: #FDF0EE;
          --red-border: rgba(200, 50, 30, 0.15);
          --red: #C8321E;
-         --cream: #f5f0e8;
-         --warm: #ede5d5;
-         --accent: #c8401a;
-         --accent2: #2a5c3f;
-         --card: #ffffff;
-         ;
       }
 
       *,
@@ -118,25 +112,36 @@
          border-bottom: 1px solid var(--border);
       }
 
+      .hero-tag {
+         display: inline-block;
+         font-size: 11px;
+         font-weight: 700;
+         letter-spacing: 0.18em;
+         text-transform: uppercase;
+         color: var(--orange);
+         margin-bottom: 20px;
+      }
+
       .hero h1 {
          font-size: clamp(26px, 6.5vw, 44px);
          font-weight: 900;
          line-height: 1.15;
          letter-spacing: -0.03em;
          color: var(--ink);
-         margin-bottom: 30px;
+         margin-bottom: 10px;
       }
 
-      .hero .attack {
-         color: var(--orange);
+      .hero h1 .gray {
+         color: var(--muted);
+         font-weight: 800;
       }
 
       .hero-cut {
          font-family: 'Lora', serif;
          font-size: clamp(15px, 4vw, 20px);
-         /* font-style: italic; */
-         color: var(--muted);
-         margin-bottom: 28px;
+         font-style: italic;
+         color: var(--orange);
+         margin-bottom: 12px;
          line-height: 1.5;
          display: block;
       }
@@ -145,6 +150,7 @@
          font-size: 15px;
          font-weight: 600;
          color: var(--ink2);
+         margin-bottom: 28px;
          line-height: 1.65;
          padding: 14px 18px;
          background: var(--bg);
@@ -152,24 +158,20 @@
          border-left: 3px solid var(--ink);
       }
 
-      /* --- CRITICAL LINE --- */
-      .critical-line {
-         background: var(--ink);
-         color: var(--cream);
-         padding: 40px 0;
-         text-align: center;
+      .honest-box {
+         background: var(--orange-bg);
+         border: 1px solid var(--orange-border);
+         border-left: 3px solid var(--orange);
+         border-radius: 0 8px 8px 0;
+         padding: 16px 18px;
+         font-size: 14px;
+         color: var(--ink2);
+         line-height: 1.75;
       }
 
-      .critical-line h2 {
-         text-transform: uppercase;
-         font-size: 1.7rem;
-         margin-bottom: 10px;
-      }
-
-      .critical-line p {
-         color: var(--accent);
+      .honest-box strong {
          font-weight: 700;
-         font-size: 1.5rem;
+         color: var(--orange);
       }
 
       /* ── SECTIONS ── */
@@ -210,19 +212,14 @@
          margin-bottom: 32px;
       }
 
-      .highlight {
-         color: var(--orange);
-         font-weight: 700;
-      }
-
-      /* ── PAIN/MIRROR ── */
+      /* ── MIRROR ── */
       .mirror-list {
          list-style: none;
          background: var(--white);
          border: 1px solid var(--border);
          border-radius: 10px;
          overflow: hidden;
-         margin: 20px 0;
+         margin-bottom: 20px;
       }
 
       .mirror-list li {
@@ -240,16 +237,67 @@
          border-bottom: none;
       }
 
+      .mirror-list li::before {
+         content: '—';
+         color: var(--dim);
+         flex-shrink: 0;
+         margin-top: 2px;
+      }
+
+      .emotional-stab {
+         font-size: 15px;
+         color: var(--muted);
+         margin-bottom: 4px;
+         line-height: 1.7;
+      }
+
+      .emotional-stab strong {
+         display: block;
+         font-size: 16px;
+         font-weight: 700;
+         color: var(--ink);
+         margin-top: 6px;
+      }
+
       .pull-quote {
          background: var(--white);
-         border: 0px solid var(--border);
+         border: 1px solid var(--border);
          border-left: 3px solid var(--ink);
-         /* border-radius: 0 10px 10px 0; */
+         border-radius: 0 10px 10px 0;
          padding: 22px 22px;
          margin-top: 28px;
       }
 
+      .pull-quote p {
+         font-family: 'Lora', serif;
+         font-size: clamp(17px, 4vw, 22px);
+         font-style: italic;
+         color: var(--ink);
+         line-height: 1.5;
+         margin-bottom: 10px;
+      }
+
+      .pull-quote .pq-sub {
+         font-family: 'Geologica', sans-serif;
+         font-size: 13px;
+         color: var(--muted);
+         font-style: normal;
+         line-height: 1.65;
+      }
+
       /* ── MECHANISM ── */
+      .mech-anchor {
+         display: inline-block;
+         background: var(--ink);
+         color: #fff;
+         font-size: 15px;
+         font-weight: 800;
+         padding: 10px 18px;
+         border-radius: 6px;
+         margin-bottom: 32px;
+         letter-spacing: -0.01em;
+      }
+
       .flow {
          display: flex;
          flex-direction: column;
@@ -293,12 +341,35 @@
          padding: 8px 0 36px;
       }
 
+      .flow-content h3 {
+         font-size: 16px;
+         font-weight: 700;
+         color: var(--ink);
+         margin-bottom: 5px;
+         line-height: 1.35;
+      }
+
+      .flow-content p {
+         font-size: 14px;
+         color: var(--muted);
+         line-height: 1.7;
+      }
+
       .chat-demo {
          background: var(--bg);
          border: 1px solid var(--border);
          border-radius: 12px;
          padding: 18px;
          margin-top: 12px;
+      }
+
+      .chat-label {
+         font-size: 11px;
+         font-weight: 700;
+         letter-spacing: 0.12em;
+         text-transform: uppercase;
+         color: var(--dim);
+         margin-bottom: 14px;
       }
 
       .bubbles {
@@ -330,15 +401,24 @@
          border-radius: 14px 4px 14px 14px;
       }
 
-      /* ── PROOF ── */
-      .proof-grid {
-         display: flex;
-         flex-wrap: wrap;
+      .chat-footnote {
+         font-size: 12px;
+         color: var(--dim);
+         text-align: center;
+         margin-top: 12px;
+         font-style: italic;
       }
 
-      .proof-grid .shot {
-         margin: 0 15px 30px;
-         width: calc(50% - 30px);
+      /* ── PROOF ── */
+      .proof-grid {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 10px;
+         margin-bottom: 10px;
+      }
+
+      .proof-grid .full {
+         grid-column: span 2;
       }
 
       .shot {
@@ -357,11 +437,16 @@
          padding: 14px;
       }
 
-      .shot img {
-         width: 100%;
-         height: auto;
-         object-fit: cover;
-         border-radius: 8px;
+      .shot svg {
+         opacity: 0.35;
+      }
+
+      .proof-note {
+         font-size: 12px;
+         color: var(--dim);
+         text-align: center;
+         font-style: italic;
+         margin-top: 8px;
       }
 
       /* ── STORY ── */
@@ -396,6 +481,23 @@
 
       .story-inner {
          padding: 24px 22px;
+      }
+
+      .story-inner p {
+         font-size: 15px;
+         color: var(--ink2);
+         line-height: 1.85;
+         margin-bottom: 14px;
+      }
+
+      .story-inner p:last-child {
+         margin-bottom: 0;
+      }
+
+      .story-inner em {
+         font-style: normal;
+         font-weight: 600;
+         color: var(--ink);
       }
 
       .story-result {
@@ -440,6 +542,14 @@
          margin-bottom: 14px;
       }
 
+      .cond-box.no .cond-label {
+         color: var(--red);
+      }
+
+      .cond-box.yes .cond-label {
+         color: var(--green);
+      }
+
       .cond-items {
          list-style: none;
          display: flex;
@@ -453,6 +563,24 @@
          color: var(--ink2);
          padding-left: 17px;
          position: relative;
+      }
+
+      .cond-box.no .cond-items li::before {
+         content: '✗';
+         position: absolute;
+         left: 0;
+         color: var(--red);
+         font-size: 11px;
+         top: 1px;
+      }
+
+      .cond-box.yes .cond-items li::before {
+         content: '✓';
+         position: absolute;
+         left: 0;
+         color: var(--green);
+         font-size: 11px;
+         top: 1px;
       }
 
       .warning-strip {
@@ -503,6 +631,11 @@
          line-height: 1.65;
       }
 
+      .week-text strong {
+         font-weight: 700;
+         color: var(--ink);
+      }
+
       /* ── PRICING ── */
       .price-grid {
          display: grid;
@@ -515,6 +648,11 @@
          border: 1.5px solid var(--border);
          border-radius: 12px;
          padding: 22px 18px;
+         transition: border-color 0.2s;
+      }
+
+      .price-card:hover {
+         border-color: var(--orange);
       }
 
       .price-card.best {
@@ -526,21 +664,72 @@
          display: inline-block;
          font-size: 10px;
          font-weight: 800;
+         letter-spacing: 0.12em;
+         text-transform: uppercase;
          padding: 4px 10px;
          border-radius: 4px;
          margin-bottom: 16px;
       }
 
+      .price-pill.try {
+         background: rgba(217, 95, 43, 0.12);
+         color: var(--orange);
+      }
+
+      .price-pill.best {
+         background: rgba(42, 110, 74, 0.12);
+         color: var(--green);
+      }
+
       .price-num {
          font-size: 34px;
          font-weight: 900;
+         letter-spacing: -0.03em;
          color: var(--ink);
          line-height: 1;
+         margin-bottom: 2px;
       }
 
       .price-num span {
          font-size: 14px;
          font-weight: 500;
+         color: var(--muted);
+      }
+
+      .price-per {
+         font-size: 13px;
+         color: var(--dim);
+         margin-bottom: 4px;
+      }
+
+      .price-save {
+         font-size: 13px;
+         color: var(--green);
+         font-weight: 600;
+         margin-bottom: 14px;
+      }
+
+      .price-save s {
+         color: var(--dim);
+         font-weight: 400;
+         font-size: 12px;
+      }
+
+      .price-note {
+         font-size: 13px;
+         color: var(--muted);
+         line-height: 1.65;
+         padding-top: 14px;
+         border-top: 1px solid var(--border);
+         margin-bottom: 8px;
+         font-style: italic;
+      }
+
+      .price-social {
+         font-size: 13px;
+         font-weight: 700;
+         color: var(--ink2);
+         margin-bottom: 18px;
       }
 
       .btn-price {
@@ -548,11 +737,20 @@
          width: 100%;
          padding: 13px;
          text-align: center;
+         font-family: 'Geologica', sans-serif;
          font-size: 13px;
          font-weight: 800;
          border-radius: 7px;
          text-decoration: none;
-         margin-top: 15px;
+         border: none;
+         cursor: pointer;
+         transition: opacity 0.15s, transform 0.12s;
+         letter-spacing: 0.02em;
+      }
+
+      .btn-price:hover {
+         opacity: 0.85;
+         transform: translateY(-1px);
       }
 
       .btn-price.orange {
@@ -566,11 +764,21 @@
       }
 
       /* ── FAQ ── */
+      .faq-section {
+         padding: 56px 0;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .faq-list {
+         display: flex;
+         flex-direction: column;
+         gap: 8px;
+      }
+
       .faq-item {
          background: var(--white);
          border: 1px solid var(--border);
          border-radius: 8px;
-         margin-bottom: 8px;
          overflow: hidden;
       }
 
@@ -582,15 +790,42 @@
          display: flex;
          justify-content: space-between;
          align-items: center;
+         gap: 14px;
          color: var(--ink);
+         user-select: none;
+         line-height: 1.45;
+      }
+
+      .faq-icon {
+         width: 24px;
+         height: 24px;
+         border-radius: 50%;
+         border: 1.5px solid var(--border);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 18px;
+         color: var(--muted);
+         flex-shrink: 0;
+         transition: transform 0.2s;
+         font-weight: 300;
+         line-height: 1;
+      }
+
+      .faq-item.open .faq-icon {
+         transform: rotate(45deg);
+         border-color: var(--orange);
+         color: var(--orange);
       }
 
       .faq-a {
          display: none;
-         padding: 14px 18px;
+         padding: 0 18px 16px;
          font-size: 14px;
          color: var(--muted);
+         line-height: 1.8;
          border-top: 1px solid var(--border);
+         padding-top: 14px;
       }
 
       .faq-item.open .faq-a {
@@ -601,20 +836,37 @@
       .push-section {
          background: var(--ink);
          padding: 72px 0;
+      }
+
+      .push-section .container {
          text-align: center;
       }
 
       .push-line {
          font-size: clamp(18px, 4.5vw, 26px);
+         font-weight: 400;
          color: #6A6458;
+         line-height: 1.6;
          margin-bottom: 4px;
+      }
+
+      .push-line strong {
+         color: #C0B8A8;
+         font-weight: 600;
+      }
+
+      .push-pause {
+         display: block;
+         height: 32px;
       }
 
       .push-choice {
          font-size: clamp(20px, 5vw, 30px);
          font-weight: 900;
          color: #FFFFFF;
+         line-height: 1.35;
          margin-bottom: 40px;
+         letter-spacing: -0.025em;
       }
 
       .push-btn {
@@ -622,19 +874,85 @@
          width: fit-content;
          background: var(--orange);
          color: #fff;
+         font-family: 'Geologica', sans-serif;
+         font-size: 15px;
+         font-weight: 800;
          padding: 18px 48px;
          border-radius: 8px;
          text-decoration: none;
-         margin: 0 auto;
-         font-weight: 800;
+         letter-spacing: 0.02em;
+         transition: opacity 0.15s, transform 0.15s;
+         margin: 0 auto 12px;
       }
 
+      .push-btn:hover {
+         opacity: 0.88;
+         transform: translateY(-2px);
+      }
+
+      .push-caveat {
+         font-size: 12px;
+         color: #4A4438;
+         font-style: italic;
+         margin-bottom: 4px;
+      }
+
+      .push-micro {
+         font-size: 13px;
+         font-weight: 600;
+         color: #7A7060;
+         margin-top: 6px;
+      }
+
+      /* ── FOOTER ── */
       .footer {
          padding: 28px 20px;
          text-align: center;
          font-size: 12px;
          color: var(--dim);
+         line-height: 1.9;
          border-top: 1px solid var(--border);
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fadeUp {
+         from {
+            opacity: 0;
+            transform: translateY(20px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      .hero .container>* {
+         animation: fadeUp 0.55s ease both;
+      }
+
+      .hero .container>*:nth-child(1) {
+         animation-delay: 0.05s;
+      }
+
+      .hero .container>*:nth-child(2) {
+         animation-delay: 0.12s;
+      }
+
+      .hero .container>*:nth-child(3) {
+         animation-delay: 0.20s;
+      }
+
+      .hero .container>*:nth-child(4) {
+         animation-delay: 0.28s;
+      }
+
+      .hero .container>*:nth-child(5) {
+         animation-delay: 0.36s;
+      }
+
+      .hero .container>*:nth-child(6) {
+         animation-delay: 0.44s;
       }
 
       .reveal {
@@ -648,24 +966,26 @@
          transform: none;
       }
 
+      /* ── MOBILE ── */
       @media (max-width: 480px) {
+         .cond-grid {
+            grid-template-columns: 1fr;
+         }
 
-         .cond-grid,
          .price-grid {
             grid-template-columns: 1fr;
          }
-      }
 
-      /* Mobile adaptivligi uchun */
-      @media (max-width: 480px) {
-         div[style*="grid-template-columns: 1fr 1px 1.5fr"] {
-            grid-template-columns: 1fr !important;
+         .proof-grid {
+            grid-template-columns: 1fr;
          }
 
-         div[style*="width: 1px"] {
-            width: 100% !important;
-            height: 1px !important;
-            margin: 10px 0;
+         .proof-grid .full {
+            grid-column: span 1;
+         }
+
+         .week {
+            grid-template-columns: 68px 1fr;
          }
       }
    </style>
@@ -673,241 +993,234 @@
 
 <body>
 
-   <!-- <nav class="topbar">
+   <!-- TOP BAR -->
+   <nav class="topbar">
       <div class="logo">
          Konsultant <span>Robot</span>
          <span class="logo-sub">Yozdiradigan postlar tizimi</span>
       </div>
       <a href="https://t.me/KonsultantRobot" class="nav-btn">Boshlash →</a>
-   </nav> -->
+   </nav>
 
+
+   <!-- ══ HERO ══ -->
    <section class="hero">
       <div class="container">
-         <h1>Gruppangizda odamlar bor… lekin hech kim sizdan <span class="attack">hech narsa so‘ramayaptimi?</span></h1>
-         <p class="hero-cut pull-quote">Demak siz post tashlayapsiz — lekin sotuvni o‘ldiryapsiz.</p>
+         <div class="hero-tag">Faberlic konsultantlari uchun</div>
 
-         <!-- <div class="hero-twist">
-            <h2>Muammo guruhda emas.</h2>
-            <p>Muammo — postingizda.</p>
-         </div> -->
+         <h1>Gruppangizda odamlar bor…<br>
+            <span class="gray">lekin hech kim sizdan<br>hech narsa so'ramayaptimi?</span></h1>
+
+         <span class="hero-cut">Demak siz post tashlayapsiz — lekin sotuvni o'ldiryapsiz.</span>
+
+         <div class="hero-twist">
+            Siz o'ylaysiz — muammo odamda.<br>
+            Aslida esa muammo sizning <strong>postingizda.</strong>
+         </div>
+
+         <div class="honest-box">
+            <strong>Halol gap:</strong> «Yozdiradigan postlar tizimi» sehrli tayoqcha emas va sotuvni kafolatlamaydi.
+            Lekin agar guruhingizda jonli odamlar bo'lsa — ular sizga o'zlari yozishni boshlaydi.
+         </div>
       </div>
    </section>
-   <section class="critical-line">
-      <div class="container">
-         <h2>Muammo guruppa emas.</h2>
-         <p>Muammo — postingizda.</p>
-      </div>
-   </section>
 
+
+   <!-- ══ MIRROR ══ -->
    <section class="section" style="background:var(--white);">
       <div class="container">
-         <div class="section-eyebrow reveal">Aslida nima bo'layapti</div>
-         <h2 class="section-title reveal">
-            Ko‘pchilik konsultantlar gruppaga rasmlar, videolar, kataloglar tashlaydi
-            va mo‘jiza kutadi
-         </h2>
+         <div class="section-eyebrow reveal">Nima bo'layapti aslida</div>
+         <h2 class="section-title reveal">Siz ham shunaqa qilgansiz</h2>
 
-         <div class="section-body reveal">
-            <p>
-               Lekin odamlar buni <strong>reklama</strong> sifatida ko‘radi —
-               va umuman e'tibor bermaydi.
-            </p>
-            <p>
-               Chunki odamlar reklama qidirmaydi. <br>
-               Ular o‘ziga foydali narsa qidiradi.
-            </p>
+         <ul class="mirror-list reveal">
+            <li>Video tashladingiz — odamlar o'tkazib yubordi</li>
+            <li>«Mega aktsiya!» yozdingiz — hech kim ishonmadi</li>
+            <li>Ko'p mahsulot qo'ydingiz — e'tibor tarqalib ketdi</li>
+            <li>Narx yozdingiz — hech kim savol bermadi</li>
+         </ul>
+
+         <div class="emotional-stab reveal">
+            Va siz kutasiz… lekin hech narsa o'zgarmaydi.
+            <strong>Va siz o'ylaysiz: «Nega hech kim yozmayapti?»</strong>
          </div>
 
-         <div class="section-body reveal">
-            <p><strong>Aslida siz nima qilyapsiz:</strong></p>
-            <p>
-               Siz odamlarni reklama bilan ko‘mib tashlayapsiz.
-               <br>Go‘yoki ular hammasini ko‘rishga majburdek.
-            </p>
-         </div>
+         <p class="section-body reveal" style="margin-top:16px; margin-bottom:0;">
+            Javob oddiy: siz yozdiradigan post qilmayapsiz. Siz ma'lumot beryapsiz — mijozda savol berishga ehtiyoj
+            qolmayapti.
+         </p>
 
-         <div class="section-body reveal" style="margin-top:28px;">
-            <p><strong>Lekin aslida nima bo‘ladi:</strong></p>
-            <p>Odamlar reklama ko‘rishni xohlamaydi.</p>
-
-            <p style="margin-top:28px;">Ular:</p>
-
-            <div class="reveal" style="margin-top:10px;margin-left:20px;">
-               <p>Televizorda reklama chiqsa → boshqa kanalga olishadi</p>
-               <p>Instagramda reklama chiqsa → o'tkazib yuboradi</p>
-               <p>Telegramda reklama chiqsa → e’tibor bermaydi</p>
-            </div>
-
-            <p style="margin-top:28px;"><strong>Gruppangiz ham bundan mustasno emas.</strong></p>
-         </div>
-
-         <div class="reveal">
-            <div style="display: grid; grid-template-columns: 1fr 1px 1.5fr; gap: 30px; align-items: start;">
-
-               <div class="cond-box-simple">
-                  <div class="cond-label" style="color: var(--muted); margin-bottom: 15px; font-size: 12px;">Siz nima kutyapsiz:</div>
-                  <p class="highlight">
-                     Reklama → Sotuv
-                  </p>
-               </div>
-
-               <div style="background: var(--border); width: 1px; height: 100%;"></div>
-
-               <div class="cond-box-simple">
-                  <div class="cond-label" style="color: var(--green); margin-bottom: 15px; font-size: 12px;">Aslida esa:</div>
-                  <p class="highlight" style="margin-bottom: 15px;">
-                     Qiziqish → Savol → Lichka → Sotuv
-                  </p>
-                  <ul class="cond-items">
-                     <li style="margin-bottom: 8px;"><strong>Qiziqish</strong> — postni o‘qiydi</li>
-                     <li style="margin-bottom: 8px;"><strong>Savol</strong> — “qancha?” deb yozadi</li>
-                     <li style="margin-bottom: 8px;"><strong>Lichka</strong> — siz javob berasiz</li>
-                     <li><strong>Sotuv</strong> — buyurtma yopiladi</li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-
-         <div class="section-body reveal" style="margin-top:28px;">
-            <p>
-               Siz to‘g‘ridan-to‘g‘ri sotuvga o‘tyapsiz.
-               <br>Lekin odam hali qiziqmagan ham.
-            </p>
-            <p><strong>Va siz o‘ylaysiz:</strong></p>
-            <blockquote class="pull-quote">“Nega hech kim yozmayapti?”</blockquote>
-            <p class="highlight" style="margin-top:28px;">
-               Javob oddiy:
-               <br><strong>siz yozdiradigan post qilmayapsiz.</strong>
+         <div class="pull-quote reveal">
+            <p>Gruppa sotmaydi.<br>Guruhning vazifasi — odamni <em style="color:var(--orange);">yozdirish.</em></p>
+            <p class="pq-sub">Sotuv esa faqat lichkada bo'ladi. Shu bitta narsani o'zgartiring — hamma narsa o'zgaradi.
             </p>
          </div>
       </div>
    </section>
 
-   <section class="section" style="background:var(--white);">
-      <div class="container">
-         <div class="section-eyebrow reveal">Yechim</div>
-         <h2 class="section-title reveal">Buning yechimi bor.</h2>
-         <div class="section-body reveal">
-            <p>Konsultant Robot ichida bitta oddiy narsa ishlay boshladi.</p>
-            <p>Bu — <span class="highlight">yozdiradigan postlar tizimi.</span></p>
-            <br>
-            <p>
-               Har kuni bitta mahsulot tanlanadi…<br>
-               va unga reklama emas, oddiy post yoziladi.
-            </p>
-            <p>Shunaqa postki, o‘qigan odamda savol tug‘iladi.</p>
-            <br>
-            <p>Siz esa shunchaki olib, gruppaga tashlaysiz.</p>
-            <p>Va qiziq joyi — <span class="highlight">odamlar o‘zlari yozishni boshlaydi.</span></p>
+   <!-- ══ INTRODUCTION ══ -->
+   <section class="instroduce-the-solution">
+   <div class="container">
+         <h2>Yechim bor</h2>
+
+         <p class="highlight">
+         Bu — yozdiradigan postlar tizimi.
+         </p>
+
+         <p>
+         Bu tizim sizga har kuni odamlarni qiziqtiradigan va yozishga majbur qiladigan 1 ta post beradi.
+         </p>
+
+         <p>
+         Siz o‘ylamaysiz. Siz shunchaki qo‘yasiz.
+         Siz esa nusxa olib gruppangizga qo‘yasiz xolos.
+         </p>
+
+         <p>
+            Va odamlar o‘zlari asta-sekin yozishni boshlaydi.
+         </p>
          </div>
-      </div>
    </section>
 
+   <!-- ══ MECHANISM ══ -->
    <section class="section">
       <div class="container">
-         <div class="section-eyebrow reveal">Mexanizm</div>
-         <div class="section-title">Aslida bu juda oddiy ishlaydi.</div>
-         <p>Ko‘p post emas. Bir kunda 1 ta to‘g‘ri post.</p>
-         <br>
-         <p class="highlight">Qiziqish → Savol → Lichka → Sotuv</p>
-         <br>
+         <div class="section-eyebrow reveal">Tizim qanday ishlaydi</div>
+         <h2 class="section-title reveal">Tizim sizga reklamani emas —<br>savol <em>tug'diradigan</em> matnni beradi.
+         </h2>
+
+         <div class="mech-anchor reveal">Ko'p post emas. 1 ta to'g'ri post.</div>
+
          <div class="flow reveal">
             <div class="flow-item">
                <div class="flow-num">1</div>
                <div class="flow-content">
-                  <p>Postni ko‘radi → qiziqadi</p>
+                  <h3>Har kuni 1 ta tayyor post</h3>
+                  <p>Nima yozishni o'ylamaysiz. Tizim mahsulotni suhbat uslubida taqdim etadi — reklama emas, qiziqarli
+                     ma'lumot.</p>
                </div>
             </div>
             <div class="flow-item">
                <div class="flow-num">2</div>
                <div class="flow-content">
-                  <p>Qiziqadi → yozadi (“qancha?”)</p>
+                  <h3>Mijozda qiziqish uyg'onadi</h3>
+                  <p>Matnda hamma ma'lumot yo'q. Mijoz majbur bo'ladi: «Bu nima?» yoki «Narxi qancha?» deb yozishga.</p>
                </div>
             </div>
             <div class="flow-item">
                <div class="flow-num">3</div>
                <div class="flow-content">
-                  <p>Siz javob berasiz → lichkada gaplashasiz</p>
+                  <h3>Lichkada sotuv boshlanadi</h3>
+                  <p>Mijoz yozdimi — demak u yarim tayyor xaridor. Tizimning vazifasi tugadi. Qolgani sizda.</p>
+                  <div class="chat-demo">
+                     <div class="chat-label">Shunday ko'rinadi →</div>
+                     <div class="bubbles">
+                        <div class="bub them">Bu kollagen kremni ko'rdim, qancha turadi?</div>
+                        <div class="bub you">Lichkangizga yozdim 😊</div>
+                        <div class="bub them">Rahmat, buyurtma beraman!</div>
+                     </div>
+                     <div class="chat-footnote">Guruh qiziqtirdi → lichka ochildi → sotuv yopildi</div>
+                  </div>
                </div>
             </div>
             <div class="flow-item">
                <div class="flow-num">4</div>
                <div class="flow-content">
-                  <p>Shu yerda sotuv yopiladi</p>
+                  <h3>Streak tizimi saqlab turadi</h3>
+                  <p>Eslatmalar va 7 kunlik silsila sizi izchil ushlab turadi. Izchillik — bu tizimning yagona siri.</p>
                </div>
             </div>
-         </div>
-
-         <div class="chat-demo reveal">
-            <p class="section-eyebrow">Shunday ko‘rinadi:</p>
-            <div class="bubbles">
-               <div class="bub them">Mijoz: Bu krem qancha?</div>
-               <div class="bub you">Siz: Lichkangizga yozdim 😊</div>
-               <div class="bub them">Mijoz: Rahmat, buyurtma beraman</div>
-            </div>
-            <p class="section-body" style="margin-top:10px; font-size:12px;">Gruppada qiziqish → lichkada sotuv</p>
-         </div>
-
-         <div class="section-body reveal" style="margin-top:28px;">
-            <p>Oldin siz sotishga urinardingiz.</p>
-            <p class="highlight">Bu yerda esa — odam o‘zi yozadi.</p>
          </div>
       </div>
    </section>
 
+
+   <!-- ══ PROOF ══ -->
    <section class="section" style="background:var(--white);">
       <div class="container">
          <div class="section-eyebrow reveal">Isbot</div>
          <h2 class="section-title reveal">Bu ishlayotganining isboti</h2>
          <p class="section-body reveal">Bu ayollar boyib ketgani yo'q. Ular shunchaki mijozlari bilan muloqotni qayta
             boshlashdi.</p>
+
          <div class="proof-grid reveal">
-            <div class="shot"><img src="assets/images/proof-1.jpg" /></div>
-            <div class="shot"><img src="assets/images/proof-2.jpg" /></div>
-            <div class="shot"><img src="assets/images/proof-3.jpg" /></div>
-            <div class="shot"><img src="assets/images/proof-4.jpg" /></div>
+            <div class="shot">
+               <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" /></svg>
+               <span>Skrinshot 1</span>
+            </div>
+            <div class="shot">
+               <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" /></svg>
+               <span>Skrinshot 2</span>
+            </div>
+            <div class="shot">
+               <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" /></svg>
+               <span>Skrinshot 3</span>
+            </div>
+            <div class="shot">
+               <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" /></svg>
+               <span>Skrinshot 4</span>
+            </div>
+            <div class="shot full">
+               <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" /></svg>
+               <span>Skrinshot 5</span>
+            </div>
          </div>
-         <p class="footer">
-            Haqiqiy foydalanuvchilar · ismlar yashirilgan <br>
-            PRO funksiyasi hozirda "Yozdiradigan Postlar Tizimi" deb ataladi.
-         </p>
+         <p class="proof-note">Haqiqiy foydalanuvchilar · ismlar yashirilgan</p>
       </div>
    </section>
 
+
+   <!-- ══ STORY ══ -->
    <section class="section">
       <div class="container">
          <div class="section-eyebrow reveal">Haqiqiy holat</div>
          <h2 class="section-title reveal">700 kishilik o'lik guruh.<br>30 kishilik <em>jonli guruh.</em></h2>
+
          <div class="story-card reveal">
             <div class="story-top">
                <div class="story-dot"></div>
-               <div class="story-label">Foydalanuvchi tajribasi · 2026</div>
+               <div class="story-label">Foydalanuvchi tajribasi · 2025</div>
             </div>
             <div class="story-inner">
-               <p>
-                  Bir foydalanuvchimizning <em>700+ a'zoli guruhi</em> bor edi. Har kuni rasmlar, videolar, kataloglar tashlardi.     Natija — sukunat. Guruh o'lik edi.
-               </p>
-               <p>
-                  Hamma narsani to'xtatdik. U yangi guruh ochdi va <em>30 ta yaqin tanishini</em> qo'shdi. Bundan tashqari ularning har biriga shaxsan yozdi: <em>«Yangi guruh ochdim, foydali mahsulotlar haqida ma'lumot berib boraman.»</em>
-               </p>
+               <p>Bir foydalanuvchimizning <em>700+ a'zoli guruhi</em> bor edi. Har kuni post, video, narx. Natija —
+                  sukunat. Guruh o'lik edi.</p>
+               <p>Hamma narsani to'xtatdik. U <em>30 ta yaqin tanishi</em> bilan yangi guruh ochdi. Har biriga shaxsan
+                  yozdi: <em>«Yangi guruh ochdim, foydali mahsulotlar haqida ma'lumot berib boraman.»</em></p>
                <p>«Yozdiradigan postlar tizimi»ni ishga tushirdi.</p>
-               <p>
-                  To'g'ridan-to'g'ri katta sotuvlar bo'lmadi. Lekin odamlar yozishni boshladi. Narx so'rashdi,
-                  qiziqishdi.
-               </p>
-               <p><em>Oldin hech kim yozmasdi. Endi — gruppa jonlandi.</em></p>
+               <p>To'g'ridan-to'g'ri katta sotuvlar bo'lmadi. Lekin odamlar yozishni boshladi. Narx so'rashdi,
+                  qiziqishdi.</p>
+               <p><em>Oldin 0 edi. Endi — harakat bor.</em></p>
             </div>
-            <div class="story-result">💡 O'lik 700 kishidan ko'ra, qiziqayotgan 30 kishi ming marta foydaliroq.
-               Guruhning hajmi muhim, lekin sifati undan muhimroq.</div>
+            <div class="story-result">
+               💡 O'lik 700 kishidan ko'ra, qiziqayotgan 30 kishi ming marta foydaliroq. Guruhning hajmi emas — sifati
+               muhim.
+            </div>
          </div>
       </div>
    </section>
 
-   <section class="section" style="background:var(--white);">
+
+   <!-- ══ CONDITIONS ══ -->
+   <section class="section" id="shartlar" style="background:var(--white);">
       <div class="container">
          <div class="section-eyebrow reveal">Kimga mos</div>
          <h2 class="section-title reveal">Bu tizim sizga mos emas, <em>agar…</em></h2>
-         <p class="section-body reveal">Ochiq aytamiz. Mos bo'lmasangiz — pulni tejang.</p>
+         <p class="section-body reveal">Halol gapimiz. Mos bo'lmasangiz — pulni tejang.</p>
+
          <div class="cond-grid reveal">
             <div class="cond-box no">
                <div class="cond-label">Ishlamaydi</div>
@@ -915,30 +1228,35 @@
                   <li>Guruhingiz to'liq jim — hech kim o'qimaydi</li>
                   <li>Natijani faqat tizimdan kutasiz, o'zingiz hech narsa qilmaysiz</li>
                   <li>3 kun post qilib, keyin tashlab qo'ysangiz</li>
-                  <li>Gruppaga, lichkaga yozganlarga javob bermasangiz</li>
+                  <li>Lichkaga yozganlarga javob bermasangiz</li>
                </ul>
             </div>
             <div class="cond-box yes">
                <div class="cond-label">Ishlaydi</div>
                <ul class="cond-items">
-                  <li>Guruhda kamida 30-50 jonli odam bor</li>
+                  <li>Guruhda kamida 20–30 jonli odam bor</li>
                   <li>Har kuni 1 post tashlay olasiz</li>
                   <li>Lichkaga kelgan savollarga javob berasiz</li>
                   <li>3–4 hafta sabr qila olasiz</li>
                </ul>
             </div>
          </div>
-         <div class="warning-strip reveal">⚠️ <strong>Guruhingiz o'lik bo'lsa</strong> — avval yangi guruh oching, jonli
-            odamlarni to'plang, har biriga shaxsan yozing. Keyin tizimni ishga tushiring. O'lik guruhda hech narsa
-            ishlamaydi.</div>
+
+         <div class="warning-strip reveal">
+            ⚠️ <strong>Guruhingiz o'lik bo'lsa</strong> — avval yangi guruh oching, jonli odamlarni to'plang, har biriga
+            shaxsan yozing. Keyin tizimni ishga tushiring. O'lik guruhda hech narsa ishlamaydi.
+         </div>
       </div>
    </section>
 
+
+   <!-- ══ TIMELINE ══ -->
    <section class="section">
       <div class="container">
          <div class="section-eyebrow reveal">Nima kutish kerak</div>
          <h2 class="section-title reveal">Bu tez pul emas. Bu — <em>tizim.</em></h2>
-         <p class="section-body reveal">Birinchi kuni sotuv bo'lmaydi. Bu normal. Nimalarni kutish mumkin:</p>
+         <p class="section-body reveal">Birinchi kuni sotuv bo'lmaydi. Bu normal. Haqiqiy kutishlar:</p>
+
          <div class="weeks reveal">
             <div class="week">
                <div class="week-label">1-hafta</div>
@@ -947,7 +1265,7 @@
             </div>
             <div class="week">
                <div class="week-label">2-hafta</div>
-               <div class="week-text"><strong>Birinchi savollar paydo bo'ladi.</strong> «Qancha?» «Sifati yaxshimikan?» — bu
+               <div class="week-text"><strong>Birinchi savollar paydo bo'ladi.</strong> «Qancha?» «Bu qayer?» — bu
                   sizning birinchi kichik g'alabangiz.</div>
             </div>
             <div class="week">
@@ -959,91 +1277,97 @@
       </div>
    </section>
 
+
+   <!-- ══ PRICING ══ -->
    <section class="section" style="background:var(--white);">
       <div class="container">
          <div class="section-eyebrow reveal">Narx</div>
          <h2 class="section-title reveal">O'zingiz sinab ko'ring.<br>Tavakkal yo'q.</h2>
          <p class="section-body reveal">Birinchi oy — sinash uchun. Natija ko'rsangiz — davom eting.</p>
-         <p class="highlight" style="margin-bottom: 20px;" >Agar ishlasa — bu eng arzon sotuv vositangiz bo‘ladi.</p>
+
          <div class="price-grid reveal">
             <div class="price-card">
-               <div class="price-pill" style="background:var(--orange-bg); color:var(--orange);">Sinash uchun</div>
+               <div class="price-pill try">Sinash uchun</div>
                <div class="price-num">24 000 <span>so'm</span></div>
-               <p class="footer">1 oy</p>
-               <p class="section-body" style="font-size:13px; margin-top:10px;">Ko'pchilik shu yerda tekshiradi: «Menda
-                  ishlaydimi yoki yo'q?»</p>
-               <p class="highlight" style="font-size:12px;">Aksariyat odamlar shu bilan boshlaydi</p>
+               <div class="price-per">1 oy</div>
+               <div class="price-note">Ko'pchilik shu yerda tekshiradi: «Menda ishlaydimi yoki yo'q?»</div>
+               <div class="price-social">Aksariyat odamlar shu bilan boshlaydi</div>
                <a href="https://t.me/KonsultantRobot" class="btn-price orange">1 oyga sinab ko'rish</a>
             </div>
+
             <div class="price-card best">
-               <div class="price-pill" style="background:var(--green-bg); color:var(--green);">Tejamkor</div>
+               <div class="price-pill best">Tejamkor</div>
                <div class="price-num">48 000 <span>so'm</span></div>
-               <p class="footer">3 oy</p>
-               <p style="color:var(--green); font-size:13px; font-weight:700;">Oyiga 16 000 so'm · <s>72 000 o'rniga</s>
-               </p>
-               <p class="section-body" style="font-size:13px; margin-top:10px;">Odatda natija ko'rganlar shu variantni
-                  oladi.</p>
-               <p class="highlight" style="font-size:12px; color:var(--green);">Ishlayotganini ko'rganlar uchun</p>
+               <div class="price-per">3 oy</div>
+               <div class="price-save">Oyiga 16 000 so'm · <s>72 000 o'rniga</s></div>
+               <div class="price-note">Odatda natija ko'rganlar shu variantni oladi.</div>
+               <div class="price-social" style="color:var(--green);">Ishlayotganini ko'rganlar uchun</div>
                <a href="https://t.me/KonsultantRobot" class="btn-price green">3 oyga olish</a>
             </div>
          </div>
       </div>
    </section>
 
-   <section class="section">
+
+   <!-- ══ FAQ ══ -->
+   <section class="faq-section">
       <div class="container">
          <div class="section-eyebrow reveal">Savollar</div>
-         <h2 class="section-title reveal">Ko'p so'raladigan</h2>
+         <h2 class="section-title reveal" style="margin-bottom:28px;">Ko'p so'raladigan</h2>
+
          <div class="faq-list reveal">
             <div class="faq-item">
-               <div class="faq-q">Birinchi kuni sotuv bo'ladimi? <span>+</span></div>
+               <div class="faq-q">Birinchi kuni sotuv bo'ladimi? <span class="faq-icon">+</span></div>
                <div class="faq-a">Ehtimoldan yiroq. 1-hafta odamlar kuzatadi, 2-haftada savollar paydo bo'ladi,
                   3–4-haftada ba'zan sotuv chiqadi. Tez pul emas — tizim.</div>
             </div>
             <div class="faq-item">
-               <div class="faq-q">Video reklama ko'proq ishlaydi-ku? <span>+</span></div>
+               <div class="faq-q">Video reklama ko'proq ishlaydi-ku? <span class="faq-icon">+</span></div>
                <div class="faq-a">Yaxshi video kuchli. Lekin har kuni sifatli video tayyorlash qiyin. Yozdiradigan post
                   esa 30 soniyada forward — har kuni, izchil. Izchillik videoni yutadi.</div>
             </div>
             <div class="faq-item">
-               <div class="faq-q">Guruhim 20–25 kishi, bo'ladimi? <span>+</span></div>
+               <div class="faq-q">Guruhim 20–25 kishi, bo'ladimi? <span class="faq-icon">+</span></div>
                <div class="faq-a">Ha, agar jonli bo'lsa — ishlaydi. Lekin kutishlar ham kichik bo'lsin. 20 kishidan 2–3
                   ta savol — bu yaxshi natija.</div>
             </div>
             <div class="faq-item">
-               <div class="faq-q">Pul qaytarib berilsinmi? <span>+</span></div>
+               <div class="faq-q">Pul qaytarib berilsinmi? <span class="faq-icon">+</span></div>
                <div class="faq-a">Hozircha rasmiy qaytarish siyosati yo'q. Shuning uchun avval 1 oylik variantni sinang
                   — 24 000 so'm, risk minimal.</div>
             </div>
             <div class="faq-item">
-               <div class="faq-q">Bu «Konsultant Robot» boti ichida qanday ishlaydi? <span>+</span></div>
+               <div class="faq-q">Bu «Konsultant Robot» boti ichida qanday ishlaydi? <span class="faq-icon">+</span>
+               </div>
                <div class="faq-a">«Yozdiradigan postlar tizimi» — bu botning Pro rejimi. Bepul foydalanuvchilarga
                   ko'rinmaydi. Pro rejimni yoqgandan so'ng, har kuni siz uchun tayyor yozdiradigan post keladi.</div>
             </div>
             <div class="faq-item">
-               <div class="faq-q">Faberlic bo'lmasa ham ishlaydi? <span>+</span></div>
+               <div class="faq-q">Faberlic bo'lmasa ham ishlaydi? <span class="faq-icon">+</span></div>
                <div class="faq-a">Yo'q. Tizim faqat Faberlic mahsulotlari uchun sozlangan.</div>
             </div>
          </div>
       </div>
    </section>
 
+
+   <!-- ══ FINAL PUSH ══ -->
    <section class="push-section">
       <div class="container">
          <p class="push-line">Siz yana video tashlaysiz.</p>
-         <p class="push-line"><strong style="color:white;">Yana hech kim yozmaydi.</strong></p>
-         <br>
-         <p class="push-choice">Yoki yangi usulni<br>sinab ko'razis.</p>
+         <p class="push-line"><strong>Yana hech kim yozmaydi.</strong></p>
+         <span class="push-pause"></span>
+         <p class="push-choice">Yoki yangi usulni<br>sinab ko'rasiz.</p>
          <a href="https://t.me/KonsultantRobot" class="push-btn">Boshlash — 24 000 so'm →</a>
-         <p class="footer" style="color:#7A7060; border:none; margin-top:20px;">Kafolatlanmagan · Agar ishlasa — davom
-            eting<br>Sinab ko'rmasangiz — bilolmaysiz.</p>
+         <p class="push-caveat">Kafolatlanmagan · Agar ishlasa — davom eting</p>
+         <p class="push-micro">Sinab ko'rmasangiz — bilolmaysiz.</p>
       </div>
    </section>
 
-   <!-- <div class="footer">
+   <div class="footer">
       © 2025 Konsultant Robot · Faberlic konsultantlari uchun<br>
       <span>Haqiqiy natijalar foydalanuvchiga qarab farq qiladi.</span>
-   </div> -->
+   </div>
 
    <script>
       document.querySelectorAll('.faq-q').forEach(q => {
@@ -1063,7 +1387,8 @@
             }
          });
       }, {
-         threshold: 0.1
+         threshold: 0.08,
+         rootMargin: '0px 0px -30px 0px'
       });
 
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));

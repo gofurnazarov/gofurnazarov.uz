@@ -26,12 +26,6 @@
          --red-bg: #FDF0EE;
          --red-border: rgba(200, 50, 30, 0.15);
          --red: #C8321E;
-         --cream: #f5f0e8;
-         --warm: #ede5d5;
-         --accent: #c8401a;
-         --accent2: #2a5c3f;
-         --card: #ffffff;
-         ;
       }
 
       *,
@@ -124,7 +118,7 @@
          line-height: 1.15;
          letter-spacing: -0.03em;
          color: var(--ink);
-         margin-bottom: 30px;
+         margin-bottom: 10px;
       }
 
       .hero .attack {
@@ -134,7 +128,7 @@
       .hero-cut {
          font-family: 'Lora', serif;
          font-size: clamp(15px, 4vw, 20px);
-         /* font-style: italic; */
+         font-style: italic;
          color: var(--muted);
          margin-bottom: 28px;
          line-height: 1.5;
@@ -150,26 +144,6 @@
          background: var(--bg);
          border-radius: 8px;
          border-left: 3px solid var(--ink);
-      }
-
-      /* --- CRITICAL LINE --- */
-      .critical-line {
-         background: var(--ink);
-         color: var(--cream);
-         padding: 40px 0;
-         text-align: center;
-      }
-
-      .critical-line h2 {
-         text-transform: uppercase;
-         font-size: 1.7rem;
-         margin-bottom: 10px;
-      }
-
-      .critical-line p {
-         color: var(--accent);
-         font-weight: 700;
-         font-size: 1.5rem;
       }
 
       /* ── SECTIONS ── */
@@ -242,11 +216,45 @@
 
       .pull-quote {
          background: var(--white);
-         border: 0px solid var(--border);
+         border: 1px solid var(--border);
          border-left: 3px solid var(--ink);
-         /* border-radius: 0 10px 10px 0; */
+         border-radius: 0 10px 10px 0;
          padding: 22px 22px;
          margin-top: 28px;
+      }
+
+      /* ── NEW: COMPARISON VISUAL (for pain section) ── */
+      .comparison {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 20px;
+         margin: 28px 0;
+      }
+      .path {
+         background: var(--white);
+         border: 1px solid var(--border);
+         border-radius: 12px;
+         padding: 24px 22px;
+         height: 100%;
+      }
+      .path.bad {
+         border-color: var(--red-border);
+         background: var(--red-bg);
+      }
+      .path.good {
+         border-color: var(--green-border);
+         background: var(--green-bg);
+      }
+      .path p.highlight {
+         font-size: 21px;
+         line-height: 1.25;
+         margin: 12px 0 0;
+      }
+      @media (max-width: 480px) {
+         .comparison {
+            grid-template-columns: 1fr;
+            gap: 16px;
+         }
       }
 
       /* ── MECHANISM ── */
@@ -332,13 +340,14 @@
 
       /* ── PROOF ── */
       .proof-grid {
-         display: flex;
-         flex-wrap: wrap;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 10px;
+         margin-bottom: 10px;
       }
 
-      .proof-grid .shot {
-         margin: 0 15px 30px;
-         width: calc(50% - 30px);
+      .proof-grid .full {
+         grid-column: span 2;
       }
 
       .shot {
@@ -355,13 +364,6 @@
          font-size: 12px;
          text-align: center;
          padding: 14px;
-      }
-
-      .shot img {
-         width: 100%;
-         height: auto;
-         object-fit: cover;
-         border-radius: 8px;
       }
 
       /* ── STORY ── */
@@ -555,15 +557,8 @@
          margin-top: 15px;
       }
 
-      .btn-price.orange {
-         background: var(--orange);
-         color: #fff;
-      }
-
-      .btn-price.green {
-         background: var(--green);
-         color: #fff;
-      }
+      .btn-price.orange { background: var(--orange); color: #fff; }
+      .btn-price.green { background: var(--green); color: #fff; }
 
       /* ── FAQ ── */
       .faq-item {
@@ -593,9 +588,7 @@
          border-top: 1px solid var(--border);
       }
 
-      .faq-item.open .faq-a {
-         display: block;
-      }
+      .faq-item.open .faq-a { display: block; }
 
       /* ── FINAL PUSH ── */
       .push-section {
@@ -649,76 +642,49 @@
       }
 
       @media (max-width: 480px) {
-
-         .cond-grid,
-         .price-grid {
-            grid-template-columns: 1fr;
-         }
-      }
-
-      /* Mobile adaptivligi uchun */
-      @media (max-width: 480px) {
-         div[style*="grid-template-columns: 1fr 1px 1.5fr"] {
-            grid-template-columns: 1fr !important;
-         }
-
-         div[style*="width: 1px"] {
-            width: 100% !important;
-            height: 1px !important;
-            margin: 10px 0;
-         }
+         .cond-grid, .price-grid { grid-template-columns: 1fr; }
       }
    </style>
 </head>
 
 <body>
 
-   <!-- <nav class="topbar">
+   <nav class="topbar">
       <div class="logo">
          Konsultant <span>Robot</span>
          <span class="logo-sub">Yozdiradigan postlar tizimi</span>
       </div>
       <a href="https://t.me/KonsultantRobot" class="nav-btn">Boshlash →</a>
-   </nav> -->
+   </nav>
 
    <section class="hero">
       <div class="container">
          <h1>Gruppangizda odamlar bor… lekin hech kim sizdan <span class="attack">hech narsa so‘ramayaptimi?</span></h1>
-         <p class="hero-cut pull-quote">Demak siz post tashlayapsiz — lekin sotuvni o‘ldiryapsiz.</p>
-
-         <!-- <div class="hero-twist">
+         <p class="hero-cut">Demak siz post tashlayapsiz — lekin sotuvni o‘ldiryapsiz.</p>
+         
+         <div class="hero-twist">
             <h2>Muammo guruhda emas.</h2>
             <p>Muammo — postingizda.</p>
-         </div> -->
-      </div>
-   </section>
-   <section class="critical-line">
-      <div class="container">
-         <h2>Muammo guruppa emas.</h2>
-         <p>Muammo — postingizda.</p>
+         </div>
       </div>
    </section>
 
+   <!-- FIXED PAIN SECTION: now has clean visual comparison (same exact words, just better placed in side-by-side paths) -->
    <section class="section" style="background:var(--white);">
       <div class="container">
-         <div class="section-eyebrow reveal">Aslida nima bo'layapti</div>
-         <h2 class="section-title reveal">
-            Ko‘pchilik konsultantlar gruppaga rasmlar, videolar, kataloglar tashlaydi
-            va mo‘jiza kutadi
-         </h2>
-
+         <div class="section-eyebrow reveal">Nima bo'layapti aslida</div>
          <div class="section-body reveal">
             <p>
-               Lekin odamlar buni <strong>reklama</strong> sifatida ko‘radi —
-               va umuman e'tibor bermaydi.
+               Ko‘pchilik konsultantlar gruppaga rasm, video, katalog tashlaydi…
+               <br><strong>va mo‘jiza kutadi.</strong>
             </p>
+
             <p>
-               Chunki odamlar reklama qidirmaydi. <br>
-               Ular o‘ziga foydali narsa qidiradi.
+               Lekin odamlar buni <strong>reklama</strong> deb ko‘radi — va o‘tkazib yuboradi.
             </p>
          </div>
 
-         <div class="section-body reveal">
+         <div class="pull-quote reveal">
             <p><strong>Aslida siz nima qilyapsiz:</strong></p>
             <p>
                Siz odamlarni reklama bilan ko‘mib tashlayapsiz.
@@ -730,40 +696,34 @@
             <p><strong>Lekin aslida nima bo‘ladi:</strong></p>
             <p>Odamlar reklama ko‘rishni xohlamaydi.</p>
 
-            <p style="margin-top:28px;">Ular:</p>
+            <ul class="mirror-list">
+               <li>Televizorda reklama chiqsa → boshqa kanal</li>
+               <li>Instagramda chiqsa → o'tkazib yuboradi</li>
+               <li>Telegramda chiqsa → e’tibor bermaydi</li>
+            </ul>
 
-            <div class="reveal" style="margin-top:10px;margin-left:20px;">
-               <p>Televizorda reklama chiqsa → boshqa kanalga olishadi</p>
-               <p>Instagramda reklama chiqsa → o'tkazib yuboradi</p>
-               <p>Telegramda reklama chiqsa → e’tibor bermaydi</p>
-            </div>
-
-            <p style="margin-top:28px;"><strong>Gruppangiz ham bundan mustasno emas.</strong></p>
+            <p><strong>Gruppangiz ham bundan farq qilmaydi.</strong></p>
          </div>
 
-         <div class="reveal">
-            <div style="display: grid; grid-template-columns: 1fr 1px 1.5fr; gap: 30px; align-items: start;">
-
-               <div class="cond-box-simple">
-                  <div class="cond-label" style="color: var(--muted); margin-bottom: 15px; font-size: 12px;">Siz nima kutyapsiz:</div>
-                  <p class="highlight">
-                     Reklama → Sotuv
-                  </p>
+         <!-- Visual comparison using exact original text – strong, minimal, instantly scannable -->
+         <div class="pull-quote reveal">
+            <div class="comparison">
+               <div class="path bad">
+                  <p><strong>Siz nima kutyapsiz:</strong></p>
+                  <p class="highlight">Reklama → Sotuv</p>
                </div>
-
-               <div style="background: var(--border); width: 1px; height: 100%;"></div>
-
-               <div class="cond-box-simple">
-                  <div class="cond-label" style="color: var(--green); margin-bottom: 15px; font-size: 12px;">Aslida esa:</div>
-                  <p class="highlight" style="margin-bottom: 15px;">
-                     Qiziqish → Savol → Lichka → Sotuv
+               <div class="path good">
+                  <p><strong>Aslida esa:</strong></p>
+                  <p class="highlight">Qiziqish → Savol → Lichka → Sotuv</p>
+                  <br>
+                  <p>
+                     Aslida esa:<br>
+                     Qiziqish → Savol → Lichka → Sotuv<br><br>
+                     Qiziqish — postni o‘qiydi<br>
+                     Savol — “qancha?” deb yozadi<br>
+                     Lichka — siz javob berasiz<br>
+                     Sotuv — buyurtma yopiladi
                   </p>
-                  <ul class="cond-items">
-                     <li style="margin-bottom: 8px;"><strong>Qiziqish</strong> — postni o‘qiydi</li>
-                     <li style="margin-bottom: 8px;"><strong>Savol</strong> — “qancha?” deb yozadi</li>
-                     <li style="margin-bottom: 8px;"><strong>Lichka</strong> — siz javob berasiz</li>
-                     <li><strong>Sotuv</strong> — buyurtma yopiladi</li>
-                  </ul>
                </div>
             </div>
          </div>
@@ -774,8 +734,8 @@
                <br>Lekin odam hali qiziqmagan ham.
             </p>
             <p><strong>Va siz o‘ylaysiz:</strong></p>
-            <blockquote class="pull-quote">“Nega hech kim yozmayapti?”</blockquote>
-            <p class="highlight" style="margin-top:28px;">
+            <blockquote>“Nega hech kim yozmayapti?”</blockquote>
+            <p class="highlight">
                Javob oddiy:
                <br><strong>siz yozdiradigan post qilmayapsiz.</strong>
             </p>
@@ -783,22 +743,45 @@
       </div>
    </section>
 
-   <section class="section" style="background:var(--white);">
+   <!-- FIXED SOLUTION SECTION: now uses clean numbered flow (same exact words, just repositioned into visual steps) -->
+   <section class="section">
       <div class="container">
          <div class="section-eyebrow reveal">Yechim</div>
          <h2 class="section-title reveal">Buning yechimi bor.</h2>
          <div class="section-body reveal">
             <p>Konsultant Robot ichida bitta oddiy narsa ishlay boshladi.</p>
-            <p>Bu — <span class="highlight">yozdiradigan postlar tizimi.</span></p>
-            <br>
-            <p>
-               Har kuni bitta mahsulot tanlanadi…<br>
-               va unga reklama emas, oddiy post yoziladi.
-            </p>
-            <p>Shunaqa postki, o‘qigan odamda savol tug‘iladi.</p>
-            <br>
-            <p>Siz esa shunchaki olib, gruppaga tashlaysiz.</p>
-            <p>Va qiziq joyi — <span class="highlight">odamlar o‘zlari yozishni boshlaydi.</span></p>
+            <p class="highlight">Bu — yozdiradigan postlar tizimi.</p>
+         </div>
+
+         <div class="flow reveal">
+            <div class="flow-item">
+               <div class="flow-num">1</div>
+               <div class="flow-content">
+                  <p class="highlight">
+                     Har kuni bitta mahsulot tanlanadi…<br>
+                     va unga reklama emas, oddiy post yoziladi.
+                  </p>
+               </div>
+            </div>
+            <div class="flow-item">
+               <div class="flow-num">2</div>
+               <div class="flow-content">
+                  <p>Shunaqa postki, o‘qigan odamda savol tug‘iladi.</p>
+               </div>
+            </div>
+            <div class="flow-item">
+               <div class="flow-num">3</div>
+               <div class="flow-content">
+                  <p>Siz esa shunchaki olib, gruppaga tashlaysiz.</p>
+               </div>
+            </div>
+            <div class="flow-item">
+               <div class="flow-num">4</div>
+               <div class="flow-content">
+                  <p>Va qiziq joyi —</p>
+                  <p class="highlight">odamlar o‘zlari yozishni boshlaydi.</p>
+               </div>
+            </div>
          </div>
       </div>
    </section>
@@ -806,35 +789,27 @@
    <section class="section">
       <div class="container">
          <div class="section-eyebrow reveal">Mexanizm</div>
-         <div class="section-title">Aslida bu juda oddiy ishlaydi.</div>
-         <p>Ko‘p post emas. Bir kunda 1 ta to‘g‘ri post.</p>
+         <p><strong>Aslida bu juda oddiy ishlaydi.</strong></p>
+         <p class="highlight">Ko‘p post emas. Bir kunda 1 ta to‘g‘ri post.</p>
          <br>
          <p class="highlight">Qiziqish → Savol → Lichka → Sotuv</p>
          <br>
          <div class="flow reveal">
             <div class="flow-item">
                <div class="flow-num">1</div>
-               <div class="flow-content">
-                  <p>Postni ko‘radi → qiziqadi</p>
-               </div>
+               <div class="flow-content"><p>Postni ko‘radi → qiziqadi</p></div>
             </div>
             <div class="flow-item">
                <div class="flow-num">2</div>
-               <div class="flow-content">
-                  <p>Qiziqadi → yozadi (“qancha?”)</p>
-               </div>
+               <div class="flow-content"><p>Qiziqadi → yozadi (“qancha?”)</p></div>
             </div>
             <div class="flow-item">
                <div class="flow-num">3</div>
-               <div class="flow-content">
-                  <p>Siz javob berasiz → lichkada gaplashasiz</p>
-               </div>
+               <div class="flow-content"><p>Siz javob berasiz → lichkada gaplashasiz</p></div>
             </div>
             <div class="flow-item">
                <div class="flow-num">4</div>
-               <div class="flow-content">
-                  <p>Shu yerda sotuv yopiladi</p>
-               </div>
+               <div class="flow-content"><p>Shu yerda sotuv yopiladi</p></div>
             </div>
          </div>
 
@@ -859,18 +834,15 @@
       <div class="container">
          <div class="section-eyebrow reveal">Isbot</div>
          <h2 class="section-title reveal">Bu ishlayotganining isboti</h2>
-         <p class="section-body reveal">Bu ayollar boyib ketgani yo'q. Ular shunchaki mijozlari bilan muloqotni qayta
-            boshlashdi.</p>
+         <p class="section-body reveal">Bu ayollar boyib ketgani yo'q. Ular shunchaki mijozlari bilan muloqotni qayta boshlashdi.</p>
          <div class="proof-grid reveal">
-            <div class="shot"><img src="assets/images/proof-1.jpg" /></div>
-            <div class="shot"><img src="assets/images/proof-2.jpg" /></div>
-            <div class="shot"><img src="assets/images/proof-3.jpg" /></div>
-            <div class="shot"><img src="assets/images/proof-4.jpg" /></div>
+            <div class="shot"><span>Skrinshot 1</span></div>
+            <div class="shot"><span>Skrinshot 2</span></div>
+            <div class="shot"><span>Skrinshot 3</span></div>
+            <div class="shot"><span>Skrinshot 4</span></div>
+            <div class="shot full"><span>Skrinshot 5</span></div>
          </div>
-         <p class="footer">
-            Haqiqiy foydalanuvchilar · ismlar yashirilgan <br>
-            PRO funksiyasi hozirda "Yozdiradigan Postlar Tizimi" deb ataladi.
-         </p>
+         <p class="footer">Haqiqiy foydalanuvchilar · ismlar yashirilgan</p>
       </div>
    </section>
 
@@ -881,24 +853,16 @@
          <div class="story-card reveal">
             <div class="story-top">
                <div class="story-dot"></div>
-               <div class="story-label">Foydalanuvchi tajribasi · 2026</div>
+               <div class="story-label">Foydalanuvchi tajribasi · 2025</div>
             </div>
             <div class="story-inner">
-               <p>
-                  Bir foydalanuvchimizning <em>700+ a'zoli guruhi</em> bor edi. Har kuni rasmlar, videolar, kataloglar tashlardi.     Natija — sukunat. Guruh o'lik edi.
-               </p>
-               <p>
-                  Hamma narsani to'xtatdik. U yangi guruh ochdi va <em>30 ta yaqin tanishini</em> qo'shdi. Bundan tashqari ularning har biriga shaxsan yozdi: <em>«Yangi guruh ochdim, foydali mahsulotlar haqida ma'lumot berib boraman.»</em>
-               </p>
+               <p>Bir foydalanuvchimizning <em>700+ a'zoli guruhi</em> bor edi. Har kuni post, video, narx. Natija — sukunat. Guruh o'lik edi.</p>
+               <p>Hamma narsani to'xtatdik. U <em>30 ta yaqin tanishi</em> bilan yangi guruh ochdi. Har biriga shaxsan yozdi: <em>«Yangi guruh ochdim, foydali mahsulotlar haqida ma'lumot berib boraman.»</em></p>
                <p>«Yozdiradigan postlar tizimi»ni ishga tushirdi.</p>
-               <p>
-                  To'g'ridan-to'g'ri katta sotuvlar bo'lmadi. Lekin odamlar yozishni boshladi. Narx so'rashdi,
-                  qiziqishdi.
-               </p>
-               <p><em>Oldin hech kim yozmasdi. Endi — gruppa jonlandi.</em></p>
+               <p>To'g'ridan-to'g'ri katta sotuvlar bo'lmadi. Lekin odamlar yozishni boshladi. Narx so'rashdi, qiziqishdi.</p>
+               <p><em>Oldin 0 edi. Endi — harakat bor.</em></p>
             </div>
-            <div class="story-result">💡 O'lik 700 kishidan ko'ra, qiziqayotgan 30 kishi ming marta foydaliroq.
-               Guruhning hajmi muhim, lekin sifati undan muhimroq.</div>
+            <div class="story-result">💡 O'lik 700 kishidan ko'ra, qiziqayotgan 30 kishi ming marta foydaliroq. Guruhning hajmi emas — sifati muhim.</div>
          </div>
       </div>
    </section>
@@ -907,7 +871,7 @@
       <div class="container">
          <div class="section-eyebrow reveal">Kimga mos</div>
          <h2 class="section-title reveal">Bu tizim sizga mos emas, <em>agar…</em></h2>
-         <p class="section-body reveal">Ochiq aytamiz. Mos bo'lmasangiz — pulni tejang.</p>
+         <p class="section-body reveal">Halol gapimiz. Mos bo'lmasangiz — pulni tejang.</p>
          <div class="cond-grid reveal">
             <div class="cond-box no">
                <div class="cond-label">Ishlamaydi</div>
@@ -915,22 +879,20 @@
                   <li>Guruhingiz to'liq jim — hech kim o'qimaydi</li>
                   <li>Natijani faqat tizimdan kutasiz, o'zingiz hech narsa qilmaysiz</li>
                   <li>3 kun post qilib, keyin tashlab qo'ysangiz</li>
-                  <li>Gruppaga, lichkaga yozganlarga javob bermasangiz</li>
+                  <li>Lichkaga yozganlarga javob bermasangiz</li>
                </ul>
             </div>
             <div class="cond-box yes">
                <div class="cond-label">Ishlaydi</div>
                <ul class="cond-items">
-                  <li>Guruhda kamida 30-50 jonli odam bor</li>
+                  <li>Guruhda kamida 20–30 jonli odam bor</li>
                   <li>Har kuni 1 post tashlay olasiz</li>
                   <li>Lichkaga kelgan savollarga javob berasiz</li>
                   <li>3–4 hafta sabr qila olasiz</li>
                </ul>
             </div>
          </div>
-         <div class="warning-strip reveal">⚠️ <strong>Guruhingiz o'lik bo'lsa</strong> — avval yangi guruh oching, jonli
-            odamlarni to'plang, har biriga shaxsan yozing. Keyin tizimni ishga tushiring. O'lik guruhda hech narsa
-            ishlamaydi.</div>
+         <div class="warning-strip reveal">⚠️ <strong>Guruhingiz o'lik bo'lsa</strong> — avval yangi guruh oching, jonli odamlarni to'plang, har biriga shaxsan yozing. Keyin tizimni ishga tushiring. O'lik guruhda hech narsa ishlamaydi.</div>
       </div>
    </section>
 
@@ -938,22 +900,19 @@
       <div class="container">
          <div class="section-eyebrow reveal">Nima kutish kerak</div>
          <h2 class="section-title reveal">Bu tez pul emas. Bu — <em>tizim.</em></h2>
-         <p class="section-body reveal">Birinchi kuni sotuv bo'lmaydi. Bu normal. Nimalarni kutish mumkin:</p>
+         <p class="section-body reveal">Birinchi kuni sotuv bo'lmaydi. Bu normal. Haqiqiy kutishlar:</p>
          <div class="weeks reveal">
             <div class="week">
                <div class="week-label">1-hafta</div>
-               <div class="week-text"><strong>Jim bo'lishi normal.</strong> Odamlar kuzatayapti. O'qiyapti. Lekin hali
-                  yozishmayapti. Davom eting.</div>
+               <div class="week-text"><strong>Jim bo'lishi normal.</strong> Odamlar kuzatayapti. O'qiyapti. Lekin hali yozishmayapti. Davom eting.</div>
             </div>
             <div class="week">
                <div class="week-label">2-hafta</div>
-               <div class="week-text"><strong>Birinchi savollar paydo bo'ladi.</strong> «Qancha?» «Sifati yaxshimikan?» — bu
-                  sizning birinchi kichik g'alabangiz.</div>
+               <div class="week-text"><strong>Birinchi savollar paydo bo'ladi.</strong> «Qancha?» «Bu qayer?» — bu sizning birinchi kichik g'alabangiz.</div>
             </div>
             <div class="week">
                <div class="week-label">3–4-hafta</div>
-               <div class="week-text"><strong>Ba'zan sotuv chiqadi.</strong> Guruhingizning holatiga qarab farq qiladi.
-                  Lekin guruh endi «tirik» — harakat bor.</div>
+               <div class="week-text"><strong>Ba'zan sotuv chiqadi.</strong> Guruhingizning holatiga qarab farq qiladi. Lekin guruh endi «tirik» — harakat bor.</div>
             </div>
          </div>
       </div>
@@ -964,14 +923,13 @@
          <div class="section-eyebrow reveal">Narx</div>
          <h2 class="section-title reveal">O'zingiz sinab ko'ring.<br>Tavakkal yo'q.</h2>
          <p class="section-body reveal">Birinchi oy — sinash uchun. Natija ko'rsangiz — davom eting.</p>
-         <p class="highlight" style="margin-bottom: 20px;" >Agar ishlasa — bu eng arzon sotuv vositangiz bo‘ladi.</p>
+         <p class="highlight">Agar ishlasa — bu eng arzon sotuv vositangiz bo‘ladi.</p>
          <div class="price-grid reveal">
             <div class="price-card">
                <div class="price-pill" style="background:var(--orange-bg); color:var(--orange);">Sinash uchun</div>
                <div class="price-num">24 000 <span>so'm</span></div>
                <p class="footer">1 oy</p>
-               <p class="section-body" style="font-size:13px; margin-top:10px;">Ko'pchilik shu yerda tekshiradi: «Menda
-                  ishlaydimi yoki yo'q?»</p>
+               <p class="section-body" style="font-size:13px; margin-top:10px;">Ko'pchilik shu yerda tekshiradi: «Menda ishlaydimi yoki yo'q?»</p>
                <p class="highlight" style="font-size:12px;">Aksariyat odamlar shu bilan boshlaydi</p>
                <a href="https://t.me/KonsultantRobot" class="btn-price orange">1 oyga sinab ko'rish</a>
             </div>
@@ -979,10 +937,8 @@
                <div class="price-pill" style="background:var(--green-bg); color:var(--green);">Tejamkor</div>
                <div class="price-num">48 000 <span>so'm</span></div>
                <p class="footer">3 oy</p>
-               <p style="color:var(--green); font-size:13px; font-weight:700;">Oyiga 16 000 so'm · <s>72 000 o'rniga</s>
-               </p>
-               <p class="section-body" style="font-size:13px; margin-top:10px;">Odatda natija ko'rganlar shu variantni
-                  oladi.</p>
+               <p style="color:var(--green); font-size:13px; font-weight:700;">Oyiga 16 000 so'm · <s>72 000 o'rniga</s></p>
+               <p class="section-body" style="font-size:13px; margin-top:10px;">Odatda natija ko'rganlar shu variantni oladi.</p>
                <p class="highlight" style="font-size:12px; color:var(--green);">Ishlayotganini ko'rganlar uchun</p>
                <a href="https://t.me/KonsultantRobot" class="btn-price green">3 oyga olish</a>
             </div>
@@ -997,28 +953,23 @@
          <div class="faq-list reveal">
             <div class="faq-item">
                <div class="faq-q">Birinchi kuni sotuv bo'ladimi? <span>+</span></div>
-               <div class="faq-a">Ehtimoldan yiroq. 1-hafta odamlar kuzatadi, 2-haftada savollar paydo bo'ladi,
-                  3–4-haftada ba'zan sotuv chiqadi. Tez pul emas — tizim.</div>
+               <div class="faq-a">Ehtimoldan yiroq. 1-hafta odamlar kuzatadi, 2-haftada savollar paydo bo'ladi, 3–4-haftada ba'zan sotuv chiqadi. Tez pul emas — tizim.</div>
             </div>
             <div class="faq-item">
                <div class="faq-q">Video reklama ko'proq ishlaydi-ku? <span>+</span></div>
-               <div class="faq-a">Yaxshi video kuchli. Lekin har kuni sifatli video tayyorlash qiyin. Yozdiradigan post
-                  esa 30 soniyada forward — har kuni, izchil. Izchillik videoni yutadi.</div>
+               <div class="faq-a">Yaxshi video kuchli. Lekin har kuni sifatli video tayyorlash qiyin. Yozdiradigan post esa 30 soniyada forward — har kuni, izchil. Izchillik videoni yutadi.</div>
             </div>
             <div class="faq-item">
                <div class="faq-q">Guruhim 20–25 kishi, bo'ladimi? <span>+</span></div>
-               <div class="faq-a">Ha, agar jonli bo'lsa — ishlaydi. Lekin kutishlar ham kichik bo'lsin. 20 kishidan 2–3
-                  ta savol — bu yaxshi natija.</div>
+               <div class="faq-a">Ha, agar jonli bo'lsa — ishlaydi. Lekin kutishlar ham kichik bo'lsin. 20 kishidan 2–3 ta savol — bu yaxshi natija.</div>
             </div>
             <div class="faq-item">
                <div class="faq-q">Pul qaytarib berilsinmi? <span>+</span></div>
-               <div class="faq-a">Hozircha rasmiy qaytarish siyosati yo'q. Shuning uchun avval 1 oylik variantni sinang
-                  — 24 000 so'm, risk minimal.</div>
+               <div class="faq-a">Hozircha rasmiy qaytarish siyosati yo'q. Shuning uchun avval 1 oylik variantni sinang — 24 000 so'm, risk minimal.</div>
             </div>
             <div class="faq-item">
                <div class="faq-q">Bu «Konsultant Robot» boti ichida qanday ishlaydi? <span>+</span></div>
-               <div class="faq-a">«Yozdiradigan postlar tizimi» — bu botning Pro rejimi. Bepul foydalanuvchilarga
-                  ko'rinmaydi. Pro rejimni yoqgandan so'ng, har kuni siz uchun tayyor yozdiradigan post keladi.</div>
+               <div class="faq-a">«Yozdiradigan postlar tizimi» — bu botning Pro rejimi. Bepul foydalanuvchilarga ko'rinmaydi. Pro rejimni yoqgandan so'ng, har kuni siz uchun tayyor yozdiradigan post keladi.</div>
             </div>
             <div class="faq-item">
                <div class="faq-q">Faberlic bo'lmasa ham ishlaydi? <span>+</span></div>
@@ -1035,15 +986,14 @@
          <br>
          <p class="push-choice">Yoki yangi usulni<br>sinab ko'razis.</p>
          <a href="https://t.me/KonsultantRobot" class="push-btn">Boshlash — 24 000 so'm →</a>
-         <p class="footer" style="color:#7A7060; border:none; margin-top:20px;">Kafolatlanmagan · Agar ishlasa — davom
-            eting<br>Sinab ko'rmasangiz — bilolmaysiz.</p>
+         <p class="footer" style="color:#7A7060; border:none; margin-top:20px;">Kafolatlanmagan · Agar ishlasa — davom eting<br>Sinab ko'rmasangiz — bilolmaysiz.</p>
       </div>
    </section>
 
-   <!-- <div class="footer">
+   <div class="footer">
       © 2025 Konsultant Robot · Faberlic konsultantlari uchun<br>
       <span>Haqiqiy natijalar foydalanuvchiga qarab farq qiladi.</span>
-   </div> -->
+   </div>
 
    <script>
       document.querySelectorAll('.faq-q').forEach(q => {
@@ -1062,9 +1012,7 @@
                obs.unobserve(e.target);
             }
          });
-      }, {
-         threshold: 0.1
-      });
+      }, { threshold: 0.1 });
 
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
    </script>
