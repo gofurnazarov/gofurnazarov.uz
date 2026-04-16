@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Rekrut Sahifasi — @konsultantrobot</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <style>
+      *,
+      *::before,
+      *::after {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+      }
+
+      :root {
+         --bg: #0c1018;
+         --bg2: #131a26;
+         --border: rgba(255, 255, 255, 0.07);
+         --border2: rgba(255, 255, 255, 0.12);
+         --text: #e6e9f0;
+         --muted: #6e7a94;
+         --muted2: #9ba5bb;
+         --accent: #4da8ff;
+         --green: #3dba72;
+         --red: #e05252;
+         --tg-bg: #0d1520;
+         --tg-in: #1e2d42;
+         --tg-out: #2b5278;
+         --font: 'Onest', sans-serif;
+      }
+
+      html {
+         scroll-behavior: smooth;
+      }
+
+      body {
+         background: var(--bg);
+         color: var(--text);
+         font-family: var(--font);
+         font-size: 16px;
+         line-height: 1.65;
+         overflow-x: hidden;
+         -webkit-font-smoothing: antialiased;
+      }
+
+      .hero {
+         padding: 5.5rem 1.5rem 5rem;
+         max-width: 680px;
+         margin: 0 auto;
+      }
+
+      .hero-tag {
+         display: inline-flex;
+         align-items: center;
+         font-size: 11px;
+         font-weight: 600;
+         letter-spacing: 0.13em;
+         text-transform: uppercase;
+         color: var(--accent);
+         margin-bottom: 2rem;
+         opacity: 0;
+         animation: up 0.5s 0.05s forwards;
+      }
+
+      .hero h1 {
+         font-size: clamp(2rem, 6vw, 3.2rem);
+         font-weight: 700;
+         line-height: 1.15;
+         letter-spacing: -0.025em;
+         margin-bottom: 1.1rem;
+         opacity: 0;
+         animation: up 0.5s 0.15s forwards;
+      }
+
+      .hero h1 .dim {
+         color: var(--muted2);
+      }
+
+      .hero-body {
+         font-size: 1.05rem;
+         color: var(--muted2);
+         max-width: 500px;
+         opacity: 0;
+         animation: up 0.5s 0.25s forwards;
+      }
+
+      hr.div {
+         border: none;
+         border-top: 1px solid var(--border);
+         margin: 0 1.5rem;
+      }
+
+      .section {
+         padding: 4.5rem 1.5rem;
+         max-width: 680px;
+         margin: 0 auto;
+      }
+
+      .s-label {
+         font-size: 11px;
+         font-weight: 600;
+         letter-spacing: 0.13em;
+         text-transform: uppercase;
+         color: var(--accent);
+         margin-bottom: 0.8rem;
+      }
+
+      .s-title {
+         font-size: clamp(1.4rem, 4vw, 1.9rem);
+         font-weight: 700;
+         letter-spacing: -0.02em;
+         line-height: 1.2;
+         margin-bottom: 0.6rem;
+      }
+
+      .s-sub {
+         color: var(--muted2);
+         font-size: 1rem;
+         margin-bottom: 2rem;
+      }
+
+      /* pattern list */
+      .pattern-list {
+         border: 1px solid var(--border2);
+         border-radius: 16px;
+         overflow: hidden;
+         margin-bottom: 2rem;
+      }
+
+      .pattern-item {
+         display: flex;
+         align-items: flex-start;
+         gap: 1rem;
+         padding: 1.1rem 1.3rem;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .pattern-item:last-child {
+         border-bottom: none;
+      }
+
+      .p-icon {
+         width: 32px;
+         height: 32px;
+         border-radius: 8px;
+         background: rgba(224, 82, 82, 0.09);
+         border: 1px solid rgba(224, 82, 82, 0.18);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 14px;
+         flex-shrink: 0;
+         margin-top: 1px;
+      }
+
+      .p-text strong {
+         font-size: 0.95rem;
+         font-weight: 600;
+         display: block;
+         margin-bottom: 0.15rem;
+      }
+
+      .p-text span {
+         font-size: 0.85rem;
+         color: var(--muted);
+         line-height: 1.5;
+      }
+
+      .conclusion {
+         background: var(--bg2);
+         border: 1px solid var(--border2);
+         border-radius: 14px;
+         padding: 1.3rem 1.4rem;
+      }
+
+      .conclusion p {
+         font-size: 1rem;
+         color: var(--muted2);
+         line-height: 1.7;
+      }
+
+      .conclusion strong {
+         color: var(--text);
+         font-weight: 600;
+      }
+
+      /* compare question */
+      .cq {
+         padding: 3.5rem 1.5rem 0.5rem;
+         max-width: 680px;
+         margin: 0 auto;
+         text-align: center;
+      }
+
+      .cq h2 {
+         font-size: clamp(1.4rem, 4vw, 1.9rem);
+         font-weight: 700;
+         letter-spacing: -0.02em;
+         line-height: 1.2;
+      }
+
+      .cq h2 em {
+         font-style: italic;
+         color: var(--accent);
+      }
+
+      /* chat comparison */
+      .chat-section {
+         padding: 2rem 0 4rem;
+      }
+
+      .chat-grid {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 1rem;
+         padding: 0 1rem;
+         max-width: 760px;
+         margin: 0 auto;
+      }
+
+      .chat-badge {
+         display: inline-block;
+         font-size: 11px;
+         font-weight: 600;
+         padding: 0.2rem 0.7rem;
+         border-radius: 20px;
+         margin-bottom: 0.7rem;
+      }
+
+      .chat-badge.bad {
+         background: rgba(224, 82, 82, 0.12);
+         color: var(--red);
+         border: 1px solid rgba(224, 82, 82, 0.2);
+      }
+
+      .chat-badge.good {
+         background: rgba(61, 186, 114, 0.10);
+         color: var(--green);
+         border: 1px solid rgba(61, 186, 114, 0.2);
+      }
+
+      .phone {
+         background: var(--tg-bg);
+         border-radius: 18px;
+         overflow: hidden;
+         border: 1px solid rgba(255, 255, 255, 0.09);
+         box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+      }
+
+      .phone-bar {
+         background: #17212b;
+         padding: 0.55rem 0.85rem;
+         display: flex;
+         align-items: center;
+         gap: 0.5rem;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .phone-ava {
+         width: 26px;
+         height: 26px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 11px;
+         font-weight: 700;
+         flex-shrink: 0;
+      }
+
+      .phone-info {
+         flex: 1;
+         min-width: 0;
+      }
+
+      .phone-name {
+         font-size: 11.5px;
+         font-weight: 600;
+         color: #e8eaf0;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+      }
+
+      .phone-status {
+         font-size: 9.5px;
+         color: #4da8ff;
+      }
+
+      .phone-status.off {
+         color: #4a5568;
+      }
+
+      .phone-body {
+         padding: 0.75rem 0.65rem;
+         display: flex;
+         flex-direction: column;
+         gap: 0.45rem;
+      }
+
+      .msg {
+         max-width: 94%;
+         padding: 0.5rem 0.7rem;
+         border-radius: 13px;
+         font-size: 11px;
+         line-height: 1.5;
+         word-break: break-word;
+      }
+
+      .msg-in {
+         background: var(--tg-in);
+         border-bottom-left-radius: 3px;
+         align-self: flex-start;
+         color: #c5cedd;
+      }
+
+      .msg-out {
+         background: var(--tg-out);
+         border-bottom-right-radius: 3px;
+         align-self: flex-end;
+         color: #d8e8f8;
+      }
+
+      .msg-time {
+         font-size: 8.5px;
+         color: rgba(255, 255, 255, 0.3);
+         text-align: right;
+         margin-top: 2px;
+      }
+
+      .msg .r {
+         color: #ff9090;
+         font-weight: 600;
+      }
+
+      .msg .g {
+         color: #ffd060;
+      }
+
+      .msg .lnk {
+         color: #6badf0;
+         font-size: 10px;
+         display: block;
+         margin-top: 2px;
+         word-break: break-all;
+      }
+
+      .ignored {
+         font-size: 10px;
+         color: #3a4455;
+         text-align: center;
+         padding: 0.4rem 0;
+         font-style: italic;
+      }
+
+      .lp {
+         background: rgba(77, 168, 255, 0.09);
+         border-left: 2.5px solid var(--accent);
+         border-radius: 0 9px 9px 0;
+         padding: 0.4rem 0.55rem;
+         margin-top: 0.4rem;
+      }
+
+      .lp-site {
+         font-size: 9.5px;
+         color: var(--accent);
+         font-weight: 600;
+         margin-bottom: 1px;
+      }
+
+      .lp-title {
+         font-size: 10.5px;
+         color: #dde8f8;
+         font-weight: 600;
+         line-height: 1.25;
+         margin-bottom: 1px;
+      }
+
+      .lp-desc {
+         font-size: 9.5px;
+         color: #5a6880;
+      }
+
+      .compare-note {
+         text-align: center;
+         font-size: 16px;
+         color: var(--muted);
+         padding: 1.2rem 1.5rem 0;
+         max-width: 500px;
+         margin: 0 auto;
+         line-height: 1.6;
+      }
+
+      /* principles */
+      .principles {
+         display: flex;
+         flex-direction: column;
+         gap: 1rem;
+         margin-bottom: 2rem;
+      }
+
+      .principle {
+         display: flex;
+         gap: 1rem;
+         align-items: flex-start;
+      }
+
+      .p-dot {
+         width: 8px;
+         height: 8px;
+         border-radius: 50%;
+         background: var(--accent);
+         flex-shrink: 0;
+         margin-top: 8px;
+      }
+
+      .p-body strong {
+         font-size: 1rem;
+         font-weight: 600;
+         display: block;
+         margin-bottom: 0.15rem;
+      }
+
+      .p-body span {
+         font-size: 0.88rem;
+         color: var(--muted);
+      }
+
+      /* steps */
+      .steps {
+         display: flex;
+         flex-direction: column;
+         gap: 1.1rem;
+         margin-top: 2rem;
+      }
+
+      .step {
+         display: flex;
+         gap: 1rem;
+         align-items: flex-start;
+      }
+
+      .step-n {
+         width: 34px;
+         height: 34px;
+         border-radius: 9px;
+         background: rgba(77, 168, 255, 0.09);
+         border: 1px solid rgba(77, 168, 255, 0.18);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 13px;
+         font-weight: 700;
+         color: var(--accent);
+         flex-shrink: 0;
+         margin-top: 2px;
+      }
+
+      .step-c h3 {
+         font-size: 0.97rem;
+         font-weight: 600;
+         margin-bottom: 0.2rem;
+      }
+
+      .step-c p {
+         font-size: 0.87rem;
+         color: var(--muted);
+         line-height: 1.6;
+      }
+
+      .step-c .hl {
+         color: var(--accent);
+      }
+
+      /* price */
+      .price-card {
+         background: var(--bg2);
+         border: 1px solid rgba(77, 168, 255, 0.18);
+         border-radius: 20px;
+         padding: 2rem 1.6rem;
+         margin-top: 2rem;
+      }
+
+      .price-amount {
+         font-size: 2.8rem;
+         font-weight: 700;
+         letter-spacing: -0.03em;
+         line-height: 1;
+         margin-bottom: 0.25rem;
+      }
+
+      .price-amount span {
+         font-size: 1.1rem;
+         font-weight: 400;
+         color: var(--muted);
+      }
+
+      .price-note {
+         font-size: 0.85rem;
+         color: var(--muted);
+         margin-bottom: 1.5rem;
+      }
+
+      .price-features {
+         list-style: none;
+         margin-bottom: 1.6rem;
+      }
+
+      .price-features li {
+         display: flex;
+         align-items: flex-start;
+         gap: 0.6rem;
+         padding: 0.5rem 0;
+         border-bottom: 1px solid var(--border);
+         font-size: 0.91rem;
+         color: var(--muted2);
+      }
+
+      .price-features li:last-child {
+         border-bottom: none;
+      }
+
+      .price-features .ck {
+         color: var(--green);
+         font-size: 13px;
+         flex-shrink: 0;
+         margin-top: 2px;
+      }
+
+      .btn {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 0.5rem;
+         padding: 0.9rem 2rem;
+         border-radius: 12px;
+         font-family: var(--font);
+         font-size: 1rem;
+         font-weight: 600;
+         cursor: pointer;
+         text-decoration: none;
+         border: none;
+         transition: all 0.18s;
+         width: 100%;
+      }
+
+      .btn-primary {
+         background: var(--accent);
+         color: #071020;
+      }
+
+      .btn-primary:hover {
+         background: #6bbeff;
+         transform: translateY(-1px);
+         box-shadow: 0 8px 24px rgba(77, 168, 255, 0.28);
+      }
+
+      /* faq */
+      .faq-item {
+         border-bottom: 1px solid var(--border);
+      }
+
+      .faq-q {
+         width: 100%;
+         background: none;
+         border: none;
+         text-align: left;
+         padding: 1rem 0;
+         font-family: var(--font);
+         font-size: 0.94rem;
+         font-weight: 500;
+         color: var(--text);
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 0.8rem;
+      }
+
+      .faq-arr {
+         color: var(--muted);
+         font-size: 17px;
+         transition: transform 0.2s;
+         flex-shrink: 0;
+      }
+
+      .faq-item.open .faq-arr {
+         transform: rotate(180deg);
+      }
+
+      .faq-a {
+         font-size: 0.88rem;
+         color: var(--muted);
+         line-height: 1.7;
+         max-height: 0;
+         overflow: hidden;
+         transition: max-height 0.3s ease, padding 0.2s;
+      }
+
+      .faq-item.open .faq-a {
+         max-height: 300px;
+         padding-bottom: 1rem;
+      }
+
+      footer {
+         padding: 2.5rem 1.5rem 2rem;
+         text-align: center;
+         font-size: 0.85rem;
+         color: var(--muted);
+         border-top: 1px solid var(--border);
+      }
+
+      footer a {
+         color: var(--accent);
+         text-decoration: none;
+      }
+
+      @keyframes up {
+         from {
+            opacity: 0;
+            transform: translateY(14px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      .reveal {
+         opacity: 0;
+         transform: translateY(18px);
+         transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .reveal.visible {
+         opacity: 1;
+         transform: translateY(0);
+      }
+
+      @media (max-width: 480px) {
+         .chat-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+         }
+      }
+
+      .highlight {
+         color: #f48181;
+      }
+
+      .accent {
+         color: var(--accent) !important;
+      }
+
+      .mb-lg {
+         margin-bottom: 2.5rem !important;
+      }
+
+      .mb-md {
+         margin-bottom: 2.3rem !important;
+      }
+
+      .mb-sm {
+         margin-bottom: 1.8rem !important;
+      }
+
+      .mb-xs {
+         margin-bottom: 1rem !important;
+      }
+   </style>
+</head>
+
+<body>
+
+   <!-- HERO -->
+   <section class="hero">
+      <div class="hero-tag">Rekrut sahifasi</div>
+      <h2 class="s-title highlight mb">
+         Reklamalar tarqatasiz. <br> 
+         Lichkalarga yozasiz. <br><br>
+
+         Lekin baribir . . .
+      </h2>
+      <h1 class="mb">
+         odamlar javob bermaydi. <br>
+      </h1>
+      <h2 class="s-title accent mb-xs">
+         Muammo Faberlic emas.<br><span class="dim">Muammo — siz qanday tushuntiryapsiz.</span>
+      </h2>
+      <p class="hero-body mb-xs">
+         Ko‘pchilik aynan shu yerda xato qiladi.
+         Va buni o‘zi sezmaydi ham.
+      </p>
+      <p class="hero-body">
+         Nega bunday bo‘layotganini ko‘ring 👇
+      </p>
+   </section>
+
+   <hr class="div">
+
+   <!-- SELF-RECOGNITION -->
+   <section class="section reveal">
+      <p class="s-label">Tanib oling</p>
+      <h2 class="s-title mb-md">Siz ham shunday qilyapsizmi?</h2>
+
+      <div class="pattern-list mb-lg">
+         <div class="pattern-item">
+            <div class="p-icon">📢</div>
+            <div class="p-text">
+               <strong>Gruppalarga reklama tashlaysiz</strong>
+               <span>Hech kim jiddiy qabul qilmaydi.</span>
+            </div>
+         </div>
+         <div class="pattern-item">
+            <div class="p-icon">💬</div>
+            <div class="p-text">
+               <strong>Birovlarning lichkasiga yozasiz</strong>
+               <span>U sizni tanimaydi ham.</span>
+            </div>
+         </div>
+         <div class="pattern-item">
+            <div class="p-icon">💰</div>
+            <div class="p-text">
+               <strong>Daromadni bo‘rttirasiz</strong>
+               <span>Ishonchsiz ko‘rinadi.</span>
+            </div>
+         </div>
+         <div class="pattern-item">
+            <div class="p-icon">⏳</div>
+            <div class="p-text">
+               <strong>Shoshiltirasiz  </strong>
+               <span>“Hoziroq boshlang” — odamni bezovta qiladi.</span>
+            </div>
+         </div>
+      </div>
+
+      <div class="conclusion">
+         <p class="mb-xs"><strong class="accent">Natija:</strong></p>
+         <p class="mb-xs">
+            <strong>Javoblar juda kam.</strong> <br>
+            Ba’zan umuman yo‘q.
+         </p>
+         <p class="mb-xs">
+            Va siz o‘ylaysiz: <br>
+            “Muammo qayerda?”
+         </p>
+         <p class="mb-xs">
+            Sababi odamlar sizni tanimaydi. <br>
+            Va bu reklamalar ularga ishonchli ko‘rinmaydi.
+         </p>
+         <p class="mb-xs">
+            Telegramda bunaqa reklamalar juda ko‘p. <br>
+            Odam qaysi biri ishonchli, qaysi biri yo‘q — ajrata olmaydi.
+         </p>
+         <p class="mb-xs">
+            Shuning uchun e’tibor bermaydi.
+         </p>
+         <p>
+            Muammo shu yerda. <br>
+            Endi boshqa yo‘l qanday — pastda ko‘rasiz.
+         </p>
+      </div>
+   </section>
+
+   <hr class="div">
+
+   <!-- COMPARISON QUESTION -->
+   <div class="cq reveal">
+      <h2 class="mb-sm">Siz qaysi xabar<br><em>qiziqtirgan bo'lardi?</em></h2>
+      <p class="hero-body" style="text-align:center;margin: auto">
+         Ikkalasi ham lichkada yozilgan.
+      </p>
+   </div>
+
+   <!-- CHAT COMPARISON -->
+   <section class="chat-section reveal">
+      <div class="chat-grid">
+
+         <!-- BAD -->
+         <div>
+            <div style="text-align:center;">
+               <span class="chat-badge bad">Ko'pchilik shunday</span>
+            </div>
+            <div class="phone">
+               <div class="phone-bar">
+                  <div class="phone-ava" style="background:#2e1f38;color:#b07ae0;">FN</div>
+                  <div class="phone-info">
+                     <div class="phone-name">Farida N.</div>
+                     <div class="phone-status">online</div>
+                  </div>
+               </div>
+               <div class="phone-body">
+                  <!-- <div class="msg msg-in">
+                     <span class="r">💥 AYOLLAR UCHUN SUPER ONLINE ISH! 💥</span><br>
+                     🔥 Avon + Faberlic BIRLASHDI!<br>
+                     <span class="g">Daromad: 3 mln – 26 mln+</span><br>
+                     ✔ Umra uchun bilet ham bor!<br>
+                     <span class="r">❗ Joylar cheklangan!</span>
+                     <span class="lnk">t.me/OnlineDaromaaaaad</span>
+                     <div class="msg-time">09:41</div>
+                  </div>
+                  <div class="msg msg-in">
+                     <span class="r">❗️DIQQAT! BO'SH ISH O'RINLARI!💸</span><br>
+                     1 kunda 50–200 ming so'm!<br>
+                     📌 Tajriba shart emas
+                     <span class="lnk">faberlic.com/register?sponsor=7364...</span>
+                     <div class="msg-time">09:44</div>
+                  </div> -->
+                  <div class="msg msg-out">
+                     ASSALOMU ALAYKUM,
+
+                     FABERLIK KAMPANIYASI SIZGA😊😊 <br>
+                     1. UYDAN CHIQMASDAN DAROMAD QILISH💃 <br>
+                     2.TEKIN AZO BULLISH VA 20% 26% 70%SKITKALADA MAHSULOT OLISH <br>
+                     3. HAM OYLIK HAM SOTUVDAN DAROMAD QILISH☺️☺️☺️☺️ <br>
+                     4.5KATALIK SHAG PADARKA AKSIYA SOVGALARI SPONSIR SOVGALARI <br> 
+                     5. STAJ <br>
+                     6. BOLA PULI <br>
+                     7. AHIL INOQ JAMOA <br> 
+                     8. OFIS OCHIB OFIS RAHBARI BULISH <br>
+                     ENG ASOSIYSI ODDIY UY BEKASIDAN BIZNES LADYGA AYLANISH IMKONIYATINI BERADI🥰🥰🥰🥰🥰
+                     <div class="msg-time">09:51</div>
+                  </div>
+                  <div class="msg msg-in">
+                     Keremas 😡
+                     <div class="msg-time">09:51</div>
+                  </div>
+                  <!-- <div class="ignored">— o'qilmadi —</div> -->
+               </div>
+            </div>
+         </div>
+
+         <!-- GOOD -->
+         <div>
+            <div style="text-align:center;">
+               <span class="chat-badge good">Boshqacha yondashuv</span>
+            </div>
+            <div class="phone">
+               <div class="phone-bar">
+                  <div class="phone-ava" style="background:#17302a;color:#4eca8a;">SN</div>
+                  <div class="phone-info">
+                     <div class="phone-name">Sarvinoz N.</div>
+                     <div class="phone-status">online</div>
+                  </div>
+               </div>
+               <div class="phone-body">
+                  <div class="msg msg-out">
+                     Assalomu alaykum 🙂<br><br>
+
+                     Faberlicni eshitgandirsiz?<br><br>
+                     
+                     Lekin bu siz o‘ylagandek emas. <br><br>
+
+                     Sahifamga bir ko‘z yugurtirib ko‘ring: <br>
+                     👉 <span class="lp-site">https://menhaqimda.uz/umida-ochilova</span> <br><br>
+
+                     1–2 daqiqa kifoya
+                     <!-- <div class="lp">
+                        menhaqimda.uz</div>
+                        <div class="lp-title">Uydan turib haqiqiy daromad — bu mumkin</div>
+                        <div class="lp-desc">Faberlic konsultanti · O'zbekiston</div>
+                     </div> -->
+                     <div class="msg-time">09:52 ✓✓</div>
+                  </div>
+                  <div class="msg msg-in" style="margin-top:0.3rem;">
+                     O'qidim. Qiziq ekan — boshlash uchun nima qilish kerak?
+                     <div class="msg-time">10:04</div>
+                  </div>
+                  <div class="msg msg-out">
+                     Ajoyib 🙂 Tushuntirib beraman...
+                     <div class="msg-time">10:05 ✓✓</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+
+      <div class="section">
+         <h2 class="s-title mb-md">Farq shu yerda.</h2> 
+
+         <p class="hero-body mb-sm">
+            Chap tomonda — darrov ishontirishga urinish. <br>
+            O‘ng tomonda — qiziqtirish.
+         </p>
+         <p class="hero-body mb-sm">
+            Shuning uchun javob ham boshqacha.
+         </p>
+         <p class="hero-body mb-sm">
+            Bu yerda siz darrov taklif bermaysiz. <br>
+   
+            Siz faqat tushuntirasiz — <br>
+            odam o‘zi qaror qiladi.
+         </p>
+
+         <p class="hero-body mb-sm">
+            Siz ham aynan shunaqa yozishingiz mumkin. <br>
+            Va bu ancha osonroq.
+         </p>
+
+         <p class="hero-body mb-sm">
+            Chap tomonni hamma qiladi.
+         </p>
+
+         <p class="hero-body mb-sm">
+            O‘ng tomonni esa kam odam ishlatadi — <br>
+            shuning uchun natija ham boshqacha.
+         </p>
+
+      </div>
+   </section>
+
+   <hr class="div">
+
+   <!-- POSITIONING -->
+   <section class="section reveal">
+      <p class="s-label">To'g'ri yondashuv</p>
+      <h2 class="s-title">Siz majburlamaysiz.<br>Odam o‘zi qiziqadi.</h2>
+      <p class="s-sub">Siz faqat yo‘l ko‘rsatasiz. Odam o‘zi keladi.</p>
+
+      <div class="principles">
+         <div class="principle">
+            <div class="p-dot"></div>
+            <div class="p-body">
+               <strong>Qisqa yozasiz</strong>
+               <span>→ odam o‘qiydi</span>
+            </div>
+         </div>
+         <div class="principle">
+            <div class="p-dot"></div>
+            <div class="p-body">
+               <strong>Bosim qilmayapsiz</strong>
+               <span>→ odam qochmaydi</span>
+            </div>
+         </div>
+         <div class="principle">
+            <div class="p-dot"></div>
+            <div class="p-body">
+               <strong>Avval ishonch berasiz</strong>
+               <span>→ keyin o‘zi qiziqadi</span>
+            </div>
+         </div>
+      </div>
+
+      <p class="s-sub">
+         Odam sotib olishni yoqtirmaydi. <br><br>
+         Lekin o‘zi qaror qilishni yoqtiradi. <br><br>
+         Farq shu yerda. <br>
+      </p>
+
+      <!-- DM flow mockup -->
+      <p
+         style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:1rem;">
+         Amalda qanday ko'rinadi</p>
+      <div class="phone" style="max-width:340px;margin:0 auto;">
+         <div class="phone-bar">
+            <div class="phone-ava" style="background:#1a1f32;color:#7b9ef8;">DM</div>
+            <div class="phone-info">
+               <div class="phone-name">Dilnoza M.</div>
+               <div class="phone-status">online</div>
+            </div>
+         </div>
+         <div class="phone-body">
+            <div class="msg msg-out">
+               Assalomu alaykum 🙂<br><br>
+
+               Faberlicni eshitgandirsiz?<br><br>
+               
+               Lekin bu siz o‘ylagandek emas. <br><br>
+
+               Sahifamga bir ko‘z yugurtirib ko‘ring: <br>
+               👉 <span class="lp-site">https://menhaqimda.uz/umida-ochilova</span> <br><br>
+
+               1–2 daqiqa kifoya
+               <!-- <div class="lp">
+                  menhaqimda.uz</div>
+                  <div class="lp-title">Uydan turib haqiqiy daromad — bu mumkin</div>
+                  <div class="lp-desc">Faberlic konsultanti · O'zbekiston</div>
+               </div> -->
+               <div class="msg-time">09:52 ✓✓</div>
+            </div>
+            <div class="msg msg-in" style="margin-top:0.3rem;">
+               O'qidim. Qiziq ekan — boshlash uchun nima qilish kerak?
+               <div class="msg-time">10:04</div>
+            </div>
+            <div class="msg msg-out">
+               Ha 🙂 Xohlasangiz tushuntirib beraman — sizga qachon qulay?
+               <div class="msg-time">14:36 ✓✓</div>
+            </div>
+            <div class="msg msg-in">
+               Kechqurun yaxshi bo'lardi
+               <div class="msg-time">16:28</div>
+            </div>
+         </div>
+      </div>
+      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:0.8rem;line-height:1.6;">
+         Siz hech kimni ishontirmadingiz. <br><br>
+
+         Odam o‘zi ishondi. <br>
+         Va o‘zi yozdi.
+      </p>
+      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:0.8rem;line-height:1.6;">
+         Shu ishni sizning o‘rningizga sahifa qiladi.
+      </p>
+   </section>
+
+   <hr class="div">
+
+   <!-- Demo -->
+   <section class="section reveal">
+      <p class="s-label">Namuna</p>
+      <h2 class="s-title">Shunaqa sahifa qanday <br> ishlashini ko‘ring</h2>
+      <div class="s-sub">
+         Shunaqa sahifa qanday ishlashini ko‘ring: <br><br>
+
+         👉 <a href="https://t.me/gofurnazarov" class="accent">
+            https://menhaqimda.uz/umidaochilova
+         </a> <br><br>
+
+         Shu sahifa hammasini sizning o‘rningizga tushuntiradi.
+      </div>
+   </section>
+
+   <hr class="div">
+
+   <!-- HOW IT WORKS -->
+   <section class="section reveal">
+      <p class="s-label">Qanday olasiz</p>
+      <h2 class="s-title">Bu juda oddiy</h2>
+      <div class="s-sub">24 soat ichida sahifangiz tayyor bo'ladi.</div>
+
+      <div class="steps mb-lg">
+         <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-c">
+               <h3>@gofurnazarov ga yozasiz</h3>
+               <p>
+                  Ismingiz, rasmingiz va Telegram manzilingizni yuborasiz. <br>
+                  2 daqiqalik ish.
+               </p>
+            </div>
+         </div>
+         <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-c">
+               <h3>Qolganini men qilaman</h3>
+               <p>
+                  24 soat ichida sahifangiz tayyor bo‘ladi. <br>
+                  O‘z havolangiz bilan: <span class="hl">menhaqimda.uz/sizningismingiz</span>
+               </p>
+            </div>
+         </div>
+         <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-c">
+               <h3>Foydalanishni boshlaysiz</h3>
+               <p>
+                  Har safar yangi odamga faqat sahifangiz havolasini yuborasiz. <br>
+                  Sahifa o‘zi tushuntiradi.
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <div class="s-sub">
+         Siz faqat havola yuborasiz. <br>
+         Qolganini sahifa qiladi.
+      </div>
+   </section>
+
+   <hr class="div">
+
+   <!-- PRICE -->
+   <section class="section reveal" id="price">
+      <p class="s-label">Narx</p>
+      <h2 class="s-title">Bir martalik to'lov</h2>
+      <p class="s-sub">
+         Har bir odamga qaytadan tushuntirib o'tirmaysiz. <br>
+
+         Sahifangiz havolasini yuborasiz xalos. 
+      </p>
+
+      <p class="s-sub">
+         Qanchalik erta boshlasangiz — <br>
+
+         shunchalik tez natija ko‘rasiz.
+      </p>
+
+      <div class="price-card">
+         <div class="price-amount">247 000 <span>so'm</span></div>
+         <div class="price-note">bir martalik · oylik to'lov yo'q · sahifa abadiy sizniki</div>
+
+         <ul class="price-features">
+            <li><span class="ck">✓</span> To'liq siz nomingizda sahifa</li>
+            <li><span class="ck">✓</span> O'z havalongiz — menhaqimda.uz/sizningismingiz</li>
+            <li><span class="ck">✓</span> 24 soat ichida tayyor</li>
+            <li><span class="ck">✓</span> Savollar va etirozlarga o'zi javob beradi</li>
+            <li><span class="ck">✓</span> Istalgan joyda ishlating</li>
+         </ul>
+
+         <a href="https://t.me/gofurnazarov" class="btn btn-primary">
+            💬 Menga yozing — sizga ham shunaqa sahifa tayyorlab beraman.
+         </a>
+         <p style="font-size:12px;color:var(--muted);margin-top:0.8rem;text-align:center;">
+            Qo'shimcha savollaringiz bo'lsa ham yozing.
+         </p>
+      </div>
+   </section>
+
+   <hr class="div">
+
+   <!-- FAQ -->
+   <section class="section reveal" style="padding-bottom:3rem;">
+      <p class="s-label">Savollar</p>
+
+      <div class="faq-item">
+         <button class="faq-q" onclick="faq(this)">Shunaqa sahifa qanday ko‘rinadi?<span
+               class="faq-arr">⌄</span></button>
+         <div class="faq-a">
+            Mana real misol: <br>
+
+            👉<a href="https://menhaqimda.uz/umida-ochilova" class="accent">https://menhaqimda.uz/umida-ochilova</a>
+         </div>
+      </div>
+
+      <div class="faq-item">
+         <button class="faq-q" onclick="faq(this)">Bu sahifa foyda berishini qanday bilaman? <span
+               class="faq-arr">⌄</span></button>
+         <div class="faq-a">
+            Bu sahifa sehirli tayoqcha emas. <br><br>
+
+            Lekin bitta narsani o‘zgartiradi:<br><br>
+
+            Siz odamni majburlamaysiz —
+            u o‘zi tushunadi va qaror qiladi.<br><br>
+
+            Shu sababli oddiy xabardan farqi katta.
+         </div>
+      </div>
+
+      <div class="faq-item mb-lg">
+         <button class="faq-q" onclick="faq(this)">Keyin ma'lumotlarni o'zgartirish mumkinmi? <span
+               class="faq-arr">⌄</span></button>
+         <div class="faq-a">
+            Ha. <br><br>
+
+            Ism, rasm yoki Telegram o‘zgarsa — <br>
+            yozing, tezda yangilab beraman. <br><br>
+
+            Sahifa sizniki — nazorat ham sizda.
+         </div>
+      </div>
+
+      <p class="s-sub" style="text-align: center;">
+         Agar sizga hammasi tushunarli bo‘lsa — <br>
+
+         boshlash uchun menga yozing.
+      </p>
+      <a href="https://t.me/gofurnazarov" class="btn btn-primary">
+            💬 Menga yozing — @gofurnazarov
+         </a>
+   </section>
+
+   <!-- <footer>
+      <p><a href="https://t.me/gofurnazarov">@gofurnazarov</a> · <a
+            href="https://t.me/konsultantrobot">@konsultantrobot</a></p>
+      <p style="margin-top:0.4rem;">Sayt <a href="https://menhaqimda.uz">menhaqimda.uz</a> tomonidan yaratildi</p>
+   </footer> -->
+
+   <script>
+      const obs = new IntersectionObserver(entries => {
+         entries.forEach(e => {
+            if (e.isIntersecting) {
+               e.target.classList.add('visible');
+               obs.unobserve(e.target);
+            }
+         });
+      }, {
+         threshold: 0.08
+      });
+      document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+      function faq(btn) {
+         btn.closest('.faq-item').classList.toggle('open');
+      }
+   </script>
+</body>
+
+</html>
