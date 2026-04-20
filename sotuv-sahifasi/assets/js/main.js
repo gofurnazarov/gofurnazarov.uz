@@ -7,12 +7,12 @@ const SHOPS = {
 		phone: '+998901234567',
 		instagram: 'gullar.uz',
 	},
-	elanore: {
-		name: 'Elanore Flowers',
-		logoSuffix: ' Flowers',
-		telegram: 'Elanoreflowers',
-		phone: '+998901234567',
-		instagram: 'elanore_flowers',
+	gardenia: {
+		name: 'Gardenia',
+		logoSuffix: ' .uz',
+		telegram: 'gardeniatashkent',
+		phone: '+99890-93-330-09-09',
+		instagram: 'gardenia.uzb',
 	},
 };
 
