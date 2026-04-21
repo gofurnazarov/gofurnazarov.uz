@@ -28,6 +28,13 @@ const SHOPS = {
 		phone: '+998 98 880 81 08',
 		instagram: 'moretflowers',
 	},
+	veronica_garden: {
+		name: 'VeronicaGarden',
+		logoSuffix: '.uz',
+		telegram: 'Veronica_garden2',
+		phone: '+998335747474',
+		instagram: 'veronica_garden__',
+	},
 };
 
 const params = new URLSearchParams(window.location.search);
