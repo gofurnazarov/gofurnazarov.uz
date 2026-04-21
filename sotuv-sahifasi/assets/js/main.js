@@ -9,10 +9,17 @@ const SHOPS = {
 	},
 	gardenia: {
 		name: 'Gardenia',
-		logoSuffix: ' .uz',
+		logoSuffix: '.uz',
 		telegram: 'gardeniatashkent',
 		phone: '+99890-93-330-09-09',
 		instagram: 'gardenia.uzb',
+	},
+	mmroses: {
+		name: 'M&M Roses',
+		logoSuffix: '.uz',
+		telegram: 'mmroses',
+		phone: '+998994088096',
+		instagram: 'mm_rose__',
 	},
 };
 
