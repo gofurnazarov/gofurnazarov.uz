@@ -21,6 +21,13 @@ const SHOPS = {
 		phone: '+998994088096',
 		instagram: 'mm_rose__',
 	},
+	moretflowers: {
+		name: 'MoretFlowers',
+		logoSuffix: '.uz',
+		telegram: 'moretflowers',
+		phone: '+998 98 880 81 08',
+		instagram: 'moretflowers',
+	},
 };
 
 const params = new URLSearchParams(window.location.search);
