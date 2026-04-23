@@ -3,9 +3,9 @@ const SHOPS = {
 	default: {
 		name: 'Gullar.uz',
 		logoSuffix: '.uz',
-		telegram: 'gullaruz_bot',
-		phone: '+998901234567',
-		instagram: 'gullar.uz',
+		telegram: 'gofurnazarov',
+		phone: '+998-90-123-45-67',
+		instagram: '',
 	},
 	gardenia: {
 		name: 'Gardenia',
