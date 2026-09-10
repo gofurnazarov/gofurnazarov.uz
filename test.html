@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Instagramda target reklama orqali o‘z mahsulot yoki xizmatingizni sotishni o‘rganing. 30 kunlik amaliy dastur.">
+<title>Instagramda Sotuv</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#1c2321;
+  --paper:#eae4d3;
+  --paper-2:#e1dac5;
+  --rust:#c4501d;
+  --teal:#1f4d3e;
+  --line:#b8ada0;
+  --text:#29261f;
+  --muted:#5b554a;
+  --max:680px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text);
+  font-family:Manrope,system-ui,sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{color:var(--ink);font-weight:800;letter-spacing:-.025em}
+.wrap{width:min(var(--max),100%);margin:auto;padding:0 20px}
+section{padding:54px 0;border-top:1px solid var(--line)}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(234,228,211,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+.brand{font-size:14px;font-weight:800}
+.topbar a{
+  background:var(--ink);
+  color:var(--paper);
+  text-decoration:none;
+  padding:9px 13px;
+  font-size:12px;
+  font-weight:700;
+  border-radius:2px;
+}
+
+/* Hero */
+.hero{border-top:0;padding-top:58px;padding-bottom:42px}
+.eyebrow{
+  display:inline-block;
+  color:var(--rust);
+  font:700 11px/1 Space Mono,monospace;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  margin-bottom:14px;
+}
+h1{
+  font-size:clamp(31px,7.5vw,44px);
+  line-height:1.12;
+  max-width:15ch;
+}
+.hero-sub{
+  margin-top:20px;
+  font-size:16px;
+  color:var(--muted);
+  max-width:58ch;
+}
+.identity{
+  margin-top:25px;
+  display:grid;
+  gap:8px;
+}
+.identity-item{
+  background:var(--paper-2);
+  padding:13px 15px;
+  font-size:14px;
+  line-height:1.45;
+}
+.identity-item strong{color:var(--ink)}
+.transition{
+  margin-top:24px;
+  padding:17px 16px;
+  background:var(--ink);
+  color:var(--paper);
+  font-size:14px;
+  line-height:1.55;
+}
+.transition b{color:#f0a07d}
+.cta{
+  display:block;
+  margin-top:22px;
+  background:var(--rust);
+  color:var(--paper);
+  text-align:center;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:800;
+  padding:15px 18px;
+  border-radius:2px;
+}
+.cta-note{
+  text-align:center;
+  color:var(--muted);
+  font-size:11.5px;
+  margin-top:9px;
+}
+
+/* Common */
+.section-kicker{
+  color:var(--rust);
+  font:700 11px/1.2 Space Mono,monospace;
+  margin-bottom:10px;
+}
+h2{
+  font-size:clamp(25px,6vw,32px);
+  line-height:1.2;
+  max-width:24ch;
+}
+.section-lead{
+  margin-top:13px;
+  color:var(--muted);
+  font-size:15px;
+  max-width:57ch;
+}
+
+/* Outcomes */
+.outcomes{
+  margin-top:24px;
+  border-top:1px solid var(--line);
+}
+.outcome{
+  display:grid;
+  grid-template-columns:25px 1fr;
+  gap:8px;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+  font-size:15px;
+}
+.check{color:var(--teal);font-weight:800}
+
+/* Three parts */
+.parts{margin-top:23px}
+.part{
+  padding:19px 0;
+  border-top:1px solid var(--line);
+}
+.part:last-child{border-bottom:1px solid var(--line)}
+.part-head{
+  display:flex;
+  gap:12px;
+  align-items:baseline;
+}
+.part-number{
+  color:var(--rust);
+  font:700 12px Space Mono,monospace;
+}
+.part-title{font-size:18px;font-weight:800;color:var(--ink)}
+.part p{
+  margin:7px 0 0 31px;
+  color:var(--muted);
+  font-size:14px;
+}
+.parts-summary{
+  margin-top:17px;
+  padding:15px;
+  background:var(--paper-2);
+  font-size:14px;
+  font-weight:700;
+}
+
+/* Practical */
+.practice{
+  margin-top:23px;
+  display:grid;
+  gap:0;
+}
+.practice-row{
+  display:grid;
+  grid-template-columns:30px 1fr;
+  gap:12px;
+  padding:15px 0;
+  border-top:1px solid var(--line);
+}
+.practice-row:last-child{border-bottom:1px solid var(--line)}
+.practice-num{
+  color:var(--teal);
+  font:700 12px Space Mono,monospace;
+}
+.practice-title{font-weight:800;color:var(--ink);font-size:15px}
+.practice-text{margin-top:3px;color:var(--muted);font-size:13.5px}
+
+/* Proof */
+.proof-box{
+  margin-top:23px;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:20px 17px;
+}
+.proof-big{
+  font:700 clamp(27px,7vw,37px)/1 Space Mono,monospace;
+  color:var(--ink);
+}
+.proof-big span{color:var(--rust)}
+.proof-text{
+  margin-top:13px;
+  font-size:14px;
+  color:var(--muted);
+}
+.proof-stats{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px dashed var(--line);
+  border-bottom:1px dashed var(--line);
+}
+.stat{
+  padding:14px 10px;
+}
+.stat + .stat{border-left:1px dashed var(--line)}
+.stat-number{
+  font:700 21px Space Mono,monospace;
+  color:var(--teal);
+}
+.stat-label{font-size:11.5px;color:var(--muted);margin-top:3px}
+.disclaimer{
+  margin-top:14px;
+  font-size:12.5px;
+  color:var(--muted);
+}
+
+/* Fit */
+.fit-box{
+  margin-top:22px;
+  border:1px solid var(--line);
+  background:var(--paper-2);
+}
+.fit-item{
+  padding:14px 15px;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+.fit-item:last-child{border-bottom:0}
+.fit-item b{color:var(--ink)}
+
+/* Price */
+.price-card{
+  margin-top:22px;
+  background:var(--ink);
+  color:var(--paper);
+  padding:24px 19px;
+}
+.price{
+  font:700 clamp(31px,8vw,42px)/1 Space Mono,monospace;
+}
+.price-note{
+  margin-top:7px;
+  color:#c9c2b4;
+  font-size:13px;
+}
+.details{
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px dashed rgba(234,228,211,.35);
+  display:grid;
+  gap:7px;
+  font-size:13px;
+}
+.detail{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+.detail span:first-child{color:#aaa394}
+.detail strong{font-weight:700;text-align:right}
+
+.guarantee{
+  margin-top:14px;
+  border:1px solid var(--teal);
+  padding:16px;
+}
+.guarantee strong{
+  color:var(--teal);
+  display:block;
+  margin-bottom:5px;
+}
+.guarantee p{font-size:13px;color:var(--muted)}
+
+.final{
+  background:var(--ink);
+  color:var(--paper);
+  border-top:0;
+  padding:55px 0 70px;
+}
+.final h2{color:var(--paper);max-width:18ch}
+.final p{
+  margin-top:14px;
+  color:#c9c2b4;
+  font-size:14px;
+  max-width:50ch;
+}
+.final .cta{margin-top:22px}
+footer{
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* Sticky CTA */
+.sticky{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  z-index:30;
+  background:var(--ink);
+  border-top:1px solid var(--line);
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  transform:translateY(110%);
+  transition:transform .25s ease;
+}
+.sticky.show{transform:translateY(0)}
+.sticky-info{font-size:11.5px;color:var(--paper);line-height:1.25}
+.sticky-info b{
+  display:block;
+  color:#e8916a;
+  font:700 12px Space Mono,monospace;
+  margin-top:2px;
+}
+.sticky a{
+  flex-shrink:0;
+  background:var(--rust);
+  color:var(--paper);
+  text-decoration:none;
+  padding:10px 13px;
+  font-size:12.5px;
+  font-weight:800;
+  border-radius:2px;
+}
+
+@media(min-width:700px){
+  .hero{padding-top:78px;padding-bottom:58px}
+  section{padding:72px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sticky{transition:none}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">Instagramda Sotuv</div>
+    <a href="#royxat">Qo‘shilish</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. I WANT THIS -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Instagramda Sotuv</div>
+
+      <h1>Target reklama orqali Instagramda o‘z mahsulot yoki xizmatingizni sotishni o‘rganing</h1>
+
+      <p class="hero-sub">
+        Instagramda biznesingiz bor, lekin target reklama yoqishni umuman bilmaysizmi?
+        Yoki target reklama berib ko‘rgansiz, pul sarflagansiz-u, lekin sotuv bo‘lmayaptimi?
+      </p>
+
+      <div class="identity">
+        <div class="identity-item">
+          <strong>“Targetni qanday yoqishni bilmayman.”</strong><br>
+          Qayerdan boshlashni va reklamani kimlarga ko‘rsatishni bilmaysiz.
+        </div>
+        <div class="identity-item">
+          <strong>“Reklama beraman, lekin pulim ketyapti.”</strong><br>
+          Reklama bor, lekin sotuv yo‘q. Nima noto‘g‘ri ekanini tushunmaysiz.
+        </div>
+      </div>
+
+      <div class="transition">
+        <strong>30 kun davomida target reklama orqali sotuv qilishni amalda o‘rganasiz:</strong><br><br>
+        Bozoringizni tushunasiz → kuchli taklif tayyorlaysiz → reklama berasiz →
+        natijani ko‘rasiz → kamchilikni to‘g‘rilaysiz → yana sinaysiz.
+      </div>
+
+      <a class="cta" href="#royxat">O‘zim o‘rganmoqchiman</a>
+      <div class="cta-note">390 000 so‘m · bir martalik to‘lov · 10 ta o‘rin</div>
+    </div>
+  </section>
+
+  <!-- 2. THIS IS WHAT CHANGES -->
+  <section>
+    <div class="wrap">
+      <div class="section-kicker">Natija</div>
+      <h2>30 kun oxirida nimalarni qila olasiz?</h2>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <span class="check">✓</span>
+          <span>Instagramda target reklama yoqishni <strong>0 dan o‘zingiz bilasiz</strong></span>
+        </div>
+        <div class="outcome">
+          <span class="check">✓</span>
+          <span>Reklamani <strong>kerakli odamlarga ko‘rsatishni</strong> tushunasiz</span>
+        </div>
+        <div class="outcome">
+          <span class="check">✓</span>
+          <span>Sotuv bo‘lmasa, <strong>muammo nimada ekanini aniqlay olasiz</strong></span>
+        </div>
+        <div class="outcome">
+          <span class="check">✓</span>
+          <span>Reklamadan qiziqib yozgan odam bilan <strong>to‘g‘ri gaplashib, sotuv qilishni</strong> bilasiz</span>
+        </div>
+        <div class="outcome">
+          <span class="check">✓</span>
+          <span>Eng muhimi, reklama uchun pul sarflab, <strong>nima uchun natija chiqmayotganini bilmay o‘tirmaysiz</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. THIS IS HOW YOU GET THERE -->
+  <section>
+    <div class="wrap">
+      <div class="section-kicker">Qanday qilib?</div>
+      <h2>Shunchaki reklama berishni emas, sotishni o‘rganasiz</h2>
+      <p class="section-lead">
+        Target reklamani yoqishning o‘zi yetarli emas. Sotuv chiqishi uchun uchta narsa birga ishlashi kerak.
+      </p>
+
+      <div class="parts">
+        <div class="part">
+          <div class="part-head">
+            <span class="part-number">01</span>
+            <span class="part-title">Kuchli taklif berish</span>
+          </div>
+          <p>Odamga mahsulot yoki xizmatingizni sotib olish uchun aniq sabab berish.</p>
+        </div>
+
+        <div class="part">
+          <div class="part-head">
+            <span class="part-number">02</span>
+            <span class="part-title">Target reklama orqali kerakli odamlarga chiqish</span>
+          </div>
+          <p>Mahsulotingiz yoki xizmatingizga qiziqishi mumkin bo‘lgan odamlarga reklama berish.</p>
+        </div>
+
+        <div class="part">
+          <div class="part-head">
+            <span class="part-number">03</span>
+            <span class="part-title">Qiziqqan odamni xaridorga aylantirish</span>
+          </div>
+          <p>Sizga yozgan odam bilan to‘g‘ri gaplashib, sotuv qilish.</p>
+        </div>
+      </div>
+
+      <div class="parts-summary">
+        Bittasi ishlamasa, reklama uchun sarflangan pul ham natija bermasligi mumkin.
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THIS ISN'T THEORY -->
+  <section>
+    <div class="wrap">
+      <div class="section-kicker">30 kun davomida</div>
+      <h2>Bu faqat dars ko‘rish emas</h2>
+      <p class="section-lead">
+        O‘rgangan narsangizni o‘sha zahoti o‘z biznesingizda bajarasiz.
+      </p>
+
+      <div class="practice">
+        <div class="practice-row">
+          <span class="practice-num">01</span>
+          <div>
+            <div class="practice-title">O‘rganasiz</div>
+            <div class="practice-text">Qisqa va tushunarli qilib kerakli narsani bilib olasiz.</div>
+          </div>
+        </div>
+
+        <div class="practice-row">
+          <span class="practice-num">02</span>
+          <div>
+            <div class="practice-title">Bajarasiz</div>
+            <div class="practice-text">O‘z mahsulotingiz yoki xizmatingizda amalda qilasiz.</div>
+          </div>
+        </div>
+
+        <div class="practice-row">
+          <span class="practice-num">03</span>
+          <div>
+            <div class="practice-title">Sinaysiz</div>
+            <div class="practice-text">Kichik byudjet bilan target reklama berasiz.</div>
+          </div>
+        </div>
+
+        <div class="practice-row">
+          <span class="practice-num">04</span>
+          <div>
+            <div class="practice-title">Yaxshilaysiz</div>
+            <div class="practice-text">Natijani ko‘rib, kamchilikni to‘g‘rilab yana sinaysiz.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="parts-summary">
+        Maqsad — targetni bir marta yoqib ko‘rish emas, sotuv beradigan yo‘nalishni topish uchun to‘g‘ri sinovlar qilishni o‘rganish.
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WHY BELIEVE -->
+  <section>
+    <div class="wrap">
+      <div class="section-kicker">Nega menga ishonishingiz mumkin?</div>
+      <h2>Men ham buni boshida bilmaganman</h2>
+
+      <div class="proof-box">
+        <div class="proof-big">~$300 <span>→</span> ~$3/kun</div>
+
+        <p class="proof-text">
+          Faberlic jamoasiga odam topish jarayonida target reklamani o‘zim o‘rganish uchun taxminan
+          <strong>$300 sarfladim</strong>. Ba’zi reklamalarimda $20–30 sarflanib, atigi 4–5 ta sifatsiz ariza kelgan.
+        </p>
+
+        <p class="proof-text">
+          Keyin taklifimni, targetimni va sotuv jarayonini o‘zgartirib, reklamani boshqacha sinay boshladim.
+        </p>
+
+        <div class="proof-stats">
+          <div class="stat">
+            <div class="stat-number">4 ta</div>
+            <div class="stat-label">bir kunda olingan ariza</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">7 ta</div>
+            <div class="stat-label">boshqa bir kunda olingan ariza</div>
+          </div>
+        </div>
+
+        <p class="disclaimer">
+          Bu har qanday biznes $3 sarflab shunday natija oladi degani emas.
+          Bu — reklamani ko‘r-ko‘rona yoqish o‘rniga, sinash, natijani tushunish va yaxshilash mumkinligiga mening real tajribam.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. IS THIS FOR ME -->
+  <section>
+    <div class="wrap">
+      <div class="section-kicker">Siz uchunmi?</div>
+      <h2>Agar siz shunday bo‘lsangiz</h2>
+
+      <div class="fit-box">
+        <div class="fit-item">✓ Instagramda <b>mahsulot yoki xizmat sotasiz</b></div>
+        <div class="fit-item">✓ Target reklamani <b>umuman bilmaysiz</b> yoki boshlang‘ich darajada bilasiz</div>
+        <div class="fit-item">✓ Reklama berib, <b>pul sarflab natija olmagansiz</b></div>
+        <div class="fit-item">✓ Hozircha <b>targetolog yollashni xohlamaysiz</b></div>
+        <div class="fit-item">✓ O‘z biznesingizda <b>o‘zingiz sinab ko‘rishga tayyorsiz</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PRICE + GUARANTEE + 10 SPOTS -->
+  <section id="royxat" class="price-section">
+    <div class="wrap">
+      <div class="section-kicker">Qo‘shilish</div>
+      <h2>O‘z biznesingizda boshlang</h2>
+
+      <div class="price-card">
+        <div class="price">390 000 so‘m</div>
+        <div class="price-note">Bir martalik to‘lov. Oylik obuna emas.</div>
+
+        <div class="details">
+          <div class="detail"><span>Davomiyligi</span><strong>30 kun</strong></div>
+          <div class="detail"><span>Birinchi guruh</span><strong>10 ta o‘rin</strong></div>
+          <div class="detail"><span>Ro‘yxatdan o‘tish</span><strong>15-sentabrgacha</strong></div>
+        </div>
+      </div>
+
+      <div class="guarantee">
+        <strong>100% pulni qaytarish kafolati</strong>
+        <p>
+          Agar 30 kunlik dasturni to‘liq bajarsangiz va undan umuman qoniqmasangiz,
+          pulingizni 100% qaytarib olishingiz mumkin.
+        </p>
+      </div>
+
+      <a class="cta" href="#">Target reklamani o‘rganishni boshlash</a>
+      <div class="cta-note">Faqat 10 ta o‘rin.</div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="section-kicker">Instagramda Sotuv</div>
+      <h2>Reklamaga pul sarflashni emas, undan foydalanib sotishni o‘rganing.</h2>
+      <p>
+        Target reklamani o‘zingiz berishni boshlang, natijani tushuning va keyingi qadamni biladigan holatga o‘ting.
+      </p>
+      <a class="cta" href="#">O‘z o‘rningizni band qilish</a>
+      <div class="cta-note">390 000 so‘m · 30 kun · 10 ta o‘rin</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Instagramda Sotuv — 30 kunlik amaliy dastur
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sticky-info">
+    Instagramda Sotuv
+    <b>390 000 so‘m · 10 ta o‘rin</b>
+  </div>
+  <a href="#royxat">Qo‘shilish</a>
+</div>
+
+<script>
+(function(){
+  const sticky = document.getElementById('sticky');
+  const hero = document.querySelector('.hero');
+  const price = document.getElementById('royxat');
+  if(!sticky || !hero || !price) return;
+
+  function update(){
+    const y = window.scrollY || window.pageYOffset;
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+    const priceTop = price.offsetTop;
+    const nearPrice = y + window.innerHeight > priceTop + 30;
+
+    sticky.classList.toggle('show', y > heroBottom && !nearPrice);
+  }
+
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+
+</body>
+</html>

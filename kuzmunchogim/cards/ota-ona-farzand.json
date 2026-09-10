@@ -1,0 +1,141 @@
+{
+	"title": "Ota-ona va farzand uchun suhbat savollari",
+	"categories": [
+		{
+			"name": "Bir-birimizni yaxshiroq bilamiz",
+			"emoji": "❤️",
+			"questions": [
+				"Kuning davomida eng sabrsizlik bilan kutadigan payting qaysi?",
+				"Agarda sen bilan do‘stlashmoqchi bo‘lgan bolaga o‘zing haqida bittagina maslahat berishing kerak bo‘lsa, nima degan bo‘larding?",
+				"Maktabdan yoki ko‘chadan uyga qaytganingda seni eng birinchi xursand qiladigan narsa nima?",
+				"O‘zing o‘ylab topgan yoki juda yoqtiradigan noodatiy yemaging bormi?",
+				"Kayfiyating yo‘q bo‘lib turganda o‘zingga kelishingga eng ko‘p nima yordam beradi?",
+				"Biror narsani o‘rganayotganingda senga ko‘proq nima xalaqit beradi: shovqinmi, charchoqmi yoki shoshqaloqlikmi?",
+				"Tasavvur qil, senga mutlaqo yangi o‘yinchoq yoki o‘yin o‘ylab topish topshirildi. U qanday o‘yin bo‘lardi?",
+				"Senga ko‘proq qaysi vaqt yoqadi: hamma uyg‘onishidan oldingi jimjit ertalabmi yoki hamma uxlagandan keyingi sokin tunmi?",
+				"Seningcha, seni hali yaxshi bilmaydigan odamlar sen haqingda birinchi bo‘lib nimani payqashadi?",
+				"Uyimizda o‘zingni eng qulay va osoyishta his qiladigan burchaging qayer?",
+				"Telefon yoki televizor bo‘lmagan kuningda eng sevimli mashg‘uloting nima bo‘ladi?",
+				"Biror yangi joyga borganingda eng birinchi bo‘lib nimaga e’tibor berasan?",
+				"Boshqalarga qaraganda tezroq va yaxshiroq eplaydigan kichik biror mahorating bormi?",
+				"Senga biror kishi sovg‘a tanlayotgan bo‘lsa, u sen haqingda eng muhim nimani bilishi kerak?",
+				"Yaxshi ko‘rib kiyadigan kiyiming boru, lekin uning aynan nimasi yoqishini tushuntira olasanmi?",
+				"Seningcha, senga o‘xshagan do‘stga ega bo‘lishning eng yaxshi tarafi nima?",
+				"O‘zing haqida o‘ylaganingda, fe’lingdagi qaysi xususiylik seni eng ko‘p xursand qiladi?",
+				"Hozir seni eng ko‘p qiziqtirayotgan narsa nima?",
+				"O‘zing haqingda men bilmaydigan bitta narsani ayt-chi.",
+				"Ikkalamiz birga bajargan ishlar ichida senga eng ko‘p yoqqani qaysi bo‘lgan?"
+			]
+		},
+		{
+			"name": "Kulamiz va tasavvur qilamiz",
+			"emoji": "😂",
+			"questions": [
+				"Agarda uyimizdagi jonivorlar yoki buyumlar gapirishni boshlasa, birinchi bo‘lib bizga nima degan bo‘lardi?",
+				"Bir kun davomida dunyodagi hamma narsani faqat bitta rangga bo‘yash imkoni berilsa, qaysi rangni tanlarding?",
+				"Tasavvur qil, sehrli oshpazsan: har doim yeydigan ovqatlaringdan mutlaqo kutilmagan ta’m chiqadigan qilib tayyorlaysan. Qaysi ovqatni qanday ta’mli qilarding?",
+				"Agarda bir kun davomida ko‘rinmas bo‘lib qolsang, birinchi bo‘lib qaysi ishni qilgan bo‘larding?",
+				"Bir kun kelib o‘z sayyorangni kashf etsang, unga qanday nom berarding va u yerda nimalar bo‘lardi?",
+				"Tasavvur qil, har safar aksirganda burningdan har xil narsalar otilib chiqadi. U nima bo‘lishini xohlarding?",
+				"Agar bir kunga superqahramon bo‘lib qolsang, lekin kuching faqat juda kulgili narsalarga yetsa, u qanday kuch bo‘lardi?",
+				"Muzlatgichimizni ochganimizda ichidagi oziq-ovqatlar o‘zaro nima haqida xafalashib yoki hazillashib o‘tirgan bo‘lishi mumkin?",
+				"Tasavvur qil, o‘zingga mutlaqo yangi va kulgili ism tanlashing kerak. O‘zingni kim deb atagan bo‘larding?",
+				"Biror hayvon bilan bir kun davomida joyingni almashish imkoni bo‘lsa, qaysi hayvon bo‘lishni xohlarding?",
+				"Agar uyingdagi paypoqlarning biri birdan yo‘qolib qolsa, seningcha u qayerga va nima uchun qochib ketgan?",
+				"Bitta g‘oyat g‘aroyib qoida o‘ylab topib, uni butun oilamiz uchun bir kunga majburiy qilsang, u qanday qoida bo‘lardi?",
+				"Tasavvur qil, bulutlar paxtaqanddan qilingan. Ularning ustida sakrab yurganingda qanday voqea sodir bo‘lardi?",
+				"Agar har safar kulganingda hayvondan biror tovush chiqarsang, qaysi hayvonning ovozi chiqishini xohlarding?",
+				"Maktabingdagi barcha xonalar bir kunga qiziqarli o‘yin parkiga aylanib qolsa, partang o‘rnida nima bo‘lardi?",
+				"Tasavvur qil, ertaga ertalab uyg‘onsang va bo‘ying uydagilardan baland bo‘lib qolsa, birinchi bo‘lib nima qilarding?",
+				"Bir kun davomida faqat qo‘shiq aytib gapirish qoidasi kiritsak, menga birinchi bo‘lib qanday qo‘shiq aytib berarding?",
+				"Agar vaqtni ortga qaytaradigan tugma bo‘lsa, bugungi kunda sodir bo‘lgan qaysi kulgili momentni takroran ko‘rgan bo‘larding?",
+				"Tasavvur qil, uydagi barcha mebellar tunda harakatlanadi. Ular tungi soat 2 da nima bilan band bo‘lishadi deb o‘ylaysan?",
+				"Agarda o‘zing o‘ylab topgan g‘aroyib bayramni nishonlashimiz kerak bo‘lsa, u qanday bayram bo‘lardi?"
+			]
+		},
+		{
+			"name": "Oilamiz haqida",
+			"emoji": "🏠",
+			"questions": [
+				"Oilamiz bilan birga o‘tkazgan qaysi kunimiz yoki dam olishimiz esingda eng ko‘p saqlanib qolgan?",
+				"Seningcha, bizning oilamizni boshqa oilalardan ajratib turadigan eng o‘zgacha odatimiz yoki an’anamiz nima?",
+				"Uyimizdagi har bir odamni bitta so‘z bilan ta’riflash kerak bo‘lsa, kimga qaysi so‘z mos keladi?",
+				"Bir kuni oilaviy bayram tashkillashtirish senga topshirilsa, dasturga qanday qiziq mashg‘ulotlarni kiritarding?",
+				"Biz birga pishiradigan yoki yeydigan taomlar ichida seni eng ko‘p xursand qiladigani qaysi?",
+				"Seningcha, oilamizda kim eng ko‘p hazillashadi va kimning hazillari eng kulgili chiqadi?",
+				"Oilamiz bilan biror joyga borishimiz kerak bo‘lsa, senga eng ko‘p qayerga borish yoqadi?",
+				"Uyimizdagi qaysi buyum yoki buyumlar senga oilamizning issiq mehrini eslatadi?",
+				"Katta bo‘lganingda, hozirgi oilaviy hayotimizdan qaysi odatni o‘z uyingga ham olib o‘tgan bo‘larding?",
+				"Seningcha, men yoki uydagilar seni birdaniga tushunib yetgan paytlarda o‘zingda nima his qilasan?",
+				"Buvang, buving yoki qarindoshlarimiznikiga borganimizda sen uchun eng qiziq va maroqli narsa nima bo‘ladi?",
+				"Oilamiz bilan birga suratga tushgan rasmlar ichida senga eng yoqadigani qaysi biri va nima uchun?",
+				"Agar oilamiz uchun maxsus gerb yoki belgi chizishimiz kerak bo‘lsa, uning markaziga nimaning rasmini solgan bo‘larding?",
+				"Uyimizdagi qaysi kichik qoida yoki tartibni biroz o‘zgartirishni xohlarding?",
+				"Hammamiz birga bo‘lgan paytimizda qaysi ish senga eng ko‘p yoqadi?"
+			]
+		},
+		{
+			"name": "Orzular va kelajak",
+			"emoji": "🌱",
+			"questions": [
+				"Bir kun kelib mutlaqo yangi narsa yaratish imkoning bo‘lsa, u nima bo‘lardi va odamlarga qanday yordam berardi?",
+				"Kelajakda qaysi kasbni tanlashingdan qat’i nazar, ish joying va xonang qanday ko‘rinishda bo‘lishini tasavvur qilasan?",
+				"Hozircha qilolmaydigan, lekin tezroq o‘rganishni juda xohlayotgan biror mahorat yoki mashg‘uloting bormi?",
+				"Bir kun kelib o‘z uyingni quradigan bo‘lsang, uning ichida qanday g‘aroyib xona bo‘lishini xohlarding?",
+				"Dunyoning biror chekkasiga sayohat qilish imkoni berilsa, birinchi bo‘lib qaysi joyni o‘z ko‘zing bilan ko‘rmoqchi bo‘larding?",
+				"Kelajakda o‘zing uchun qanday katta orzu yoki maqsadni amalga oshirishni xohlaysan?",
+				"Tasavvur qil, 20 yildan keyingi o‘zing bilan uchrashib qolding. Undan birinchi bo‘lib nima haqida so‘ragan bo‘larding?",
+				"Biror mashhur kishi, kashfiyotchi yoki sportchi bilan uchrashish imkoni bo‘lsa, kim bilan suhbatlashishni xohlarding?",
+				"Kelajakda insonlar uchun qanday yangi va foydali texnika yoki buyum kashf etilishini kutayapsan?",
+				"Agar senga super-zamonaviy maktab loyihasini tuzish topshirilsa, u yerdagi darslar qanday o‘tilgan bo‘lardi?",
+				"Katta bo‘lganingda insonlarga yoki tabiatga qanday yordam berishni orzu qilasan?",
+				"Bir kuni o‘zing kitob yoki multfilm yaratsang, uning bosh qahramoni kim bo‘lardi va qanday sarguzashtga uchraydi?",
+				"Agar biror xorijiy tilni bir zumda o‘rganib olish sehrli imkoni bo‘lsa, qaysi tilni tanlarding?",
+				"Kelajakda uyingda qandaydir noodatiy uy hayvoni bo‘lishini xohlarmiding?",
+				"O‘zing o‘ylaganingda, kelajakdagi dunyomiz hozirgidan nimasi bilan farq qiladi deb hisoblaysan?"
+			]
+		},
+		{
+			"name": "Fikrlar va qarashlar",
+			"emoji": "🧠",
+			"questions": [
+				"Seningcha, haqiqiy do‘st qanday sifatlarga ega bo‘lishi kerak?",
+				"Seningcha, adolat degani nima?",
+				"Seningcha, kattalar bolalardan nimani o‘rganishlari mumkin?",
+				"Maktabda yoki ko‘chada adolatsiz holatni ko‘rib qolsang, o‘zingni qanday tutish kerak deb hisoblaysan?",
+				"Seningcha, omad muhimroqmi yoki tirishqoqlik va harakatmi?",
+				"Agarda dunyoda bitta umumiy qoida o‘rnatish imkoni bo‘lsa, qaysi qoidani kiritarding?",
+				"Sen uchun qaysi biri qiziqroq: guruh bo‘lib birga ish bajarishmi yoki hamma narsani mustaqil bajarishmi?",
+				"Seningcha, baxtli bo‘lish uchun insonga ko‘p narsa kerakmi yoki kichik quvonchlar ham yetarlimi?",
+				"Kattalar ba’zan tushunmaydigan, lekin bolalar uchun juda muhim bo‘lgan narsa nima deb o‘ylaysan?",
+				"Biror yangi ishni boshlashdan oldin ikkilanayotgan odamga qanday maslahat bergan bo‘larding?",
+				"Seningcha, internet va telefonlar odamlarni bir-biriga yaqinlashtiradimi yoki uzoqlashtiradimi?",
+				"Yaxshi inson bo‘lish degani sen uchun nimani anglatadi?",
+				"Qaysi holatda inson o‘zini chinakamiga jasur va dovyurak his qilishi mumkin?",
+				"Seningcha, o‘yinda g‘olib bo‘lish muhimmi yoki birga yaxshi vaqt o‘tkazish?",
+				"Kimningdir fikriga qo‘shilmasang, buni unga qanday aytasan?"
+			]
+		},
+		{
+			"name": "Yurakdan suhbat",
+			"emoji": "💭",
+			"questions": [
+				"Kayfiyating unchalik yo‘q bo‘lgan paytlarda, uydagilardan qanday qo‘llab-quvvatlashni kutasan?",
+				"O‘zingni juda g‘ururlangan va o‘zingdan xursand bo‘lgan oxirgi marta qachon his qilding?",
+				"Biror narsadan xavotirlanayotganingda yoki qo‘rqayotganingda ichingdagini kimga aytish senga yengillik beradi?",
+				"Senga kutilmagan yaxshilik qilishsa yoki maqtashsa, ko‘nglingdan nimalar o‘tadi?",
+				"Biror kishi seni eshitmayotgandek tuyulsa, unga o‘zingni tushuntirish uchun nima qilasan?",
+				"Sen uchun eng tinchlantiruvchi va ko‘nglingni yorug‘ qiladigan mashg‘ulot qaysi?",
+				"O‘zingga o‘zing: “Men buni uddaladim!” deb aytgan eng birinchi kichik g‘alabang esingdami?",
+				"Bizning munosabatlarimizda senga eng ko‘p yoqadigan va qadrlaydigan narsa nima?",
+				"Biror yaqin do‘sting bilan arazlashib qolsang, birinchi bo‘lib yarashish uchun nima qilish kerak deb hisoblaysan?",
+				"Qanday paytlarda o‘zingni juda muhim va kerakli inson deb his qilasan?",
+				"Agarda kun davomida biror narsadan juda charchasang, seni tezda tetiklashtiradigan narsa nima?",
+				"Seni quvontirgan, lekin boshqalar payqamagan kichik bir narsa bo‘lganmi?",
+				"Sen uchun “uy” so‘zi qanday tuyg‘u uyg‘otadi?",
+				"Senga kimdir yaxshilik qilganda, buni qanday sezasan?",
+				"Bugun kimgadir yordam berdingmi yoki kimdir senga yordam berdimi?"
+			]
+		}
+	]
+}

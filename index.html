@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Instagram orqali mahsulot yoki xizmatingizni o'zingiz soting</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+		rel="stylesheet">
+	<style>
+		:root {
+			--ink: #1C2321;
+			--paper: #EAE4D3;
+			--paper-2: #E1DAC5;
+			--rust: #C4501D;
+			--teal: #1F4D3E;
+			--clay: #B8ADA0;
+			--text: #23201B;
+			--text-soft: #544E42;
+			--max: 640px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			background: var(--paper);
+			color: var(--text);
+			font-family: 'Manrope', system-ui, sans-serif;
+			font-weight: 400;
+			line-height: 1.55;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		.mono {
+			font-family: 'Space Mono', monospace;
+		}
+
+		img,
+		svg {
+			display: block;
+			max-width: 100%;
+		}
+
+		a {
+			color: inherit;
+		}
+
+		h1,
+		h2,
+		h3 {
+			margin: 0;
+			font-weight: 800;
+			letter-spacing: -0.01em;
+			color: var(--ink);
+		}
+
+		p {
+			margin: 0;
+		}
+
+		.wrap {
+			max-width: var(--max);
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+
+		section {
+			padding: 56px 0;
+		}
+
+		.hairline {
+			border-top: 1px solid var(--clay);
+		}
+
+		/* ---------- top bar ---------- */
+		.topbar {
+			position: sticky;
+			top: 0;
+			z-index: 30;
+			background: var(--paper);
+			border-bottom: 1px solid var(--clay);
+		}
+
+		.topbar .wrap {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}
+
+		.brand {
+			font-weight: 800;
+			font-size: 15px;
+			letter-spacing: -0.01em;
+		}
+
+		.topbar .cta {
+			font-size: 13px;
+			font-weight: 700;
+			padding: 9px 14px;
+			background: var(--ink);
+			color: var(--paper);
+			border-radius: 2px;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		/* ---------- hero ---------- */
+		.hero {
+			padding-top: 44px;
+			padding-bottom: 36px;
+		}
+
+		.hero h1 {
+			font-size: clamp(27px, 7vw, 36px);
+			line-height: 1.2;
+			margin-bottom: 20px;
+		}
+
+		.hero .q {
+			font-size: 16.5px;
+			color: var(--text-soft);
+			max-width: 54ch;
+			margin-bottom: 12px;
+		}
+
+		.hero .q b {
+			color: var(--text);
+			font-weight: 700;
+		}
+
+		.flow-line {
+			font-family: 'Space Mono', monospace;
+			font-size: 13px;
+			color: var(--teal);
+			background: var(--paper-2);
+			padding: 12px 14px;
+			border-radius: 2px;
+			margin: 22px 0 26px;
+			line-height: 1.7;
+		}
+
+		.natijada {
+			margin-bottom: 26px;
+		}
+
+		.natijada-label {
+			font-weight: 700;
+			font-size: 15px;
+			margin-bottom: 10px;
+		}
+
+		.natijada ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.natijada li {
+			font-size: 15px;
+			padding: 10px 0 10px 24px;
+			border-bottom: 1px solid var(--clay);
+			position: relative;
+		}
+
+		.natijada li:first-child {
+			border-top: 1px solid var(--clay);
+		}
+
+		.natijada li::before {
+			content: "—";
+			position: absolute;
+			left: 0;
+			color: var(--rust);
+			font-weight: 700;
+		}
+
+		.natijada li.strong {
+			font-weight: 700;
+			color: var(--ink);
+		}
+
+		.ticket {
+			background: var(--ink);
+			color: var(--paper);
+			border-radius: 3px;
+			padding: 22px 20px 18px;
+			position: relative;
+			margin-top: 28px;
+			background-image:
+				radial-gradient(circle at 0 50%, var(--paper) 8px, transparent 8.5px),
+				radial-gradient(circle at 100% 50%, var(--paper) 8px, transparent 8.5px);
+			background-repeat: no-repeat;
+			background-position: left center, right center;
+		}
+
+		.ticket-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			padding: 8px 0;
+			border-bottom: 1px dashed rgba(234, 228, 212, 0.35);
+		}
+
+		.ticket-row:last-child {
+			border-bottom: none;
+		}
+
+		.ticket-label {
+			font-size: 12.5px;
+			color: rgba(234, 228, 212, 0.65);
+		}
+
+		.ticket-value {
+			font-family: 'Space Mono', monospace;
+			font-size: 16px;
+			font-weight: 700;
+			color: var(--paper);
+		}
+
+		.ticket-value.rust {
+			color: #E8916A;
+		}
+
+		.cta-primary {
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			background: var(--rust);
+			color: var(--paper);
+			font-weight: 700;
+			font-size: 16px;
+			padding: 16px 20px;
+			border-radius: 2px;
+			margin-top: 22px;
+		}
+
+		.cta-sub {
+			text-align: center;
+			font-size: 12.5px;
+			color: var(--text-soft);
+			margin-top: 10px;
+		}
+
+		/* ---------- generic section heading ---------- */
+		.kicker {
+			font-family: 'Space Mono', monospace;
+			font-size: 12.5px;
+			color: var(--rust);
+			margin-bottom: 10px;
+		}
+
+		.h2 {
+			font-size: clamp(22px, 5.5vw, 27px);
+			line-height: 1.28;
+			margin-bottom: 14px;
+		}
+
+		.lead {
+			font-size: 16px;
+			color: var(--text-soft);
+			margin-bottom: 22px;
+			max-width: 56ch;
+		}
+
+		/* ---------- transformation ---------- */
+		.transform {
+			border: 1px solid var(--clay);
+			background: #fff;
+			padding: 22px 20px;
+		}
+
+		.transform-row {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			padding: 14px 0;
+		}
+
+		.transform-row+.transform-row {
+			border-top: 1px dashed var(--clay);
+		}
+
+		.transform-before,
+		.transform-after {
+			font-size: 14.5px;
+			flex: 1;
+		}
+
+		.transform-before {
+			color: var(--text-soft);
+		}
+
+		.transform-after {
+			color: var(--teal);
+			font-weight: 700;
+		}
+
+		.transform-arrow {
+			font-family: 'Space Mono', monospace;
+			color: var(--rust);
+			font-size: 15px;
+			flex-shrink: 0;
+		}
+
+		/* ---------- 3 step process ---------- */
+		.system {
+			margin-top: 8px;
+		}
+
+		.system-item {
+			padding: 20px 0;
+			border-bottom: 1px solid var(--clay);
+			display: grid;
+			grid-template-columns: 34px 1fr;
+			gap: 14px;
+		}
+
+		.system-item:first-child {
+			border-top: 1px solid var(--clay);
+		}
+
+		.system-num {
+			font-family: 'Space Mono', monospace;
+			font-size: 14px;
+			color: var(--rust);
+			font-weight: 700;
+			padding-top: 2px;
+		}
+
+		.system-title {
+			font-size: 17px;
+			font-weight: 700;
+			color: var(--ink);
+		}
+
+		.system-note {
+			margin-top: 18px;
+			padding: 16px 16px;
+			background: var(--paper-2);
+			border-left: 3px solid var(--teal);
+			font-size: 14.5px;
+			color: var(--text);
+		}
+
+		/* ---------- not-a-course process ---------- */
+		.story-p {
+			font-size: 15.5px;
+			color: var(--text-soft);
+			margin-bottom: 14px;
+		}
+
+		/* ---------- kimlar uchun ---------- */
+		.fit ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.fit li {
+			font-size: 15px;
+			padding: 10px 0 10px 22px;
+			position: relative;
+			color: var(--text);
+			border-bottom: 1px solid var(--clay);
+		}
+
+		.fit li:first-child {
+			border-top: 1px solid var(--clay);
+		}
+
+		.fit li::before {
+			content: "✓";
+			position: absolute;
+			left: 0;
+			color: var(--teal);
+			font-weight: 700;
+		}
+
+		.fit-close {
+			margin-top: 16px;
+			font-size: 15.5px;
+			font-weight: 700;
+			color: var(--ink);
+		}
+
+		/* ---------- included ---------- */
+		.incl-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			border-top: 1px solid var(--clay);
+		}
+
+		.incl-list li {
+			padding: 13px 0;
+			border-bottom: 1px solid var(--clay);
+			font-size: 15px;
+			display: flex;
+			justify-content: space-between;
+			gap: 10px;
+		}
+
+		.incl-list .tag {
+			font-family: 'Space Mono', monospace;
+			font-size: 11.5px;
+			color: var(--text-soft);
+			white-space: nowrap;
+		}
+
+		/* ---------- price ---------- */
+		.price-block {
+			background: var(--ink);
+			color: var(--paper);
+			padding: 28px 20px;
+		}
+
+		.price-num {
+			font-family: 'Space Mono', monospace;
+			font-size: clamp(30px, 9vw, 40px);
+			font-weight: 700;
+			color: var(--paper);
+		}
+
+		.price-cur {
+			font-size: 15px;
+			color: var(--clay);
+			margin-left: 6px;
+		}
+
+		.price-facts {
+			margin-top: 16px;
+			padding-top: 16px;
+			border-top: 1px dashed rgba(234, 228, 212, 0.35);
+			font-size: 14.5px;
+			color: rgba(234, 228, 212, 0.9);
+			line-height: 1.9;
+		}
+
+		/* ---------- guarantee ---------- */
+		.guarantee-box {
+			border: 1px solid var(--teal);
+			padding: 20px 18px;
+		}
+
+		.guarantee-box .h3 {
+			font-size: 17px;
+			color: var(--teal);
+			font-weight: 800;
+			margin-bottom: 8px;
+		}
+
+		.guarantee-box p {
+			font-size: 15px;
+			color: var(--text-soft);
+		}
+
+		/* ---------- cohort ---------- */
+		.cohort-stats {
+			display: flex;
+			gap: 0;
+			border-top: 1px solid var(--clay);
+			border-bottom: 1px solid var(--clay);
+			margin: 18px 0;
+		}
+
+		.cohort-stat {
+			flex: 1;
+			padding: 16px 12px;
+			text-align: center;
+		}
+
+		.cohort-stat:first-child {
+			border-right: 1px solid var(--clay);
+		}
+
+		.cohort-stat .num {
+			font-family: 'Space Mono', monospace;
+			font-size: 24px;
+			font-weight: 700;
+			color: var(--rust);
+		}
+
+		.cohort-stat .lab {
+			font-size: 12px;
+			color: var(--text-soft);
+			margin-top: 4px;
+		}
+
+		/* ---------- final cta ---------- */
+		.final {
+			background: var(--ink);
+			color: var(--paper);
+			padding: 52px 0 60px;
+		}
+
+		.final h2 {
+			color: var(--paper);
+			font-size: clamp(23px, 6vw, 28px);
+			margin-bottom: 14px;
+		}
+
+		.final p {
+			color: var(--clay);
+			font-size: 15.5px;
+			margin-bottom: 26px;
+			max-width: 50ch;
+		}
+
+		.final .cta-primary {
+			background: var(--rust);
+		}
+
+		.final .cta-sub {
+			color: var(--clay);
+		}
+
+		footer {
+			padding: 24px 0 40px;
+			text-align: center;
+			font-size: 12.5px;
+			color: var(--text-soft);
+		}
+
+		/* ---------- sticky mobile cta ---------- */
+		.sticky-cta {
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 40;
+			background: var(--ink);
+			border-top: 1px solid var(--clay);
+			padding: 12px 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 12px;
+			transform: translateY(110%);
+			transition: transform 0.3s ease;
+		}
+
+		.sticky-cta.show {
+			transform: translateY(0);
+		}
+
+		.sticky-cta .info {
+			color: var(--paper);
+			font-size: 13px;
+			line-height: 1.3;
+		}
+
+		.sticky-cta .info b {
+			font-family: 'Space Mono', monospace;
+			color: #E8916A;
+			display: block;
+			font-size: 14px;
+		}
+
+		.sticky-cta a {
+			background: var(--rust);
+			color: var(--paper);
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 14px;
+			padding: 11px 16px;
+			border-radius: 2px;
+			white-space: nowrap;
+		}
+
+		@media (min-width:640px) {
+			section {
+				padding: 72px 0;
+			}
+
+			.hero {
+				padding-top: 64px;
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			html {
+				scroll-behavior: auto;
+			}
+
+			.sticky-cta {
+				transition: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="topbar">
+		<div class="wrap">
+			<span class="brand">Instagramda Sotuv</span>
+			<a href="#royxat" class="cta">Ro'yxatdan o'tish</a>
+		</div>
+	</div>
+
+	<!-- HERO -->
+	<section class="hero">
+		<div class="wrap">
+			<h1>Target reklama orqali Instagramda o‘z mahsulot yoki xizmatingizni sotishni o‘rganing</h1>
+
+			<p class="q">Instagramda biznesingiz bor, lekin target reklama yoqishni bilmaysizmi?</p>
+			<p class="q">Yoki target reklama yoqib ko'rgansiz, pul sarflagansiz-u, lekin xizmatingiz yoki mahsulotingizni sotolmayapsizmi?</p>
+			<p class="q"><b>30 kun davomida target reklama orqali sotuv qilishni amalda o‘rganasiz:</b></p>
+
+			<div class="flow-line">Bozoringizni tushunasiz → kuchli taklif tayyorlaysiz → reklama berasiz → natijani ko‘rasiz → nima ishlamayotganini aniqlaysiz → kamchilikni to‘g‘rilaysiz → yana sinaysiz → sizga ishlaydigan usulni aniqlashni o‘rganasiz.</div>
+
+			<div class="natijada">
+				<div class="natijada-label">Natijada:</div>
+				<ul>
+					<li>Instagramda target yoqishni 0 dan o'zingiz bilasiz</li>
+					<li>Reklamani qanday qilib kerakli odamlarga ko‘rsatishni tushunasiz</li>
+					<li>Sotuv bo‘lmasa, muammo nimada ekanini aniqlay olasiz</li>
+					<li>Reklamadan qiziqib yozgan odam bilan to‘g‘ri gaplashib, sotuv qilishni bilasiz</li>
+					<li class="strong">Eng muhimi, reklamaga pul sarflab, nima uchun natija chiqmayotganini bilmayo'tirmaysiz</li>
+				</ul>
+			</div>
+
+			<div class="ticket">
+				<div class="ticket-row">
+					<span class="ticket-label">Davomiyligi</span>
+					<span class="ticket-value">30 kun</span>
+				</div>
+				<div class="ticket-row">
+					<span class="ticket-label">Narxi</span>
+					<span class="ticket-value rust">390 000 so'm — bir martalik</span>
+				</div>
+				<div class="ticket-row">
+					<span class="ticket-label">Birinchi guruh</span>
+					<span class="ticket-value rust">10 ta o'rin</span>
+				</div>
+				<div class="ticket-row">
+					<span class="ticket-label">Ro'yxatga olish</span>
+					<span class="ticket-value">15-sentabrgacha</span>
+				</div>
+			</div>
+
+			<a href="#royxat" class="cta-primary">O'z o'rningizni band qilish</a>
+			<p class="cta-sub">10 ta o'rin. 100% pulni qaytarish kafolati bilan.</p>
+		</div>
+	</section>
+
+	<!-- TRANSFORMATION -->
+	<section class="hairline" id="holat">
+		<div class="wrap">
+			<div class="kicker">Sizning hozirgi holatingiz</div>
+			<h2 class="h2">30 kun ichida qayerdan qayerga borasiz</h2>
+			<div class="transform">
+				<div class="transform-row">
+					<div class="transform-before">"Targetni qanday yoqishni bilmayman."</div>
+					<div class="transform-arrow">→</div>
+					<div class="transform-after">"O'zim target reklama yoqalaman."</div>
+				</div>
+				<div class="transform-row">
+					<div class="transform-before">"Targetga pul sarflayapman, lekin sotuv yo'q."</div>
+					<div class="transform-arrow">→</div>
+					<div class="transform-after">"Nima ishlamayotganini tushunib, reklamani yaxshilay olaman."</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- HOW -->
+	<section class="hairline" id="tizim">
+		<div class="wrap">
+			<div class="kicker">Bu qanday amalga oshadi?</div>
+			<h2 class="h2">Sizga shunchaki tugmani bosishni ko'rsatmayman</h2>
+			<p class="lead">Chunki target reklama to'g'ri berilgan bo'lsa ham, sotuv bo'lmasligi mumkin. Shuning uchun o'z
+				biznesingizda uchta jarayonni birgalikda amalda bajarasiz:</p>
+
+			<div class="system">
+				<div class="system-item">
+					<span class="system-num">01</span>
+					<div class="system-title">1. Kuchli taklif berish</div>
+				</div>
+				<p>Odamga mahsulot yoki xizmatingizni sotib olish uchun sabab berish.</p>
+				<div class="system-item">
+					<span class="system-num">02</span>
+					<div class="system-title">Target reklama orqali kerakli odamlarga chiqish</div>
+				</div>
+				<p>Mahsulot yoki xizmatingizga qiziqishi mumkin bo‘lgan odamlarni topish.</p>
+				<div class="system-item">
+					<span class="system-num">03</span>
+					<div class="system-title">Qiziqqan odamni xaridorga aylantirish</div>
+				</div>
+				<p>Sizga yozgan odam bilan to‘g‘ri gaplashib, sotuv qilish.</p>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- NOT A COURSE -->
+	<section class="hairline" id="jarayon">
+		<div class="wrap">
+			<div class="kicker">Bu kurs emas</div>
+			<h2 class="h2">O'z biznesingizda natija qilish jarayoni</h2>
+			<p class="story-p">Siz shunchaki darslarni ko'rib o'tirmaysiz. Har bir narsani o'z mahsulotingiz yoki
+				xizmatingizda bajarasiz.</p>
+			<div class="flow-line">O'rganasiz → bajarasiz → target reklama berasiz → natijani ko'rasiz → xatoni topasiz →
+				yaxshilaysiz.</div>
+			<p class="story-p">30 kun davomida target reklamani shunchaki yoqishni emas, undan foydalanib o‘z mahsulotingiz yoki xizmatingizni sotishni o‘rganasiz.</p>
+		</div>
+	</section>
+
+	<!-- WHO FOR -->
+	<section class="hairline" id="kimga">
+		<div class="wrap">
+			<div class="kicker">Kimlar uchun</div>
+			<h2 class="h2">Agar siz shunday bo'lsangiz</h2>
+			<div class="fit">
+				<ul>
+					<li>Instagramda mahsulot yoki xizmat sotsangiz</li>
+					<li>Target reklama yoqishni umuman bilmasangiz</li>
+					<li>Target reklama yoqib ko'rib, pulingizni natijasiz sarflagan bo'lsangiz</li>
+					<li>Reklama uchun katta pul ajrata olmasangiz</li>
+					<li>Hozircha targetolog yollashni xohlamasangiz</li>
+					<li>"Reklamaga pul berdim, lekin nima bo'layotganini tushunmayapman" desangiz</li>
+				</ul>
+			</div>
+			<p class="fit-close">— bu siz uchun.</p>
+		</div>
+	</section>
+
+	<!-- INCLUDED -->
+	<section class="hairline" id="tarkib">
+		<div class="wrap">
+			<div class="kicker">Tarkibi</div>
+			<h2 class="h2">Seminarga nima kiradi</h2>
+			<ul class="incl-list">
+				<li><span>30 kunlik amaliy seminar</span><span class="tag">30 KUN</span></li>
+				<li><span>Har bir bosqich bo'yicha amaliy topshiriqlar</span></li>
+				<li><span>Target reklama berish jarayonida yo'naltirish va yordam</span></li>
+				<li><span>Ishtirokchilar guruhi / hamjamiyat</span></li>
+				<li><span>Savol-javob</span></li>
+				<li><span>O'z target reklamangizni amalda ishga tushirish</span></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- PRICE -->
+	<section id="narx">
+		<div class="wrap">
+			<div class="kicker">Narx</div>
+			<h2 class="h2">390 000 so'm</h2>
+			<div class="price-block">
+				<span class="price-num">390 000</span><span class="price-cur">so'm</span>
+				<div class="price-facts">
+					Bir martalik to'lov.<br>
+					30 kun.<br>
+					10 ta o'rin.<br>
+					100% pulni qaytarish kafolati.
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- GUARANTEE -->
+	<section class="hairline" id="kafolat">
+		<div class="wrap">
+			<div class="kicker">Kafolat</div>
+			<div class="guarantee-box">
+				<div class="h3">100% pulni qaytarish kafolati</div>
+				<p>Agar seminarni to'liq bajarsangiz va haqiqatan ham kutgan foydani olmadim desangiz, pulingiz to'liq
+					qaytariladi.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- COHORT -->
+	<section class="hairline" id="guruh">
+		<div class="wrap">
+			<div class="kicker">Birinchi guruh</div>
+			<h2 class="h2">Nega faqat 10 ta o'rin</h2>
+			<p class="lead">Bu — ommaviy kurs emas, amaliy seminar. Har bir ishtirokchi o'z biznesi ustida ishlaydi va
+				e'tibor talab qiladi, shuning uchun birinchi guruh ataylab kichik saqlanmoqda.</p>
+			<div class="cohort-stats">
+				<div class="cohort-stat">
+					<div class="num">10</div>
+					<div class="lab">o'rin</div>
+				</div>
+				<div class="cohort-stat">
+					<div class="num">15.09</div>
+					<div class="lab">ro'yxat yopiladi</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FINAL CTA -->
+	<section class="final" id="royxat">
+		<div class="wrap">
+			<h2>Shunchaki reklama berishni emas, sotishni o‘rganasiz</h2>
+			<p>Undan foydalanib mahsulotingiz yoki xizmatingizni sotishni o'rganing. 390 000 so'm, bir martalik to'lov, 30
+				kun, 10 ta o'rin, 100% pulni qaytarish kafolati bilan.</p>
+			<a href="#" class="cta-primary">O'z o'rningizni band qilish</a>
+		</div>
+	</section>
+
+	<footer>
+		<div class="wrap">Instagramda Sotuv — 30 kunlik amaliy seminar</div>
+	</footer>
+
+	<div class="sticky-cta" id="stickyCta">
+		<div class="info">Instagramda Sotuv<b>390 000 so'm · 10 o'rin</b></div>
+		<a href="#royxat">Band qilish</a>
+	</div>
+
+	<script>
+		(function () {
+			var sticky = document.getElementById('stickyCta');
+			var hero = document.querySelector('.hero');
+			var finalCta = document.getElementById('royxat');
+			if (!sticky || !hero) return;
+			var showAfter = hero.offsetTop + hero.offsetHeight;
+			function onScroll() {
+				var y = window.scrollY || window.pageYOffset;
+				var finalTop = finalCta.offsetTop;
+				var nearFinal = y + window.innerHeight > finalTop + 40;
+				if (y > showAfter && !nearFinal) {
+					sticky.classList.add('show');
+				} else {
+					sticky.classList.remove('show');
+				}
+			}
+			window.addEventListener('scroll', onScroll, { passive: true });
+			onScroll();
+		})();
+	</script>
+
+</body>
+
+</html>

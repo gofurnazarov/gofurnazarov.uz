@@ -1,0 +1,446 @@
+PARENT + CHILDREN CONVERSATION PRODUCT — LOCKED V1 PLAN
+=============================================================
+
+Status: READY FOR EXECUTION
+Date: 8 September 2026
+
+1. PRODUCT TARGET
+-----------------
+Customer:
+- Parents with children aged 6–12.
+
+Child age constraint:
+- Questions must be simple enough for a 6-year-old to understand.
+- Questions must remain interesting enough for a 12-year-old.
+- We will NOT split the age range for V1.
+- Later, actual customer data can determine whether separate packs are needed
+  (for example 6–8, 9–12, or 13–17).
+
+2. CORE PROBLEM
+---------------
+The parent wants to spend meaningful time with their child but often does not
+know what to talk about.
+
+The product removes the need for the parent to think of conversation topics.
+
+Core job:
+"Help parents have meaningful conversations with their children without
+having to think of what to talk about."
+
+3. DESIRED OUTCOME
+------------------
+Emotional outcome:
+"Men farzandimni yaxshiroq tushuna boshladim."
+
+Behavioral outcome:
+"Har kuni 10–15 daqiqa telefonni chetga qo‘yib, farzandim bilan gaplashdim."
+
+Core product promise:
+"Har kuni 10 daqiqalik suhbat.
+Farzandingizni yaxshiroq tanish uchun 100 ta savol."
+
+Important:
+- The product is NOT positioned as therapy.
+- It is NOT positioned as parenting education.
+- It is NOT positioned as psychological assessment.
+- It is NOT simply "100 interesting questions."
+
+We are selling:
+DISCOVERY + CONNECTION + FUN.
+
+4. PRODUCT PHILOSOPHY
+---------------------
+"Don't interview your child. Have a conversation with them."
+
+The product should help create a two-way interaction between parent and child,
+rather than making the parent mechanically ask 100 questions.
+
+Some questions should naturally invite the parent to answer too.
+
+Examples of useful structures:
+- Parent answers first, then child.
+- Child answers, then parent shares their own experience.
+- A question naturally creates a follow-up question.
+
+5. PRODUCT FORMAT
+-----------------
+Format:
+- Digital only.
+- Interactive Telegram Web App.
+
+V1 should remain extremely simple.
+
+Core experience:
+OPEN → GET QUESTION → TALK → NEXT QUESTION
+
+The conversation happens between the parent and child, not inside the app.
+
+Avoid unnecessary V1 features:
+- Complex accounts
+- Profiles
+- AI chat
+- Scores
+- Points
+- Leaderboards
+- Excessive gamification
+- Complicated progress systems
+
+Optional UX:
+- "Bugungi savol"
+- Random question
+- Category selection
+
+Categories are primarily an editorial/content structure. The product should
+still feel like a simple conversation experience rather than a questionnaire
+database.
+
+6. FIRST PACK
+-------------
+First product:
+100 parent-child conversation questions.
+
+Initial editorial categories:
+
+1. ❤️ Bir-birimizni yaxshiroq bilamiz — 20
+2. 😂 Kulamiz va tasavvur qilamiz — 20
+3. 🏠 Oilamiz haqida — 15
+4. 🌱 Orzular va kelajak — 15
+5. 🧠 Fikrlar va qarashlar — 15
+6. 💭 Yurakdan suhbat — 15
+
+TOTAL: 100
+
+Important:
+These categories organize the content. They do not mean every question has
+to fit only one emotional function.
+
+7. QUESTION PURPOSES
+--------------------
+Every question should accomplish at least one of these:
+
+❤️ CONNECTION
+Create warmth and emotional closeness.
+
+🧠 UNDERSTANDING
+Reveal what the child thinks, feels, notices, or values.
+
+🌱 SELF-DISCOVERY
+Help the child articulate personality, preferences, values, or identity.
+
+🚀 DREAMS & IMAGINATION
+Open up aspirations, creativity, and hypothetical thinking.
+
+😂 FUN
+Make the experience enjoyable and playful.
+
+👨‍👩‍👧 FAMILY
+Create conversation around family, home, memories, and relationships.
+
+💭 DEEPER CONVERSATION
+Occasionally move beyond surface-level conversation without becoming
+therapeutic or emotionally unsafe.
+
+The collection must balance these purposes.
+
+8. QUESTION-WRITING RULES
+-------------------------
+RULE 1 — Age appropriate
+Every question must be understandable to a 6-year-old while remaining
+interesting to a 12-year-old.
+
+RULE 2 — Open-ended
+Prefer questions that invite explanation, stories, opinions, imagination,
+feelings, or discovery.
+
+Avoid yes/no questions unless there is a very strong reason.
+
+RULE 3 — No obvious correct answer
+The question should not feel like a test or force a socially desirable answer.
+
+RULE 4 — Trigger meaningful conversation
+A strong question should trigger at least one of:
+- Story
+- Imagination
+- Opinion
+- Feeling
+- Discovery
+
+RULE 5 — High follow-up potential
+A good answer should naturally make the parent want to ask:
+"Why?", "How?", "What happened next?", or another related question.
+
+The question should not kill the conversation.
+
+RULE 6 — Do not interrogate
+The experience must feel like a game/conversation, not an interview or
+parenting homework.
+
+Therefore, mix:
+- Easy
+- Funny
+- Curious
+- Personal
+- Imaginative
+- Meaningful
+- Light
+- Deeper
+
+Do not arrange the entire pack as a steady escalation into increasingly
+serious questions.
+
+RULE 7 — Include the parent
+Some questions should deliberately create two-way sharing.
+
+The parent should sometimes answer first or answer after the child.
+
+RULE 8 — No forced vulnerability
+Do not pressure children to reveal trauma, private information, serious fears,
+family conflict, or painful experiences.
+
+Avoid questions such as:
+- "Who hurt you the most?"
+- "What do you hate about your parents?"
+- "What is your biggest fear?"
+
+Prefer emotionally meaningful but safe alternatives.
+
+RULE 9 — Natural Uzbek
+Questions must sound like something an Uzbek parent would naturally say to
+their child.
+
+Do NOT simply translate Western conversation-card questions.
+
+Use familiar contexts when appropriate:
+- Oila
+- Maktab
+- Do'stlar
+- Buvi/buva
+- Mahalla
+- Ta'til
+- Bayramlar
+- Uy
+- Kundalik hayot
+- Orzular
+- Kelajak
+
+But avoid making the questions culturally narrow or boring.
+
+RULE 10 — No repetition
+Do not create multiple versions of the same question.
+
+For example, these are effectively duplicates:
+- "Katta bo'lganingda kim bo'lmoqchisan?"
+- "Kelajakda nima qilmoqchisan?"
+- "Qaysi kasbni tanlaysan?"
+- "Orzu qilgan kasbing qaysi?"
+
+Each final question must have a distinct conversational purpose.
+
+RULE 11 — Parent reaction test
+Ask:
+"If my child gave me an unexpected answer, would I genuinely want to hear it?"
+
+Prefer questions that can reveal something the parent may not already know.
+
+Avoid low-discovery questions unless they serve an important fun purpose.
+
+RULE 12 — Natural difficulty/depth curve
+The collection should move naturally between light and meaningful conversation.
+
+Do not make the entire pack deep.
+Do not make the entire pack silly.
+
+The product should feel:
+FUN FIRST, MEANINGFUL SECOND.
+
+9. WHAT WE ARE NOT DOING
+------------------------
+We explicitly removed the "Instagram test."
+
+A question does NOT need to be good Instagram content to belong in the
+product.
+
+Marketing criteria and product-quality criteria are separate.
+
+A question's only job is to make the conversation/product better.
+
+10. QUALITY STANDARD
+--------------------
+Every question should ideally pass all of these:
+
+- Understandable to a 6-year-old
+- Interesting to a 12-year-old
+- Open-ended
+- No obvious correct answer
+- Produces story/opinion/feeling/imagination/discovery
+- Has natural follow-up potential
+- Parent genuinely wants the answer
+- Does not feel like interrogation
+- Natural Uzbek
+- Not redundant
+- Appropriate for a parent-child setting
+- Safe and non-invasive
+- Distinct conversational purpose
+
+If a question fails multiple criteria, DELETE IT.
+
+Do not keep weak questions just to reach 100.
+
+11. CONTENT PRODUCTION PROCESS
+------------------------------
+Do NOT immediately generate exactly 100 questions and accept them.
+
+Step 1:
+Generate approximately 140–160 candidate questions.
+
+Step 2:
+Organize them according to the six editorial categories.
+
+Step 3:
+Perform a ruthless editorial pass.
+
+Delete questions that are:
+- Generic
+- Repetitive
+- Childish
+- Too abstract
+- Too difficult
+- Too obvious
+- Too emotionally invasive
+- Boring
+- Unnatural in Uzbek
+- Unlikely to create discussion
+- Merely variations of stronger questions
+
+Step 4:
+Replace deleted questions with stronger candidates.
+
+Step 5:
+Review all surviving questions TOGETHER, not individually.
+
+This is essential because repetition is easiest to detect at collection level.
+
+Step 6:
+Finalize the strongest 100.
+
+If only 83 questions are genuinely excellent, do not fill the remaining
+17 with garbage. Quality comes before the number 100.
+
+12. CONTENT ARCHITECTURE
+------------------------
+Target balance:
+
+30% — Fun & imagination
+25% — Getting to know the child
+20% — Family & relationship
+15% — Dreams & opinions
+10% — Deeper emotional conversation
+
+This is a guideline, not a mathematical prison.
+
+The final collection should feel varied rather than mechanically balanced.
+
+13. LANGUAGE / STYLE
+--------------------
+Language:
+- Uzbek
+- Natural conversational Uzbek
+- Warm
+- Simple
+- Playful
+- Human
+
+Avoid:
+- Corporate language
+- Psychology jargon
+- Educational jargon
+- Artificial motivational language
+- Overly poetic wording
+- Adult vocabulary
+- Formal textbook phrasing
+
+The parent should be able to read the question aloud naturally.
+
+14. V1 VALIDATION
+-----------------
+We are not going to spend weeks researching before testing.
+
+Execution philosophy:
+BUILD → SELL → LEARN
+
+Initial V1:
+- 100 questions
+- Simple Telegram Web App
+- Digital-only
+- Minimal UI
+- Simple payment flow
+
+Initial acquisition test:
+- Approximately $3 Instagram test
+- Measure actual purchases, not merely clicks
+
+The $3 test can tell us whether there is an initial willingness to pay.
+It cannot prove scalability.
+
+Interpretation:
+- No clicks → creative/targeting problem
+- Clicks but no checkout → offer/product presentation problem
+- Checkout but no payment → price/trust/payment friction problem
+- Purchases → promising signal; iterate and test again
+
+Do not make major conclusions from one tiny test.
+
+15. INITIAL PRODUCT STRATEGY
+----------------------------
+We are choosing Parent + Children as the first niche because:
+
+- The underlying problem is clear.
+- Parents have a strong emotional reason to spend time with their children.
+- The mechanism is simple.
+- The product is inexpensive to create.
+- Digital delivery has almost zero marginal fulfillment cost.
+- Telegram Web App is a natural interactive format.
+- The concept can later expand into additional relationship niches.
+
+Potential future packs:
+- Couples
+- Family
+- Mother + daughter
+- Father + son
+- Friends
+- Teenagers
+- Other relationship/conversation formats
+
+But NONE of these are part of V1.
+
+Focus on proving the first product.
+
+16. EXECUTION PRINCIPLE
+-----------------------
+Stop planning once the product definition is sufficiently clear.
+
+We are now ready to execute.
+
+Next task:
+CREATE THE FIRST CANDIDATE QUESTION BATCH.
+
+Do not build extra features.
+Do not expand the niche.
+Do not create branding rabbit holes.
+Do not over-research.
+
+First prove that the questions themselves are good enough to become a product.
+
+CORE THESIS
+-----------
+We are not selling 100 questions.
+
+We are selling:
+"A simple reason for a parent and child to stop, talk, laugh, share,
+and discover something about each other."
+
+The product succeeds when a parent occasionally thinks:
+
+"Men farzandim haqida buni bilmas ekanman."
+
+If the questions repeatedly create that feeling, the product has real value.
