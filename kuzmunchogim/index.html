@@ -19,7 +19,7 @@
             --badge-orange: #E6825B;
             --badge-bg-light: #F4ECE3;
             --border-radius-card: 24px;
-            --border-radius-inner: 16px;
+            --border-radius-mini-card: 18px;
             --border-radius-pill: 50px;
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
             --font-handwritten: 'Caveat', cursive;
@@ -40,7 +40,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: s0;
+            padding: 0;
         }
 
         .app-shell {
@@ -62,23 +62,23 @@
             justify-content: space-between;
             align-items: center;
             padding: 4px 4px 0 4px;
-				margin-bottom: 4px;
-				position: relative;
-				z-index: 1;
+            margin-bottom: 4px;
+            position: relative;
+            z-index: 1;
         }
 
-		  .circle-pattern {
-				position: absolute;
-				top: -75px;
-				right: -75px;
-				width: 150px;
-				height: 150px;
-				border-radius: 50%;
-				border: 15px solid #f5e2d0;
-				outline: 15px solid #f5e2d0;
-				outline-offset: 15px;
-				z-index: 0;
-		  }
+        .circle-pattern {
+            position: absolute;
+            top: -75px;
+            right: -75px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 15px solid #f5e2d0;
+            outline: 15px solid #f5e2d0;
+            outline-offset: 15px;
+            z-index: 0;
+        }
 
         .header-left {
             display: flex;
@@ -114,25 +114,18 @@
             margin-top: 2px;
         }
 
-        .nazar-icon {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #0F1C3F 0%, #0F1C3F 25%, #4295D6 26%, #4295D6 50%, #FFFFFF 51%, #FFFFFF 72%, #0E3269 73%);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
         /* HERO FEATURED PRODUCT CARD */
-        .hero-card {
+        .product-card {
             background-color: var(--card-bg);
             border-radius: var(--border-radius-card);
             display: flex;
             flex-direction: column;
             gap: 14px;
-            box-shadow: 0 4px 20px rgba(74, 43, 32, 0.04);
+            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+            overflow: hidden;
         }
 
-        .hero-banner {
+        .product-banner {
             width: 100%;
             background: linear-gradient(135deg, #FBEFE2 0%, #F5DEC9 100%);
             border-top-left-radius: var(--border-radius-card);
@@ -144,147 +137,15 @@
             justify-content: center;
         }
 
-		  .hero-banner img  {
-			width: 100%;
-			aspect-ratio: 1 / 1;
-		  }
-
-        .hero-banner-bg-graphics {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-        }
-
-        .bg-shape-blue-left {
-            position: absolute;
-            left: -10px;
-            bottom: 30px;
-            width: 70px;
-            height: 120px;
-            background-color: #5B92BA;
-            border-radius: 0 50px 50px 0;
-            opacity: 0.85;
-        }
-
-        .bg-shape-blue-right {
-            position: absolute;
-            right: -20px;
-            bottom: 10px;
-            width: 90px;
-            height: 80px;
-            background-color: #5B92BA;
-            border-radius: 50px 0 0 50px;
-            opacity: 0.85;
-        }
-
-        .bg-plant-leaf {
-            position: absolute;
-            left: 20px;
-            bottom: 35px;
-            width: 40px;
-            height: 70px;
-            background-color: #2D5843;
-            border-radius: 50px 0 50px 0;
-            transform: rotate(-15deg);
-        }
-
-        .badge-mavjud {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background-color: var(--badge-orange);
-            color: #FFFFFF;
-            font-size: 0.68rem;
-            font-weight: 800;
-            padding: 5px 12px;
-            border-radius: var(--border-radius-pill);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            z-index: 5;
-        }
-
-        /* Box 3D Artwork Simulation */
-        .box-mockup {
-            width: 145px;
-            height: 195px;
-            background: #FFFFFF;
-            border-radius: 8px;
-            box-shadow: -12px 12px 25px rgba(59, 34, 25, 0.25);
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 12px 8px;
-            text-align: center;
-            border-left: 14px solid #E67A53;
-            transform: perspective(600px) rotateY(-12deg) rotateX(4deg);
-        }
-
-        .box-title {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: #123B5D;
-            line-height: 1.1;
-            margin-top: 4px;
-        }
-
-        .box-subtitle {
-            font-size: 0.58rem;
-            color: #3B2219;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-
-        .box-illustration {
-            width: 85px;
-            height: 85px;
-            margin-top: 10px;
-            border-radius: 50%;
+        .product-banner img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
             object-fit: cover;
+            display: block;
         }
 
-        .box-age-pill {
-            position: absolute;
-            bottom: 10px;
-            right: 8px;
-            background-color: var(--badge-bg-light);
-            color: var(--text-dark);
-            font-size: 0.55rem;
-            font-weight: 700;
-            padding: 3px 6px;
-            border-radius: 8px;
-        }
-
-        /* Handwritten Callout Text */
-        .handwritten-callout {
-            position: absolute;
-            right: 14px;
-            top: 35px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 3;
-        }
-
-        .handwritten-text {
-            font-family: var(--font-handwritten);
-            font-size: 1.35rem;
-            color: var(--text-dark);
-            line-height: 1.05;
-            text-align: center;
-            transform: rotate(4deg);
-        }
-
-        .heart-icon {
-            font-size: 1.2rem;
-            color: var(--text-dark);
-            margin-top: 4px;
-        }
-
-        /* Hero Product Info */
-        .hero-details {
-            padding: 0 12px 12px;
+        .product-details {
+            padding: 0 14px 14px;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -297,10 +158,17 @@
             letter-spacing: -0.02em;
         }
 
+        .product-description {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
         .product-meta-row {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
             color: var(--text-muted);
             font-size: 0.8rem;
             font-weight: 600;
@@ -373,135 +241,162 @@
             letter-spacing: -0.01em;
         }
 
-        .collection-sub {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
+        /* 2-COLUMN SCALED MINI HERO CARDS */
         .grid-2col {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .product-mini-card {
+        .mini-product-card {
             background-color: var(--card-bg);
-            border-radius: 18px;
-            padding: 12px;
+            border-radius: var(--border-radius-mini-card);
             display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 2px 10px rgba(74, 43, 32, 0.03);
+            flex-direction: column;
+            box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
         }
 
-        .product-mini-card.full-width {
-            grid-column: span 2;
-        }
-
-        /* Mini Box Graphics */
-        .mini-box {
-            width: 38px;
-            height: 55px;
-            border-radius: 4px;
-            flex-shrink: 0;
+        .mini-product-banner {
+            width: 100%;
+            position: relative;
+            background: linear-gradient(135deg, #FBEFE2 0%, #F5DEC9 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: -3px 3px 8px rgba(0,0,0,0.1);
-            position: relative;
         }
 
-        .mini-box-red {
-            background-color: #F8B5B1;
-            border-left: 4px solid #E58680;
-        }
-
-        .mini-box-blue {
-            background-color: #92C5E9;
-            border-left: 4px solid #5A9ECB;
-        }
-
-        .mini-box-green {
-            background-color: #A3D9C9;
-            border-left: 4px solid #62B8A2;
-        }
-
-        .mini-box-purple {
-            background-color: #CBBBEA;
-            border-left: 4px solid #9B82D4;
-        }
-
-        .mini-box-yellow {
-            background-color: #F2D283;
-            border-left: 4px solid #DFB243;
-        }
-
-        .mini-icon {
-            font-size: 1rem;
-        }
-
-        .mini-info {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .mini-title {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            line-height: 1.1;
-				margin-bottom: 4px;
+        .mini-product-banner img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
         }
 
         .badge-tez-orada {
-            background-color: var(--badge-bg-light);
-            color: var(--text-light-badge);
-            font-size: 0.62rem;
-            font-weight: 300;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background-color: rgba(255, 255, 255, 0.92);
+            color: var(--text-dark);
+            font-size: 0.6rem;
+            font-weight: 700;
             padding: 3px 8px;
             border-radius: var(--border-radius-pill);
-            align-self: flex-start;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .mini-product-details {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .mini-product-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+        }
+
+        .mini-product-description {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.2;
+				margin-bottom: 4px;
+				text-align: justify;
+        }
+
+        .mini-product-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .mini-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .mini-meta-icon {
+            width: 12px;
+            height: 12px;
+            stroke: var(--text-muted);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .mini-product-price {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            margin-top: 2px;
+        }
+
+        .mini-btn-sotib-olish {
+            background-color: var(--btn-brown);
+            color: #FFFFFF;
+            font-family: var(--font-main);
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 100%;
+            padding: 9px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-top: auto;
+            opacity: 0.7;
+        }
+
+        .mini-btn-sotib-olish.disabled {
+            background-color: var(--badge-bg-light);
+            color: var(--text-light-badge);
+            cursor: not-allowed;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
     <div class="app-shell">
-
         <!-- HEADER -->
         <header class="app-header">
             <div class="header-left">
-                <img src="./brand/logo.png" alt="Ko'zmunchoğim" class="header-avatar">
+                <img src="./assets/mehr-sandigi.png" alt="Ko'zmunchoğim" class="header-avatar">
                 <div class="header-info">
                     <h1 class="brand-name">Ko'zmunchoğim</h1>
                     <span class="brand-motto">Yaqinlaringiz bilan yaqinroq bo'lish uchun.</span>
                 </div>
             </div>
-            <div class="nazar-icon"></div>
         </header>
 
-		  <div class="circle-pattern"></div>
+        <div class="circle-pattern"></div>
 
         <!-- HERO FEATURED PRODUCT -->
-        <main class="hero-card">
-            <div class="hero-banner">
-                <span class="badge-mavjud">Mavjud</span>
-               <img src="./brand/cover.png" />
+        <main class="product-card">
+            <div class="product-banner">
+               <img src="./assets/mehr-sandigi.png" />
             </div>
 
             <!-- Product Specs & CTA -->
-            <div class="hero-details">
-                <h2 class="product-title">Ota-ona & Farzand</h2>
-                
+            <div class="product-details">
+                <h2 class="product-title">Mehr sandig'i</h2>
+                <div class="product-description">Farzandingiz bilan yaqinroq bo‘lish va birga mazmunli vaqt o‘tkazish uchun 100 ta qiziqarli savol</div>
                 <div class="product-meta-row">
-                    <div class="meta-item">
-                        <svg class="meta-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                        <span>100 ta qiziqarli savol</span>
-                    </div>
-                    <span>|</span>
                     <div class="meta-item">
                         <svg class="meta-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                         <span>6–12 yosh</span>
@@ -520,62 +415,86 @@
         <section class="collection-section">
             <div class="collection-header">
                 <h3 class="collection-title">Ko'zmunchoğim o'yinlari</h3>
-                <!-- <a href="#" class="collection-sub">Tez orada yangi o'yinlar &rarr;</a> -->
             </div>
 
             <div class="grid-2col">
                 <!-- Er-xotin -->
-                <div class="product-mini-card">
-                    <div class="mini-box mini-box-red">
-                        <span class="mini-icon">♡</span>
-                    </div>
-                    <div class="mini-info">
-                        <div class="mini-title">Er-xotin</div>
+                <div class="mini-product-card">
+                    <div class="mini-product-banner">
                         <span class="badge-tez-orada">Tez orada</span>
+                        <img src="./assets/bu-yoki-u.png" alt="Er-xotin" onerror="this.style.display='none'">
+                    </div>
+                    <div class="mini-product-details">
+                        <h4 class="mini-product-title">Bu yoki u?</h4>
+                        <div class="mini-product-description">Oila bilan kulish, bahslashish va birga maroqli vaqt o‘tkazish uchun qiziqarli tanlovlar.</div>
+                        <!-- <div class="mini-product-meta-row">
+                            <div class="mini-meta-item">
+                                <svg class="mini-meta-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                <span>100 savol</span>
+                            </div>
+                        </div> -->
+                        <!-- <div class="mini-product-price">-- --- so'm</div> -->
+                        <button class="mini-btn-sotib-olish disabled" type="button" disabled>Tez orada</button>
                     </div>
                 </div>
 
                 <!-- Butun oila -->
-                <div class="product-mini-card">
-                    <div class="mini-box mini-box-blue">
-                        <span class="mini-icon">👨‍👩‍👧‍👦</span>
-                    </div>
-                    <div class="mini-info">
-                        <div class="mini-title">Butun oila</div>
+                <div class="mini-product-card">
+                    <div class="mini-product-banner">
                         <span class="badge-tez-orada">Tez orada</span>
+                        <img src="./assets/xotira-sandigi.png" alt="Butun oila" onerror="this.style.display='none'">
+                    </div>
+                    <div class="mini-product-details">
+                        <h4 class="mini-product-title">Xotira sandig‘i</h4>
+                        <div class="mini-product-description">Birga o‘tkazgan eng yaxshi damlarni eslash va oilaviy xotiralarni jonlantirish uchun qiziqarli savollar.</div>
+                        <!-- <div class="mini-product-meta-row">
+                            <div class="mini-meta-item">
+                                <svg class="mini-meta-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                <span>100 savol</span>
+                            </div>
+                        </div> -->
+                        <!-- <div class="mini-product-price">-- --- so'm</div> -->
+                        <button class="mini-btn-sotib-olish disabled" type="button" disabled>Tez orada</button>
                     </div>
                 </div>
 
                 <!-- Do'stlar -->
-                <div class="product-mini-card">
-                    <div class="mini-box mini-box-green">
-                        <span class="mini-icon">👥</span>
-                    </div>
-                    <div class="mini-info">
-                        <div class="mini-title">Do'stlar</div>
+                <div class="mini-product-card">
+                    <div class="mini-product-banner">
                         <span class="badge-tez-orada">Tez orada</span>
+                        <img src="./assets/galati-savollar.png" alt="Do'stlar" onerror="this.style.display='none'">
+                    </div>
+                    <div class="mini-product-details">
+                        <h4 class="mini-product-title">G‘alati savollar</h4>
+                        <div class="mini-product-description">Oila bilan kulish, hayron qolish va kutilmagan suhbatlarga sabab bo‘ladigan savollar.</div>
+                        <!-- <div class="mini-product-meta-row">
+                            <div class="mini-meta-item">
+                                <svg class="mini-meta-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                <span>100 savol</span>
+                            </div>
+                        </div> -->
+                        <!-- <div class="mini-product-price">-- --- so'm</div> -->
+                        <button class="mini-btn-sotib-olish disabled" type="button" disabled>Tez orada</button>
                     </div>
                 </div>
 
                 <!-- Bu yoki u? -->
-                <div class="product-mini-card">
-                    <div class="mini-box mini-box-purple">
-                        <span class="mini-icon" style="font-weight: 800; color: #5B418E;">?</span>
-                    </div>
-                    <div class="mini-info">
-                        <div class="mini-title">Bu yoki u?</div>
+                <div class="mini-product-card">
+                    <div class="mini-product-banner">
                         <span class="badge-tez-orada">Tez orada</span>
+                        <img src="./assets/meni-yaxshi-bilasizmi.png" alt="Bu yoki u?" onerror="this.style.display='none'">
                     </div>
-                </div>
-
-                <!-- Birinchidan oxirigacha -->
-                <div class="product-mini-card full-width">
-                    <div class="mini-box mini-box-yellow">
-                        <span class="mini-icon" style="font-size: 1.2rem; color: #8A6412;">∞</span>
-                    </div>
-                    <div class="mini-info">
-                        <div class="mini-title">Birinchidan oxirigacha</div>
-                        <span class="badge-tez-orada">Tez orada</span>
+                    <div class="mini-product-details">
+                        <h4 class="mini-product-title">Meni yaxshi bilasizmi?</h4>
+                        <div class="mini-product-description">Juftliklar bir-biringizni qayta kashf qilish, kulish va yanada yaqinlashish uchun savollar.</div>
+                        <!-- <div class="mini-product-meta-row">
+                            <div class="mini-meta-item">
+                                <svg class="mini-meta-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                <span>100 savol</span>
+                            </div>
+                        </div> -->
+                        <!-- <div class="mini-product-price">-- --- so'm</div> -->
+                        <button class="mini-btn-sotib-olish disabled" type="button" disabled>Tez orada</button>
                     </div>
                 </div>
             </div>
